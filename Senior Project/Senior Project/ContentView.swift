@@ -13,8 +13,32 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView{
+            VStack{
+                List{
+                    Section(header: Text("Reed Boxes")){
+                        ScrollView(.horizontal){
+                            HStack{
+                                Text("Reed Boxes")
+                            }
+                        }
+                    }
+                    Section(header:Text("Usable Reeds")){
+                        ForEach(reeds){ reed in
+                            ReedRow(reed: reed)
+                        }
+                    }
+                }
+                .navigationTitle("Reed Log")
+                Button("Add"){
+                    let newReed = Reed(context: moc)
+                    newReed.id = UUID()
+                    newReed.stapleID = "1234"
+                    
+                    try? moc.save()
+                }
+            }
+        }
     }
 }
 

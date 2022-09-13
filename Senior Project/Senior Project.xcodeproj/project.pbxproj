@@ -13,6 +13,8 @@
 		9E87613528D0D407009C8255 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E87613428D0D407009C8255 /* Preview Assets.xcassets */; };
 		9E87613D28D0D43B009C8255 /* ReedModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9E87613B28D0D43B009C8255 /* ReedModel.xcdatamodeld */; };
 		9E87614228D0D4BD009C8255 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87614128D0D4BD009C8255 /* DataController.swift */; };
+		9E87614A28D14B83009C8255 /* ReedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87614928D14B83009C8255 /* ReedRow.swift */; };
+		9E87614F28D14D58009C8255 /* AddReed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87614E28D14D58009C8255 /* AddReed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		9E87613428D0D407009C8255 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9E87613C28D0D43B009C8255 /* ReedModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReedModel.xcdatamodel; sourceTree = "<group>"; };
 		9E87614128D0D4BD009C8255 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		9E87614928D14B83009C8255 /* ReedRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReedRow.swift; sourceTree = "<group>"; };
+		9E87614E28D14D58009C8255 /* AddReed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 				9E87614028D0D48F009C8255 /* Data Management */,
 				9E87613128D0D407009C8255 /* Assets.xcassets */,
 				9E87613328D0D407009C8255 /* Preview Content */,
+				9E87614B28D14B87009C8255 /* Reed Stuff */,
 			);
 			path = "Senior Project";
 			sourceTree = "<group>";
@@ -79,6 +84,31 @@
 				9E87614128D0D4BD009C8255 /* DataController.swift */,
 			);
 			path = "Data Management";
+			sourceTree = "<group>";
+		};
+		9E87614B28D14B87009C8255 /* Reed Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				9E87614D28D14D3B009C8255 /* Adding Reeds */,
+				9E87614C28D14B91009C8255 /* Reed Preview */,
+			);
+			path = "Reed Stuff";
+			sourceTree = "<group>";
+		};
+		9E87614C28D14B91009C8255 /* Reed Preview */ = {
+			isa = PBXGroup;
+			children = (
+				9E87614928D14B83009C8255 /* ReedRow.swift */,
+			);
+			path = "Reed Preview";
+			sourceTree = "<group>";
+		};
+		9E87614D28D14D3B009C8255 /* Adding Reeds */ = {
+			isa = PBXGroup;
+			children = (
+				9E87614E28D14D58009C8255 /* AddReed.swift */,
+			);
+			path = "Adding Reeds";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +182,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E87613D28D0D43B009C8255 /* ReedModel.xcdatamodeld in Sources */,
+				9E87614F28D14D58009C8255 /* AddReed.swift in Sources */,
 				9E87614228D0D4BD009C8255 /* DataController.swift in Sources */,
+				9E87614A28D14B83009C8255 /* ReedRow.swift in Sources */,
 				9E87613028D0D406009C8255 /* ContentView.swift in Sources */,
 				9E87612E28D0D406009C8255 /* Senior_ProjectApp.swift in Sources */,
 			);
