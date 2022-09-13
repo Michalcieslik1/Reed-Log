@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Core Data Test
+//  Senior Project
 //
 //  Created by Michał Cieslik on 9/13/22.
 //
@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @FetchRequest(sortDescriptors: []) var students: FetchedResults<Student>
+    @FetchRequest(sortDescriptors: []) var reeds: FetchedResults<Reed>
+    @FetchRequest(sortDescriptors: []) var reedBoxes: FetchedResults<ReedBox>
     @Environment(\.managedObjectContext) var moc
     
     var body: some View {
-        
+        Text("Hello, world!")
+            .padding()
     }
 }
 

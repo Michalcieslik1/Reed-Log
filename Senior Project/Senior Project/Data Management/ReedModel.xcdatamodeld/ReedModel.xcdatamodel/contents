@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Experiment" representedClassName="Experiment" syncable="YES" codeGenerationType="class"/>
+    <entity name="Measurements" representedClassName="Measurements" syncable="YES" codeGenerationType="class"/>
+    <entity name="Reed" representedClassName="Reed" syncable="YES" codeGenerationType="class">
+        <attribute name="caneDiameter" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="caneShape" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="ReedBox" representedClassName="ReedBox" syncable="YES" codeGenerationType="class"/>
+    <elements>
+        <element name="Experiment" positionX="-18" positionY="27" width="128" height="29"/>
+        <element name="Reed" positionX="-54" positionY="-9" width="128" height="74"/>
+        <element name="ReedBox" positionX="-36" positionY="9" width="128" height="29"/>
+        <element name="Measurements" positionX="0" positionY="45" width="128" height="29"/>
+    </elements>
+</model>
