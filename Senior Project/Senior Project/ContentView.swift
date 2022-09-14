@@ -19,26 +19,37 @@ struct ContentView: View {
                     Section(header: Text("Reed Boxes")){
                         ScrollView(.horizontal){
                             HStack{
-                                Text("Reed Boxes")
+                                ForEach(reedBoxes){ reedBox in
+                                    ReedBoxPreview(reedBox: reedBox)
+                                }
+                                NavigationLink(destination: AddReedBox()){
+                                    NewReedBox()
+                                        .padding(.all)
+                                }
                             }
                         }
                     }
                     Section(header:Text("Usable Reeds")){
                         ForEach(reeds){ reed in
-                            ReedRow(reed: reed)
+                            NavigationLink(destination: ReedDetail(reed: reed)) {
+                                ReedRow(reed: reed)
+                            }
                         }
+                        .onDelete(perform: deleteReed)
                     }
                 }
                 .navigationTitle("Reed Log")
-                Button("Add"){
-                    let newReed = Reed(context: moc)
-                    newReed.id = UUID()
-                    newReed.stapleID = "1234"
-                    
-                    try? moc.save()
-                }
+                NavigationLink("Add Reed", destination: AddReed())
+                    .buttonStyle(BorderedButtonStyle.bordered)
             }
         }
+    }
+    func deleteReed(at offsets:IndexSet){
+        for offset in offsets{
+            let reed = reeds[offset]
+            moc.delete(reed)
+        }
+        try? moc.save()
     }
 }
 

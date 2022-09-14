@@ -15,6 +15,11 @@
 		9E87614228D0D4BD009C8255 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87614128D0D4BD009C8255 /* DataController.swift */; };
 		9E87614A28D14B83009C8255 /* ReedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87614928D14B83009C8255 /* ReedRow.swift */; };
 		9E87614F28D14D58009C8255 /* AddReed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87614E28D14D58009C8255 /* AddReed.swift */; };
+		9E87615128D25ADA009C8255 /* ReedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87615028D25ADA009C8255 /* ReedDetail.swift */; };
+		9E87615428D2655F009C8255 /* ReedBoxPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87615328D2655F009C8255 /* ReedBoxPreview.swift */; };
+		9E87615728D265E9009C8255 /* ReedBoxName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87615628D265E9009C8255 /* ReedBoxName.swift */; };
+		9E87615B28D266F2009C8255 /* AddReedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87615A28D266F2009C8255 /* AddReedBox.swift */; };
+		9E87615D28D267FE009C8255 /* NewReedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87615C28D267FE009C8255 /* NewReedBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +32,11 @@
 		9E87614128D0D4BD009C8255 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		9E87614928D14B83009C8255 /* ReedRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReedRow.swift; sourceTree = "<group>"; };
 		9E87614E28D14D58009C8255 /* AddReed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReed.swift; sourceTree = "<group>"; };
+		9E87615028D25ADA009C8255 /* ReedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReedDetail.swift; sourceTree = "<group>"; };
+		9E87615328D2655F009C8255 /* ReedBoxPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReedBoxPreview.swift; sourceTree = "<group>"; };
+		9E87615628D265E9009C8255 /* ReedBoxName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReedBoxName.swift; sourceTree = "<group>"; };
+		9E87615A28D266F2009C8255 /* AddReedBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReedBox.swift; sourceTree = "<group>"; };
+		9E87615C28D267FE009C8255 /* NewReedBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReedBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +75,7 @@
 				9E87613128D0D407009C8255 /* Assets.xcassets */,
 				9E87613328D0D407009C8255 /* Preview Content */,
 				9E87614B28D14B87009C8255 /* Reed Stuff */,
+				9E87615528D26567009C8255 /* Reed Box Stuff */,
 			);
 			path = "Senior Project";
 			sourceTree = "<group>";
@@ -98,6 +109,7 @@
 		9E87614C28D14B91009C8255 /* Reed Preview */ = {
 			isa = PBXGroup;
 			children = (
+				9E87615028D25ADA009C8255 /* ReedDetail.swift */,
 				9E87614928D14B83009C8255 /* ReedRow.swift */,
 			);
 			path = "Reed Preview";
@@ -109,6 +121,33 @@
 				9E87614E28D14D58009C8255 /* AddReed.swift */,
 			);
 			path = "Adding Reeds";
+			sourceTree = "<group>";
+		};
+		9E87615528D26567009C8255 /* Reed Box Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				9E87615928D266DB009C8255 /* Adding Reed Box */,
+				9E87615828D266CE009C8255 /* Reed Box Preview */,
+			);
+			path = "Reed Box Stuff";
+			sourceTree = "<group>";
+		};
+		9E87615828D266CE009C8255 /* Reed Box Preview */ = {
+			isa = PBXGroup;
+			children = (
+				9E87615328D2655F009C8255 /* ReedBoxPreview.swift */,
+				9E87615628D265E9009C8255 /* ReedBoxName.swift */,
+				9E87615C28D267FE009C8255 /* NewReedBox.swift */,
+			);
+			path = "Reed Box Preview";
+			sourceTree = "<group>";
+		};
+		9E87615928D266DB009C8255 /* Adding Reed Box */ = {
+			isa = PBXGroup;
+			children = (
+				9E87615A28D266F2009C8255 /* AddReedBox.swift */,
+			);
+			path = "Adding Reed Box";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,10 +222,15 @@
 			files = (
 				9E87613D28D0D43B009C8255 /* ReedModel.xcdatamodeld in Sources */,
 				9E87614F28D14D58009C8255 /* AddReed.swift in Sources */,
+				9E87615728D265E9009C8255 /* ReedBoxName.swift in Sources */,
+				9E87615428D2655F009C8255 /* ReedBoxPreview.swift in Sources */,
 				9E87614228D0D4BD009C8255 /* DataController.swift in Sources */,
 				9E87614A28D14B83009C8255 /* ReedRow.swift in Sources */,
 				9E87613028D0D406009C8255 /* ContentView.swift in Sources */,
+				9E87615128D25ADA009C8255 /* ReedDetail.swift in Sources */,
+				9E87615D28D267FE009C8255 /* NewReedBox.swift in Sources */,
 				9E87612E28D0D406009C8255 /* Senior_ProjectApp.swift in Sources */,
+				9E87615B28D266F2009C8255 /* AddReedBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
