@@ -10,8 +10,9 @@ import SwiftUI
 struct AddReed: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
+    @FetchRequest(sortDescriptors: []) var reedBoxes: FetchedResults<ReedBox>
     
-    @State var targetReedBox: String = ""
+    @State var targetReedBox: ReedBox? = nil
     @State var errorPopUpVisible: Bool = false
     @State var message: String = ""
     @State var title: String = ""
@@ -48,7 +49,9 @@ struct AddReed: View {
                 Form{
                     Section(header: Text("General")){
                         Picker("Reed Box", selection: $targetReedBox){
-                            Text("Reed Boxes") //TODO: Choosing a reedbox for a reed
+                            ForEach(reedBoxes, id: \.self){
+                                Text($0.name ?? "Unknown").tag($0.self)
+                            }
                         }
                         Picker("Reed Stage", selection: $reedStage){
                             Text("Blank").tag(0)
@@ -162,6 +165,7 @@ struct AddReed: View {
         newReed.stapleType = stapleType
         newReed.threadColor = "TODO" //TODO: Colors to hex and vice versa
         newReed.tieLength = tieLen
+        newReed.reedBox = targetReedBox
         
         try? moc.save()
     }

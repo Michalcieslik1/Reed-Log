@@ -20,7 +20,9 @@ struct ContentView: View {
                         ScrollView(.horizontal){
                             HStack{
                                 ForEach(reedBoxes){ reedBox in
-                                    ReedBoxPreview(reedBox: reedBox)
+                                    NavigationLink(destination: ReedBoxDetail(reedBox: reedBox)){
+                                        ReedBoxPreview(reedBox: reedBox)
+                                    }
                                 }
                                 NavigationLink(destination: AddReedBox()){
                                     NewReedBox()
