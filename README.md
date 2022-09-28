@@ -9,5 +9,4 @@ https://www.nytimes.com/1997/10/21/science/the-shaping-of-oboe-reeds-maybe-it-is
 [FINAL_IQP_REPORT.pdf](https://github.com/Michalcieslik1/Senior-Project/files/9600047/FINAL_IQP_REPORT.pdf)
 
 ## CS Resources:
-### Best Core Data + SwiftUI + MVVM Tutorial Ever:
-[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](https://www.youtube.com/watch?v=gGM_Qn3CUfQ)
+### [Best Core Data + SwiftUI + MVVM Tutorial Ever](https://www.youtube.com/watch?v=gGM_Qn3CUfQ)
