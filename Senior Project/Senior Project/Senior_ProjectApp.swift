@@ -9,11 +9,12 @@ import SwiftUI
 
 @main
 struct Senior_ProjectApp: App {
-    @StateObject private var dataController = DataController()
+    //@StateObject private var dataController = DataController()
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, dataController.container.viewContext)
+            let viewContext = DataController.shared.container.viewContext
+            ContentView(vm: ContentViewModel(context: viewContext))
+                .environment(\.managedObjectContext, viewContext)
         }
     }
 }

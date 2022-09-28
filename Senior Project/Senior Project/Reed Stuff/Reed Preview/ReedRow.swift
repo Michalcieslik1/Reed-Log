@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ReedRow: View {
-    let reed: Reed
+    @ObservedObject var reed: Reed
     var body: some View {
         HStack{
             RoundedRectangle(cornerRadius: 15)
@@ -16,7 +16,7 @@ struct ReedRow: View {
                 .frame(width: 50, height: 50)
                 .padding(5)
             VStack(alignment: .leading){
-                Text(reed.stapleID!)
+                Text(reed.stapleID ?? "Unknown")
                     .font(.headline)
             }
             Spacer()

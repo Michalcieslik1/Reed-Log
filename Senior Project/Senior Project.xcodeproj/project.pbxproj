@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E6176A228E4A9BC00750F9E /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6176A128E4A9BC00750F9E /* ContentViewModel.swift */; };
+		9E6176A428E4C98300750F9E /* AddReedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6176A328E4C98300750F9E /* AddReedViewModel.swift */; };
 		9E87612E28D0D406009C8255 /* Senior_ProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87612D28D0D406009C8255 /* Senior_ProjectApp.swift */; };
 		9E87613028D0D406009C8255 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87612F28D0D406009C8255 /* ContentView.swift */; };
 		9E87613228D0D407009C8255 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E87613128D0D407009C8255 /* Assets.xcassets */; };
@@ -26,9 +28,13 @@
 		9ECC6BEA28D397CD0032A730 /* Reed+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6BE628D397CD0032A730 /* Reed+CoreDataClass.swift */; };
 		9ECC6BEB28D397CD0032A730 /* Reed+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6BE728D397CD0032A730 /* Reed+CoreDataProperties.swift */; };
 		9ECC6BEE28D39C610032A730 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6BED28D39C610032A730 /* TestData.swift */; };
+		9ECC6BF028D8BC0B0032A730 /* AddReedQuestionaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6BEF28D8BC0B0032A730 /* AddReedQuestionaire.swift */; };
+		9ECC6BF228D8BCFB0032A730 /* AddReedGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6BF128D8BCFB0032A730 /* AddReedGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E6176A128E4A9BC00750F9E /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		9E6176A328E4C98300750F9E /* AddReedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReedViewModel.swift; sourceTree = "<group>"; };
 		9E87612A28D0D406009C8255 /* Senior Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Senior Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E87612D28D0D406009C8255 /* Senior_ProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Senior_ProjectApp.swift; sourceTree = "<group>"; };
 		9E87612F28D0D406009C8255 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +55,8 @@
 		9ECC6BE628D397CD0032A730 /* Reed+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reed+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9ECC6BE728D397CD0032A730 /* Reed+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reed+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9ECC6BED28D39C610032A730 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		9ECC6BEF28D8BC0B0032A730 /* AddReedQuestionaire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReedQuestionaire.swift; sourceTree = "<group>"; };
+		9ECC6BF128D8BCFB0032A730 /* AddReedGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReedGroup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E6176A528E4C9CF00750F9E /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				9E6176A628E4C9D700750F9E /* Adding Reeds */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		9E6176A628E4C9D700750F9E /* Adding Reeds */ = {
+			isa = PBXGroup;
+			children = (
+				9E6176A328E4C98300750F9E /* AddReedViewModel.swift */,
+			);
+			path = "Adding Reeds";
+			sourceTree = "<group>";
+		};
 		9E87612128D0D406009C8255 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +107,7 @@
 			children = (
 				9E87612D28D0D406009C8255 /* Senior_ProjectApp.swift */,
 				9E87612F28D0D406009C8255 /* ContentView.swift */,
+				9E6176A128E4A9BC00750F9E /* ContentViewModel.swift */,
 				9E87614028D0D48F009C8255 /* Data Management */,
 				9E87613128D0D407009C8255 /* Assets.xcassets */,
 				9E87613328D0D407009C8255 /* Preview Content */,
@@ -117,6 +142,7 @@
 		9E87614B28D14B87009C8255 /* Reed Stuff */ = {
 			isa = PBXGroup;
 			children = (
+				9E6176A528E4C9CF00750F9E /* View Models */,
 				9E87614D28D14D3B009C8255 /* Adding Reeds */,
 				9E87614C28D14B91009C8255 /* Reed Preview */,
 			);
@@ -136,6 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				9E87614E28D14D58009C8255 /* AddReed.swift */,
+				9ECC6BEF28D8BC0B0032A730 /* AddReedQuestionaire.swift */,
+				9ECC6BF128D8BCFB0032A730 /* AddReedGroup.swift */,
 			);
 			path = "Adding Reeds";
 			sourceTree = "<group>";
@@ -246,12 +274,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E6176A428E4C98300750F9E /* AddReedViewModel.swift in Sources */,
 				9E87613D28D0D43B009C8255 /* ReedModel.xcdatamodeld in Sources */,
 				9E87614F28D14D58009C8255 /* AddReed.swift in Sources */,
 				9E87615728D265E9009C8255 /* ReedBoxName.swift in Sources */,
 				9ECC6BEB28D397CD0032A730 /* Reed+CoreDataProperties.swift in Sources */,
+				9E6176A228E4A9BC00750F9E /* ContentViewModel.swift in Sources */,
+				9ECC6BF228D8BCFB0032A730 /* AddReedGroup.swift in Sources */,
 				9E87615428D2655F009C8255 /* ReedBoxPreview.swift in Sources */,
 				9ECC6BE928D397CD0032A730 /* ReedBox+CoreDataProperties.swift in Sources */,
+				9ECC6BF028D8BC0B0032A730 /* AddReedQuestionaire.swift in Sources */,
 				9E87614228D0D4BD009C8255 /* DataController.swift in Sources */,
 				9E87614A28D14B83009C8255 /* ReedRow.swift in Sources */,
 				9E87613028D0D406009C8255 /* ContentView.swift in Sources */,

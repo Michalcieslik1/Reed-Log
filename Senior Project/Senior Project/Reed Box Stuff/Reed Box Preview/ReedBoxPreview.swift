@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ReedBoxPreview: View {
-    var reedBox: ReedBox
+    @ObservedObject var reedBox: ReedBox
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 25, style: .continuous)

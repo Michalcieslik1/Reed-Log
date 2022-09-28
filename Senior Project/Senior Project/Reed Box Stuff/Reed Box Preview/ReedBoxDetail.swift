@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ReedBoxDetail: View {
     @Environment(\.managedObjectContext) var moc
-    let reedBox: ReedBox
+    @ObservedObject var reedBox: ReedBox
+    
     var body: some View {
         VStack{
             List{
@@ -34,8 +35,8 @@ struct ReedBoxDetail: View {
             .toolbar {
                 EditButton()
             }
-            NavigationLink("Add Reed", destination:
-                                AddReed())
+            //NavigationLink("Add Reed", destination:
+                               // AddReed())
             .buttonStyle(BorderedButtonStyle.bordered)
         }
     }

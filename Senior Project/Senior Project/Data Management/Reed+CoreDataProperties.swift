@@ -12,7 +12,7 @@ import CoreData
 
 extension Reed {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Reed> {
+    @nonobjc public class func createFetchRequest() -> NSFetchRequest<Reed> {
         return NSFetchRequest<Reed>(entityName: "Reed")
     }
 

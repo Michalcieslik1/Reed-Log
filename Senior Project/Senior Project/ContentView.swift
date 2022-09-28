@@ -12,6 +12,13 @@ struct ContentView: View {
     @FetchRequest(sortDescriptors: []) var reedBoxes: FetchedResults<ReedBox>
     @Environment(\.managedObjectContext) var moc
     
+    private var contentVM: ContentViewModel
+    @State var isPresented = false
+    
+    init(vm: ContentViewModel){
+        self.contentVM = vm
+    }
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -41,9 +48,17 @@ struct ContentView: View {
                     }
                 }
                 .navigationTitle("Reed Log")
-                NavigationLink("Add Reed", destination: AddReed())
-                    .buttonStyle(BorderedButtonStyle.bordered)
+                .sheet(isPresented: $isPresented, onDismiss:{
+                    //Dismiss
+                }, content:{
+                    AddReed(vm: AddReedViewModel(context: moc))
+                })
+                Button("Add Reed"){
+                    isPresented = true
+                }
+                .buttonStyle(BorderedButtonStyle.bordered)
             }
+            
         }
     }
     func deleteReed(at offsets:IndexSet){
@@ -57,6 +72,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let viewContext = DataController.shared.container.viewContext
+        ContentView(vm: ContentViewModel(context: viewContext))
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ReedDetail: View {
-    let reed: Reed
+    @ObservedObject var reed: Reed
     var body: some View {
         List{
             Section(header: Text("Cane")){
