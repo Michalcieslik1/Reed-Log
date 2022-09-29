@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    //@FetchRequest(sortDescriptors: []) var reeds: FetchedResults<Reed>
-    //@FetchRequest(sortDescriptors: []) var reedBoxes: FetchedResults<ReedBox>
     @Environment(\.managedObjectContext) var moc
     
     @ObservedObject var reedListVM: ReedListViewModel
