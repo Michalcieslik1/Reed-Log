@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @FetchRequest(sortDescriptors: []) var reeds: FetchedResults<Reed>
-    @FetchRequest(sortDescriptors: []) var reedBoxes: FetchedResults<ReedBox>
+    //@FetchRequest(sortDescriptors: []) var reeds: FetchedResults<Reed>
+    //@FetchRequest(sortDescriptors: []) var reedBoxes: FetchedResults<ReedBox>
     @Environment(\.managedObjectContext) var moc
     
-    private var contentVM: ContentViewModel
+    @ObservedObject var reedListVM: ReedListViewModel
+    @ObservedObject var reedBoxListVM: ReedBoxListViewModel
     @State var isPresented = false
     
-    init(vm: ContentViewModel){
-        self.contentVM = vm
+    init(rvm: ReedListViewModel, rbvm: ReedBoxListViewModel){
+        self.reedListVM = rvm
+        self.reedBoxListVM = rbvm
     }
     
     var body: some View {
@@ -26,11 +28,13 @@ struct ContentView: View {
                     Section(header: Text("Reed Boxes")){
                         ScrollView(.horizontal){
                             HStack{
-                                ForEach(reedBoxes){ reedBox in
+                                ForEach(reedBoxListVM.reedBoxes){ reedBox in
                                     NavigationLink(destination: ReedBoxDetail(reedBox: reedBox)){
                                         ReedBoxPreview(reedBox: reedBox)
                                     }
                                 }
+                                .onDelete(perform: deleteReedBox)
+                                
                                 NavigationLink(destination: AddReedBox()){
                                     NewReedBox()
                                         .padding(.all)
@@ -39,7 +43,7 @@ struct ContentView: View {
                         }
                     }
                     Section(header:Text("Usable Reeds")){
-                        ForEach(reeds){ reed in
+                        ForEach(reedListVM.reeds){ reed in
                             NavigationLink(destination: ReedDetail(reed: reed)) {
                                 ReedRow(reed: reed)
                             }
@@ -51,7 +55,7 @@ struct ContentView: View {
                 .sheet(isPresented: $isPresented, onDismiss:{
                     //Dismiss
                 }, content:{
-                    AddReed(vm: AddReedViewModel(context: moc))
+                    AddReed(vm: AddReedViewModel(context: moc, reedBoxes: reedBoxListVM))
                 })
                 Button("Add Reed"){
                     isPresented = true
@@ -61,18 +65,26 @@ struct ContentView: View {
             
         }
     }
+    
     func deleteReed(at offsets:IndexSet){
         for offset in offsets{
-            let reed = reeds[offset]
-            moc.delete(reed)
+            let reed = reedListVM.reeds[offset]
+            reedListVM.deleteReed(reedID: reed.objectID)
         }
-        try? moc.save()
     }
+    
+    func deleteReedBox(at offsets:IndexSet){
+        for offset in offsets{
+            let reedBox = reedBoxListVM.reedBoxes[offset]
+            reedBoxListVM.deleteReedBox(reedBoxID: reedBox.objectID)
+        }
+    }
+     
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = DataController.shared.container.viewContext
-        ContentView(vm: ContentViewModel(context: viewContext))
+        ContentView(rvm: ReedListViewModel(context: viewContext), rbvm: ReedBoxListViewModel(context: viewContext))
     }
 }

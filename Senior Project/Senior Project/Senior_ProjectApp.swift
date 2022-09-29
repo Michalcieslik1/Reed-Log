@@ -13,7 +13,7 @@ struct Senior_ProjectApp: App {
     var body: some Scene {
         WindowGroup {
             let viewContext = DataController.shared.container.viewContext
-            ContentView(vm: ContentViewModel(context: viewContext))
+            ContentView(rvm: ReedListViewModel(context: viewContext), rbvm: ReedBoxListViewModel(context: viewContext))
                 .environment(\.managedObjectContext, viewContext)
         }
     }

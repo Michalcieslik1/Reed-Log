@@ -28,9 +28,14 @@ extension Reed {
     @NSManaged public var threadColor: String?
     @NSManaged public var tieLength: Double
     @NSManaged public var reedBox: ReedBox?
-
+    
+    static var all: NSFetchRequest<Reed>{
+        let request = Reed.createFetchRequest()
+        request.sortDescriptors = []
+        return request
+    }
 }
 
 extension Reed : Identifiable {
-
+    
 }

@@ -41,7 +41,12 @@ extension ReedBox {
 
     @objc(removeReed:)
     @NSManaged public func removeFromReed(_ values: NSSet)
-
+    
+    static var all: NSFetchRequest<ReedBox>{
+        let request = ReedBox.createFetchRequest()
+        request.sortDescriptors = []
+        return request
+    }
 }
 
 extension ReedBox : Identifiable {

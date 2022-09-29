@@ -14,9 +14,7 @@ struct AddReed: View {
         self.vm = vm
     }
     
-    @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
-    @FetchRequest(sortDescriptors: []) var reedBoxes: FetchedResults<ReedBox>
 
     var body: some View {
         NavigationView{
@@ -25,7 +23,7 @@ struct AddReed: View {
                     Form{
                         Section(header: Text("General")){
                             Picker("Reed Box", selection: $vm.targetReedBox){
-                                ForEach(reedBoxes){ (reedBox: ReedBox) in
+                                ForEach(vm.reedBoxes.reedBoxes){ (reedBox: ReedBox) in
                                     Text(reedBox.name ?? "Unknown").tag(reedBox as ReedBox?)
                                 }
                             }
@@ -118,7 +116,7 @@ struct AddReed: View {
 struct AddReed_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = DataController.shared.container.viewContext
-        AddReed(vm: AddReedViewModel(context: viewContext))
+        AddReed(vm: AddReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext)))
             //.environmentObject()
     }
 }

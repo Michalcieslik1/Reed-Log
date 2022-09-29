@@ -12,6 +12,8 @@ import SwiftUI
 class AddReedViewModel: ObservableObject{
     private (set) var context: NSManagedObjectContext
     
+    @Published var reedBoxes: ReedBoxListViewModel
+    
     @Published var targetReedBox: ReedBox?
     @Published var errorPopUpVisible: Bool = false
     @Published var message: String = ""
@@ -41,8 +43,9 @@ class AddReedViewModel: ObservableObject{
     @Published var tieLength: String = ""
     @Published var threadColor: Color = .white
     
-    init(context: NSManagedObjectContext){
+    init(context: NSManagedObjectContext, reedBoxes: ReedBoxListViewModel){
         self.context = context
+        self.reedBoxes = reedBoxes
     }
     
     func save(){
