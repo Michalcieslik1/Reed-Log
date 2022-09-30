@@ -8,19 +8,41 @@
 import SwiftUI
 
 struct AddReedGroup: View {
+    @ObservedObject var vm: AddReedViewModel
+    @Environment(\.dismiss) private var dismiss
+    
+    init(vm: AddReedViewModel){
+        self.vm = vm
+    }
+    
     var body: some View {
-        Group{
+        VStack{
             TabView{
-                //AddReed()
-                AddReedQuestionaire()
+                //Text("Hey")
+                AddReed(vm: vm)
+                    .tabItem {
+                        Text("HEY")
+                    }
+                AddReedQuestionaire(vm: vm)
             }
-            .tabViewStyle(PageTabViewStyle())
+            .tabViewStyle(.page)
+            Button("Add Reed"){
+                addReed()
+            }.buttonStyle(BorderedButtonStyle.bordered)
         }
+        .navigationTitle("Add Reed")
+        
+    }
+    
+    func addReed(){
+        vm.save()
+        dismiss()
     }
 }
 
 struct AddReedGroup_Previews: PreviewProvider {
     static var previews: some View {
-        AddReedGroup()
+        let viewContext = DataController.shared.container.viewContext
+        AddReedGroup(vm: AddReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext)))
     }
 }

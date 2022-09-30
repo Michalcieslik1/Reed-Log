@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct AddReedQuestionaire: View {
+    @ObservedObject var vm: AddReedViewModel
+    
+    init(vm: AddReedViewModel){
+        self.vm = vm
+    }
+    
     var body: some View {
         ZStack{ //TODO: This whole section, including the data management
             VStack{
@@ -29,6 +35,7 @@ struct AddReedQuestionaire: View {
 
 struct AddReedQuestionaire_Previews: PreviewProvider {
     static var previews: some View {
-        AddReedQuestionaire()
+        let viewContext = DataController.shared.container.viewContext
+        AddReedQuestionaire(vm: AddReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext)))
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     @Environment(\.managedObjectContext) var moc
     
     @ObservedObject var reedListVM: ReedListViewModel
@@ -48,20 +48,27 @@ struct ContentView: View {
                         }
                         .onDelete(perform: deleteReed)
                     }
+                    HStack{
+                        Spacer()
+                        Button("Add Reed"){
+                            isPresented = true
+                        }
+                        .buttonStyle(BorderedButtonStyle.bordered)
+                        Spacer()
+                    }
                 }
                 .navigationTitle("Reed Log")
                 .sheet(isPresented: $isPresented, onDismiss:{
                     //Dismiss
                 }, content:{
-                    AddReed(vm: AddReedViewModel(context: moc, reedBoxes: reedBoxListVM))
+                    NavigationView{
+                        AddReedGroup(vm: AddReedViewModel(context: moc, reedBoxes: reedBoxListVM))
+                    }
+                    .navigationTitle("Add Reeds")
                 })
-                Button("Add Reed"){
-                    isPresented = true
-                }
-                .buttonStyle(BorderedButtonStyle.bordered)
             }
-            
         }
+        
     }
     
     func deleteReed(at offsets:IndexSet){
@@ -80,9 +87,9 @@ struct ContentView: View {
      
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = DataController.shared.container.viewContext
-        ContentView(rvm: ReedListViewModel(context: viewContext), rbvm: ReedBoxListViewModel(context: viewContext))
+        MainView(rvm: ReedListViewModel(context: viewContext), rbvm: ReedBoxListViewModel(context: viewContext))
     }
 }

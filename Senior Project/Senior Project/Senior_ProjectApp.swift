@@ -9,12 +9,29 @@ import SwiftUI
 
 @main
 struct Senior_ProjectApp: App {
-    //@StateObject private var dataController = DataController()
+    @State private var selection = 2
     var body: some Scene {
         WindowGroup {
-            let viewContext = DataController.shared.container.viewContext
-            ContentView(rvm: ReedListViewModel(context: viewContext), rbvm: ReedBoxListViewModel(context: viewContext))
-                .environment(\.managedObjectContext, viewContext)
+            TabView(selection: $selection){
+                let viewContext = DataController.shared.container.viewContext
+                SearchView()
+                    .tabItem{
+                        Text("Search")
+                    }
+                    .tag(1)
+                MainView(rvm: ReedListViewModel(context: viewContext), rbvm: ReedBoxListViewModel(context: viewContext))
+                    .environment(\.managedObjectContext, viewContext)
+                    .tabItem{
+                        Text("Explore")
+                    }
+                    .tag(2)
+                SettingsView()
+                    .tabItem{
+                        Text("Settings")
+                    }
+                    .tag(3)
+            }
+            //.tabViewStyle(.page)
         }
     }
 }
