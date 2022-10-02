@@ -42,8 +42,7 @@ struct ReedDetail: View {
                 }
             }
             Section(header: Text("Cane Diagram")){
-                //CaneDiagramDisplay(reed: reed)//TODO: Cane Diagram
-                Text("Cane Diagram")
+                CaneDiagram(reed: reed)//TODO: Cane Diagram
             }
             
             Section(header: Text("Tying Information")){
@@ -73,7 +72,7 @@ struct ReedDetail: View {
                 }
             }
         }
-        .navigationTitle("#\(reed.stapleID!) (Date)")
+        .navigationTitle("#\(reed.stapleID ?? "Unknown") (Date)")
         .toolbar(){
             //NavigationLink(destination: EditReed(reedToEdit: reed, reedToEditBox: reedBoxID)){
             //    Text("Edit")

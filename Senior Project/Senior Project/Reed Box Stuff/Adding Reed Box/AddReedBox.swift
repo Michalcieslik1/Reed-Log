@@ -8,49 +8,35 @@
 import SwiftUI
 
 struct AddReedBox: View {
-    @Environment(\.managedObjectContext) var moc
+    @ObservedObject var vm: AddReedBoxViewModel
     @Environment(\.dismiss) var dismiss
     
-    @State private var name: String = ""
-    @State private var info: String = ""
-    @State private var size = 0
-    @State private var color: Color = .white
     var body: some View {
         VStack{
             Form{
                 Section(header: Text("General")){
-                    TextField("Name", text: $name)
-                    TextField("Size", value: $size, formatter: NumberFormatter())
-                    ColorPicker("Reed Box Color", selection: $color)
+                    TextField("Name", text: $vm.name)
+                    TextField("Size", value: $vm.size, formatter: NumberFormatter())
+                    ColorPicker("Reed Box Color", selection: $vm.color)
                 }
                 Section(header:Text("Description")){
-                    TextEditor(text: $info)
+                    TextEditor(text: $vm.info)
                 }
             }
             .navigationTitle("Create New Reed Box")
             Spacer()
             Button("Add Reed Case"){
-                addReedBox()
+                vm.save()
+                dismiss()
             }
             .buttonStyle(BorderedButtonStyle())
         }
-    }
-    
-    func addReedBox(){
-        let reedBox = ReedBox(context: moc)
-        
-        reedBox.id = UUID()
-        reedBox.name = name
-        reedBox.size = Int16(size)
-        reedBox.info = info
-        
-        try? moc.save()
-        dismiss()
     }
 }
 
 struct AddReedBox_Previews: PreviewProvider {
     static var previews: some View {
-        AddReedBox()
+        let viewContext = DataController.shared.container.viewContext
+        AddReedBox(vm: AddReedBoxViewModel(context: viewContext))
     }
 }

@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Experiment" representedClassName="Experiment" syncable="YES" codeGenerationType="class"/>
-    <entity name="Measurements" representedClassName="Measurements" syncable="YES" codeGenerationType="class"/>
     <entity name="Reed" representedClassName="Reed" syncable="YES">
+        <attribute name="bottomL" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="bottomR" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="caneDiameter" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="caneGouge" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="caneShape" optional="YES" attributeType="String"/>
         <attribute name="caneType" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="leftL" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="leftM" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="leftR" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="reedStage" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rightL" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="rightM" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="rightR" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="stapleID" optional="YES" attributeType="String"/>
         <attribute name="stapleType" optional="YES" attributeType="String"/>
         <attribute name="threadColor" optional="YES" attributeType="String"/>
@@ -23,10 +29,10 @@
         <attribute name="size" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="reed" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reed" inverseName="reedBox" inverseEntity="Reed"/>
     </entity>
+    <entity name="ReedTests" representedClassName="ReedTests" syncable="YES" codeGenerationType="class"/>
     <elements>
-        <element name="Experiment" positionX="-18" positionY="27" width="128" height="29"/>
-        <element name="Measurements" positionX="0" positionY="45" width="128" height="29"/>
-        <element name="Reed" positionX="214.74609375" positionY="-43.484375" width="128" height="209"/>
+        <element name="ReedTests" positionX="-18" positionY="27" width="128" height="29"/>
+        <element name="Reed" positionX="214.74609375" positionY="-43.484375" width="128" height="329"/>
         <element name="ReedBox" positionX="-36" positionY="9" width="128" height="104"/>
     </elements>
 </model>

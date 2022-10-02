@@ -33,7 +33,7 @@ struct MainView: View {
                                 }
                                 .onDelete(perform: deleteReedBox)
                                 
-                                NavigationLink(destination: AddReedBox()){
+                                NavigationLink(destination: AddReedBox(vm: AddReedBoxViewModel(context: moc))){
                                     NewReedBox()
                                         .padding(.all)
                                 }

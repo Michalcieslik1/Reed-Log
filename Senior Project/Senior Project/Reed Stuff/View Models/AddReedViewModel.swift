@@ -43,9 +43,86 @@ class AddReedViewModel: ObservableObject{
     @Published var tieLength: String = ""
     @Published var threadColor: Color = .white
     
+    @Published var peepPitch: Float = 0.0
+    @Published var pitchCeiling: Bool = true
+    @Published var response: Bool = true
+    @Published var resistance: Float = 0.0
+    
+    @Published var glissInterv: Float = 0.0
+    @Published var crowPitch: Float = 0.0
+    @Published var crowInterv: Int = 0
+    @Published var reedSuccess: Float = 0.0
+    @Published var reedLoudness: Float = 0.0
+    
     init(context: NSManagedObjectContext, reedBoxes: ReedBoxListViewModel){
         self.context = context
         self.reedBoxes = reedBoxes
+    }
+    
+    func peepPitchToString() -> String{
+        switch peepPitch{
+        case -200:
+            return "B♭ (in tune)"
+        case (-200)...(-101):
+            return "B (\(abs(Int(peepPitch) + 100))cents flat)"
+        case -100:
+            return "B (in tune)"
+        case (-99)...(-1):
+            return "C (\(abs(Int(peepPitch))) cents flat)"
+        case 0:
+            return "C (in tune)"
+        case 1...99:
+            return "C (\(Int(peepPitch)) cents sharp)"
+        case 100:
+            return "C# (in tune)"
+        case 200:
+            return "D (in tune)"
+        default:
+            return "C# (\(Int(peepPitch) - 100) cents sharp)"
+        }
+    }
+    
+    func crowPitchToString() -> String{
+        switch crowPitch{
+        case -200:
+            return "B (in tune)"
+        case (-200)...(-101):
+            return "C (\(abs(Int(crowPitch) + 100)) cents flat)"
+        case -100:
+            return "C (in tune)"
+        case (-99)...(-1):
+            return "C# (\(abs(Int(crowPitch))) cents flat)"
+        case 0:
+            return "C# (in tune)"
+        case 1...99:
+            return "C# (\(Int(crowPitch)) cents sharp)"
+        case 100:
+            return "D (in tune)"
+        case 101...199:
+            return "D (\(Int(crowPitch) - 100) cents sharp)"
+        default:
+            return "D# (in tune)"
+        }
+        
+    }
+    
+    func glissToString() -> String{
+        switch glissInterv{
+        case -3:
+            return "sharp major 2nd"
+        case -2:
+            return "major 2nd"
+        case -1:
+            return "sharp minor 3rd"
+        case 0:
+            return "minor 3rd"
+        case 1:
+            return "flat minor 3rd"
+        case 2:
+            return "major 3rd"
+        default:
+            return "flat major 3rd"
+        }
     }
     
     func save(){
@@ -65,6 +142,15 @@ class AddReedViewModel: ObservableObject{
             errorPopUpVisible.toggle()
             return
         }
+        
+        newReed.leftL = leftL
+        newReed.leftM = leftM
+        newReed.leftR = leftR
+        newReed.bottomL = bottomLeft
+        newReed.rightL = rightL
+        newReed.rightM = rightM
+        newReed.rightR = rightR
+        newReed.bottomR = bottomRight
         
         newReed.stapleID = stapleID
         newReed.id = UUID()

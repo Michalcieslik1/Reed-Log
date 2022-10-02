@@ -14,9 +14,9 @@ struct Senior_ProjectApp: App {
         WindowGroup {
             TabView(selection: $selection){
                 let viewContext = DataController.shared.container.viewContext
-                SearchView()
+                AnalysisView()
                     .tabItem{
-                        Text("Search")
+                        Text("Stats")
                     }
                     .tag(1)
                 MainView(rvm: ReedListViewModel(context: viewContext), rbvm: ReedBoxListViewModel(context: viewContext))
@@ -27,7 +27,7 @@ struct Senior_ProjectApp: App {
                     .tag(2)
                 SettingsView()
                     .tabItem{
-                        Text("Settings")
+                        Text("Other (Search, settings)")
                     }
                     .tag(3)
             }
