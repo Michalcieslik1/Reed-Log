@@ -1,16 +1,18 @@
 //
-//  AddReedViewModel.swift
+//  EditReedViewModel.swift
 //  Senior Project
 //
-//  Created by Michał Cieslik on 9/28/22.
+//  Created by Michał Cieslik on 10/5/22.
 //
 
 import Foundation
 import CoreData
 import SwiftUI
 
-class AddReedViewModel: ObservableObject{
+class EditReedViewModel: ObservableObject{
+    
     private (set) var context: NSManagedObjectContext
+    private (set) var reedToEdit: Reed
     
     @Published var reedBoxes: ReedBoxListViewModel
     
@@ -49,9 +51,35 @@ class AddReedViewModel: ObservableObject{
     //@ObservedObject var showingAlert: Bool = false
     //@Published var errorMessage: String = ""
     
-    init(context: NSManagedObjectContext, reedBoxes: ReedBoxListViewModel){
+    init(context: NSManagedObjectContext, reedBoxes: ReedBoxListViewModel, reedToEdit: Reed){
         self.context = context
         self.reedBoxes = reedBoxes
+        self.reedToEdit = reedToEdit
+        
+        targetReedBox = reedToEdit.reedBox
+        reedStage = Int(reedToEdit.reedStage)
+        
+        caneType = reedToEdit.caneType ?? ""
+        caneDiameter = String(reedToEdit.caneDiameter)
+        caneGouge = String(reedToEdit.caneGouge)
+        caneShape = reedToEdit.caneShape ?? ""
+        
+        bottomLeft = reedToEdit.bottomL
+        bottomRight = reedToEdit.bottomR
+        leftL = reedToEdit.leftL
+        leftM = reedToEdit.leftM
+        leftR = reedToEdit.leftR
+        rightL = reedToEdit.rightL
+        rightM = reedToEdit.rightM
+        rightR = reedToEdit.rightR
+        
+        stapleType = reedToEdit.stapleType ?? ""
+        stapleID = reedToEdit.stapleID ?? ""
+        tieLength = String(reedToEdit.tieLength)
+        threadColor = Color(hex:reedToEdit.threadColor ?? "") ?? .orange
+        
+        reedSuccess = reedToEdit.reedSuccess
+        reedLoudness = reedToEdit.reedLoudness
     }
     /*
     func listenForAlert() -> Binding<Bool>{
@@ -65,13 +93,12 @@ class AddReedViewModel: ObservableObject{
     */
     
     func save() -> Bool{
-        let newReed = Reed(context: context)
         if let rb = targetReedBox{
             if rb.size > rb.reedsSet.count{
-                rb.addToReed(newReed)
+                rb.addToReed(reedToEdit)
             } else{
                 //throwReedError(error: "HI")
-                context.delete(newReed)
+                context.delete(reedToEdit)
                 return false
             }
         }
@@ -91,29 +118,29 @@ class AddReedViewModel: ObservableObject{
             return false
         }
         
-        newReed.leftL = leftL
-        newReed.leftM = leftM
-        newReed.leftR = leftR
-        newReed.bottomL = bottomLeft
-        newReed.rightL = rightL
-        newReed.rightM = rightM
-        newReed.rightR = rightR
-        newReed.bottomR = bottomRight
+        reedToEdit.leftL = leftL
+        reedToEdit.leftM = leftM
+        reedToEdit.leftR = leftR
+        reedToEdit.bottomL = bottomLeft
+        reedToEdit.rightL = rightL
+        reedToEdit.rightM = rightM
+        reedToEdit.rightR = rightR
+        reedToEdit.bottomR = bottomRight
         
-        newReed.stapleID = stapleID
-        newReed.id = UUID()
-        newReed.date = Date.now
-        newReed.reedStage = Int16(exactly: reedStage)!
-        newReed.caneType = caneType
-        newReed.caneDiameter = diameter
-        newReed.caneGouge = Double(caneGouge)!
-        newReed.caneShape = caneShape
-        newReed.stapleType = stapleType
-        newReed.threadColor = threadColor.toHex()
-        newReed.tieLength = tieLen
+        reedToEdit.stapleID = stapleID
+        reedToEdit.id = reedToEdit.id
+        reedToEdit.date = Date.now
+        reedToEdit.reedStage = Int16(exactly: reedStage)!
+        reedToEdit.caneType = caneType
+        reedToEdit.caneDiameter = diameter
+        reedToEdit.caneGouge = Double(caneGouge) ?? 1.0 //FIX THIS
+        reedToEdit.caneShape = caneShape
+        reedToEdit.stapleType = stapleType
+        reedToEdit.threadColor = threadColor.toHex()
+        reedToEdit.tieLength = tieLen
         
-        newReed.reedSuccess = reedSuccess
-        newReed.reedLoudness = reedLoudness
+        reedToEdit.reedSuccess = reedSuccess
+        reedToEdit.reedLoudness = reedLoudness
         
         try? context.save()
         return true

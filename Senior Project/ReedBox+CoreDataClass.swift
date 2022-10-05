@@ -2,7 +2,7 @@
 //  ReedBox+CoreDataClass.swift
 //  Senior Project
 //
-//  Created by Michał Cieslik on 9/15/22.
+//  Created by Michał Cieslik on 10/1/22.
 //
 //
 

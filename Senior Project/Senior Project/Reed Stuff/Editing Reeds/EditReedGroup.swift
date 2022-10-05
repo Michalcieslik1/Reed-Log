@@ -1,33 +1,33 @@
 //
-//  AddReedGroup.swift
+//  EditReedGroup.swift
 //  Senior Project
 //
-//  Created by Michał Cieslik on 9/19/22.
+//  Created by Michał Cieslik on 10/5/22.
 //
 
 import SwiftUI
 
-struct AddReedGroup: View {
-    @ObservedObject var vm: AddReedViewModel
+struct EditReedGroup: View {
+    @ObservedObject var vm: EditReedViewModel
     @Environment(\.dismiss) private var dismiss
     @State private var errorMessage: String = ""
     
-    init(vm: AddReedViewModel){
+    init(vm: EditReedViewModel){
         self.vm = vm
     }
     
     var body: some View {
         VStack{
             TabView{
-                AddReed(vm: vm)
+                EditReed(vm: vm)
                     .tabItem {
                         Text("HEY")
                     }
-                AddReedQuestionaire(vm: vm)
+                EditReedQuestionaire(vm: vm)
             }
             .tabViewStyle(.page)
-            Button("Add Reed"){
-                addReed()
+            Button("Save Changes"){
+                saveChanges()
             }
             .buttonStyle(BorderedButtonStyle.bordered)
             
@@ -36,16 +36,16 @@ struct AddReedGroup: View {
         //.alert("Incorrect Input", isPresented: vm.listenForAlert(), actions: {})
     }
     
-    func addReed(){
+    func saveChanges(){
         if vm.save(){
             dismiss()
         }
     }
 }
 
-struct AddReedGroup_Previews: PreviewProvider {
+struct EditReedGroup_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = DataController.shared.container.viewContext
-        AddReedGroup(vm: AddReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext)))
+        EditReedGroup(vm: EditReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), reedToEdit: Reed(context: viewContext)))
     }
 }

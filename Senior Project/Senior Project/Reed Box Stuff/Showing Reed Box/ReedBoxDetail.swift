@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ReedBoxDetail: View {
-    @Environment(\.managedObjectContext) var moc
+    @ObservedObject var vm: ReedListViewModel
     @ObservedObject var reedBox: ReedBox
+    @ObservedObject var reedBoxVM: ReedBoxListViewModel
+    @State var showingAlert: Bool = false
     
     var body: some View {
         VStack{
@@ -25,7 +27,7 @@ struct ReedBoxDetail: View {
                     Spacer()
                 }
                 ForEach(reedBox.reedsSet) { reed in
-                    NavigationLink(destination: ReedDetail(reed: reed)){
+                    NavigationLink(destination: ReedDetailGroup(vm: EditReedViewModel(context: vm.context, reedBoxes: ReedBoxListViewModel(context: vm.context), reedToEdit: reed), reed: reed)){
                         ReedRow(reed: reed)
                     }
                 }
@@ -35,22 +37,22 @@ struct ReedBoxDetail: View {
             .toolbar {
                 EditButton()
             }
-            //NavigationLink("Add Reed", destination:
-                               // AddReed())
+            NavigationLink("Add Reed", destination: AddReedGroup(vm: AddReedViewModel(context: vm.context, reedBoxes: ReedBoxListViewModel(context: vm.context))))
             .buttonStyle(BorderedButtonStyle.bordered)
         }
     }
+    
     func deleteReed(at offsets:IndexSet){
         for offset in offsets{
-            let reed = reedBox.reedsSet[offset]
-            moc.delete(reed)
+            let reed = vm.reeds[offset]
+            vm.deleteReed(reedID: reed.objectID)
         }
-        try? moc.save()
     }
 }
 
 struct ReedBoxDetail_Previews: PreviewProvider {
     static var previews: some View {
-        ReedBoxDetail(reedBox: ReedBox())
+        let viewContext = DataController.shared.container.viewContext
+        ReedBoxDetail(vm: ReedListViewModel(context: viewContext), reedBox: ReedBox(), reedBoxVM: ReedBoxListViewModel(context: viewContext))
     }
 }

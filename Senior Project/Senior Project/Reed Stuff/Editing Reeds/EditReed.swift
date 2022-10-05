@@ -1,17 +1,17 @@
 //
-//  AddReed.swift
+//  EditReed.swift
 //  Senior Project
 //
-//  Created by Michał Cieslik on 9/13/22.
+//  Created by Michał Cieslik on 10/5/22.
 //
 
 import SwiftUI
 
-struct AddReed: View {
-    @ObservedObject var vm: AddReedViewModel
+struct EditReed: View {
+    @ObservedObject var vm: EditReedViewModel
     //@State var errorMe
     
-    init(vm: AddReedViewModel){
+    init(vm: EditReedViewModel){
         self.vm = vm
     }
     
@@ -105,9 +105,9 @@ struct AddReed: View {
 }
 
 
-struct AddReed_Previews: PreviewProvider {
+struct EditReed_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = DataController.shared.container.viewContext
-        AddReed(vm: AddReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext)))
+        EditReed(vm: EditReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), reedToEdit: Reed(context: viewContext)))
     }
 }

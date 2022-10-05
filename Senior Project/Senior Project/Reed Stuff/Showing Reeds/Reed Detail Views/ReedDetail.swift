@@ -9,8 +9,20 @@ import SwiftUI
 
 struct ReedDetail: View {
     @ObservedObject var reed: Reed
+    @ObservedObject var vm: EditReedViewModel
+    
+    init(vm: EditReedViewModel, reed: Reed){
+        self.vm = vm
+        self.reed = reed
+    }
+    
     var body: some View {
         List{
+            Section(header: Text("Reed Stage")){
+                Text(reed.reedStageToString())
+                .bold()
+                .centerHorizontally()
+            }
             Section(header: Text("Cane")){
                 HStack{
                     Text("Type")
@@ -65,14 +77,12 @@ struct ReedDetail: View {
                         .font(.headline)
                     Spacer()
                     Circle()
-                        .fill(Color.blue)
-                        //.fill(Reed.hexStringToUIColor(hex: reed.threadColor))TODO: Color to hex again
+                        .fill(Color(hex: reed.threadColor ?? "0") ?? .black)
                         .frame(width: 30, height: 30)
                         
                 }
             }
         }
-        .navigationTitle("#\(reed.stapleID ?? "Unknown") (Date)")
         .toolbar(){
             //NavigationLink(destination: EditReed(reedToEdit: reed, reedToEditBox: reedBoxID)){
             //    Text("Edit")
@@ -83,6 +93,8 @@ struct ReedDetail: View {
 
 struct ReedDetail_Previews: PreviewProvider {
     static var previews: some View {
-        ReedDetail(reed: Reed())
+        let viewContext = DataController.shared.container.viewContext
+        let tempReed = Reed(context: viewContext)
+        ReedDetail(vm: EditReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), reedToEdit: tempReed), reed: tempReed)
     }
 }

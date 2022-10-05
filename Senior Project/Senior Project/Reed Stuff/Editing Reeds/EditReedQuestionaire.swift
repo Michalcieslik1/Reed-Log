@@ -1,17 +1,17 @@
 //
-//  AddReedQuestionaire.swift
+//  EditReedQuestionaire.swift
 //  Senior Project
 //
-//  Created by Michał Cieslik on 9/19/22.
+//  Created by Michał Cieslik on 10/5/22.
 //
 
 import SwiftUI
 
-struct AddReedQuestionaire: View {
-    @ObservedObject var vm: AddReedViewModel
+struct EditReedQuestionaire: View {
+    @ObservedObject var vm: EditReedViewModel
     @State var showingAlert = false
     
-    init(vm: AddReedViewModel){
+    init(vm: EditReedViewModel){
         self.vm = vm
     }
     
@@ -55,11 +55,9 @@ struct AddReedQuestionaire: View {
     }
 }
 
-struct AddReedQuestionaire_Previews: PreviewProvider {
+struct EditReedQuestionaire_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = DataController.shared.container.viewContext
-        Group {
-            AddReedQuestionaire(vm: AddReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext)))
-        }
+        EditReedQuestionaire(vm: EditReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), reedToEdit: Reed(context: viewContext)))
     }
 }

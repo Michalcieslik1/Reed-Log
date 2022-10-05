@@ -12,7 +12,7 @@ struct ReedRow: View {
     var body: some View {
         HStack{
             RoundedRectangle(cornerRadius: 15)
-                .fill(Color.blue)
+                .fill(Color(hex: reed.threadColor ?? "0") ?? .black)
                 .frame(width: 50, height: 50)
                 .padding(5)
             VStack(alignment: .leading){
@@ -20,7 +20,7 @@ struct ReedRow: View {
                     .font(.headline)
             }
             Spacer()
-            Text("Reed Stage")
+            Text(reed.reedStageToString())
                 .font(.headline)
                 .padding()
         }
@@ -29,6 +29,8 @@ struct ReedRow: View {
 
 struct ReedRow_Previews: PreviewProvider {
     static var previews: some View {
-        ReedRow(reed: Reed())
+        let viewContext = DataController.shared.container.viewContext
+        let tempReed = Reed(context: viewContext)
+        ReedRow(reed: tempReed)
     }
 }

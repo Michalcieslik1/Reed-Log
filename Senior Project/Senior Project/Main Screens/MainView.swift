@@ -13,6 +13,7 @@ struct MainView: View {
     @ObservedObject var reedListVM: ReedListViewModel
     @ObservedObject var reedBoxListVM: ReedBoxListViewModel
     @State var isPresented = false
+    @State var showingAlert = false
     
     init(rvm: ReedListViewModel, rbvm: ReedBoxListViewModel){
         self.reedListVM = rvm
@@ -27,9 +28,10 @@ struct MainView: View {
                         ScrollView(.horizontal){
                             HStack{
                                 ForEach(reedBoxListVM.reedBoxes){ reedBox in
-                                    NavigationLink(destination: ReedBoxDetail(reedBox: reedBox)){
+                                    NavigationLink(destination: ReedBoxDetail(vm: ReedListViewModel(context: moc), reedBox: reedBox, reedBoxVM: reedBoxListVM)){
                                         ReedBoxPreview(reedBox: reedBox)
                                     }
+                                    .buttonStyle(PlainButtonStyle())
                                 }
                                 .onDelete(perform: deleteReedBox)
                                 
@@ -37,12 +39,13 @@ struct MainView: View {
                                     NewReedBox()
                                         .padding(.all)
                                 }
+                                .buttonStyle(PlainButtonStyle())
                             }
                         }
                     }
                     Section(header:Text("Usable Reeds")){
                         ForEach(reedListVM.reeds){ reed in
-                            NavigationLink(destination: ReedDetail(reed: reed)) {
+                            NavigationLink(destination: ReedDetailGroup(vm:EditReedViewModel(context: reedBoxListVM.context, reedBoxes: reedBoxListVM, reedToEdit: reed) ,reed: reed)) {
                                 ReedRow(reed: reed)
                             }
                         }

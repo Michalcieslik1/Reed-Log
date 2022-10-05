@@ -11,5 +11,5 @@ import CoreData
 
 @objc(Reed)
 public class Reed: NSManagedObject {
-
+    
 }

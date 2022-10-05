@@ -16,10 +16,10 @@ class AddReedBoxViewModel: ObservableObject{
         self.context = context
     }
     
-    @State var name: String = ""
-    @State var info: String = ""
-    @State var size = 0
-    @State var color: Color = .white
+    @Published var name: String = ""
+    @Published var info: String = ""
+    @Published var size = 0
+    @Published var color: Color = .white
     
     
     func save(){
@@ -29,6 +29,7 @@ class AddReedBoxViewModel: ObservableObject{
         reedBox.name = name
         reedBox.size = Int16(size)
         reedBox.info = info
+        reedBox.color = color.toHex()
         
         try? context.save()
     }

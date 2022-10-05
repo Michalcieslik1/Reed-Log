@@ -13,6 +13,7 @@ import SwiftUI
 //    non-core data list of reeds.
 class ReedListViewModel: NSObject, ObservableObject, NSFetchedResultsControllerDelegate{
     private (set) var context: NSManagedObjectContext
+    
     // Array of @Published Reed objects that's accesible by the view
     @Published var reeds = [Reed]()
     
