@@ -15,6 +15,16 @@ struct EditReedQuestionaire: View {
         self.vm = vm
     }
     
+    func addNote(){
+        vm.addNote()
+    }
+    
+    func deleteNote(at offsets: IndexSet){
+        for i in offsets{
+            vm.deleteNote(noteID: vm.notes[i].objectID)
+        }
+    }
+    
     var body: some View {
         ZStack{
             VStack{
@@ -47,7 +57,30 @@ struct EditReedQuestionaire: View {
                         Text("TODO")
                     }
                     Section(header: Text("Notes")){
-                        Text("TODO")
+                        ForEach(vm.notes){ note in
+                            VStack{
+                                HStack{
+                                    Text(Reed.dateToString(date: note.date))
+                                        .fontWeight(.semibold)
+                                    Spacer()
+                                }
+                                HStack{
+                                    Text(note.message ?? "")
+                                        .fontWeight(.light)
+                                        .multilineTextAlignment(.leading)
+                                    Spacer()
+                                }
+                            }
+                        }
+                        .onDelete(perform: deleteNote)
+                        TextEditor(text: $vm.tempNote)
+                        HStack{
+                            Spacer()
+                            Button("Add Note"){
+                                addNote()
+                            }
+                            Spacer()
+                        }
                     }
                 }
             }

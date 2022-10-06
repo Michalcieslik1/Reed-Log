@@ -45,6 +45,8 @@ class AddReedViewModel: ObservableObject{
     
     @Published var reedSuccess: Float = 5.0
     @Published var reedLoudness: Float = 5.0
+    @Published var notes: [Note] = []
+    @Published var tempNote = ""
     
     //@ObservedObject var showingAlert: Bool = false
     //@Published var errorMessage: String = ""
@@ -63,6 +65,26 @@ class AddReedViewModel: ObservableObject{
         errorMessage = error
     }
     */
+    func addNote(){
+        let temp = Note(context: context)
+        temp.id = UUID()
+        temp.message = tempNote
+        tempNote = ""
+        temp.date = Date.now
+        notes.append(temp)
+    }
+    
+    func deleteNote(noteID: NSManagedObjectID){
+        do {
+            guard let note = try context.existingObject(with: noteID) as? Note else{
+                return
+            }
+            
+            context.delete(note)
+        } catch {
+            print(error)
+        }
+    }
     
     func save() -> Bool{
         let newReed = Reed(context: context)
@@ -115,7 +137,13 @@ class AddReedViewModel: ObservableObject{
         newReed.reedSuccess = reedSuccess
         newReed.reedLoudness = reedLoudness
         
+        for note in notes{
+            note.reed = newReed
+        }
+        newReed.notes = NSSet(array: notes)
+        
         try? context.save()
+        print("Got here!")
         return true
     }
 }

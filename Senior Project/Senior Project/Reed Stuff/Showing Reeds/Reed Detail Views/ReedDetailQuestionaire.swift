@@ -34,7 +34,7 @@ struct ReedDetailQuestionaire: View {
                     ForEach(reed.notesSet, id: \.self.id){ note in
                         VStack{
                             HStack{
-                                Text("(Date)")
+                                Text(Reed.dateToString(date: reed.date))
                                     .fontWeight(.semibold)
                                 Spacer()
                             }
@@ -45,6 +45,12 @@ struct ReedDetailQuestionaire: View {
                                 Spacer()
                             }
                         }
+                    }
+                    HStack{
+                        Spacer()
+                        NavigationLink("New Note", destination: EditReedGroup(vm: vm))
+                            .buttonStyle(.plain)
+                        Spacer()
                     }
                 }
             }

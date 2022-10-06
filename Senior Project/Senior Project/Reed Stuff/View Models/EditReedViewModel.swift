@@ -23,30 +23,33 @@ class EditReedViewModel: ObservableObject{
     @Published var button: String = ""
     var stages = ["Blank", "Scraped Reed", "In Use", "Destroyed"]
     
-    @Published var name: String = ""
-    @Published var reedStage = 0
+   // @Published var name: String
+    @Published var reedStage: Int
     
-    @Published var caneType: String = ""
-    @Published var caneDiameter: String = ""
-    @Published var caneGouge: String = ""
-    @Published var caneShape: String = ""
+    @Published var caneType: String
+    @Published var caneDiameter: String
+    @Published var caneGouge: String
+    @Published var caneShape: String
     
-    @Published var bottomLeft: Double = 0.0
-    @Published var bottomRight: Double = 0.0
-    @Published var leftL: Double = 0.0
-    @Published var leftM: Double = 0.0
-    @Published var leftR: Double = 0.0
-    @Published var rightL: Double = 0.0
-    @Published var rightM: Double = 0.0
-    @Published var rightR: Double = 0.0
+    @Published var bottomLeft: Double
+    @Published var bottomRight: Double
+    @Published var leftL: Double
+    @Published var leftM: Double
+    @Published var leftR: Double
+    @Published var rightL: Double
+    @Published var rightM: Double
+    @Published var rightR: Double
     
-    @Published var stapleType: String = ""
-    @Published var stapleID: String = ""
-    @Published var tieLength: String = ""
-    @Published var threadColor: Color = .white
+    @Published var stapleType: String
+    @Published var stapleID: String
+    @Published var tieLength: String
+    @Published var threadColor: Color
+
+    @Published var reedSuccess: Float
+    @Published var reedLoudness: Float
     
-    @Published var reedSuccess: Float = 5.0
-    @Published var reedLoudness: Float = 5.0
+    @Published var notes: [Note]
+    @Published var tempNote: String
     
     //@ObservedObject var showingAlert: Bool = false
     //@Published var errorMessage: String = ""
@@ -80,6 +83,8 @@ class EditReedViewModel: ObservableObject{
         
         reedSuccess = reedToEdit.reedSuccess
         reedLoudness = reedToEdit.reedLoudness
+        notes = reedToEdit.notesSet
+        tempNote = ""
     }
     /*
     func listenForAlert() -> Binding<Bool>{
@@ -91,6 +96,27 @@ class EditReedViewModel: ObservableObject{
         errorMessage = error
     }
     */
+    
+    func addNote(){
+        let temp = Note(context: context)
+        temp.id = UUID()
+        temp.message = tempNote
+        tempNote = ""
+        temp.date = Date.now
+        notes.append(temp)
+    }
+    
+    func deleteNote(noteID: NSManagedObjectID){
+        do {
+            guard let note = try context.existingObject(with: noteID) as? Note else{
+                return
+            }
+            
+            context.delete(note)
+        } catch {
+            print(error)
+        }
+    }
     
     func save() -> Bool{
         if let rb = targetReedBox{
@@ -141,6 +167,11 @@ class EditReedViewModel: ObservableObject{
         
         reedToEdit.reedSuccess = reedSuccess
         reedToEdit.reedLoudness = reedLoudness
+        
+        for note in notes{
+            note.reed = reedToEdit
+        }
+        reedToEdit.notes = NSSet(array: notes)
         
         try? context.save()
         return true

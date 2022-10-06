@@ -62,6 +62,13 @@ extension Reed {
             return "Destroyed"
         }
     }
+    static func dateToString(date: Date?) -> String{
+        if let d = date {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            return dateFormatter.string(from: d)
+        } else {return ""}
+    }
     
     static func hexToColor(hex: String){
         //TODO
