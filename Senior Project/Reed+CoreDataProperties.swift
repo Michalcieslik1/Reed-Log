@@ -2,7 +2,7 @@
 //  Reed+CoreDataProperties.swift
 //  Senior Project
 //
-//  Created by Michał Cieslik on 10/5/22.
+//  Created by Michał Cieslik on 10/10/22.
 //
 //
 
@@ -19,7 +19,7 @@ extension Reed {
     @NSManaged public var bottomL: Double
     @NSManaged public var bottomR: Double
     @NSManaged public var caneDiameter: Double
-    @NSManaged public var caneGouge: Double
+    @NSManaged public var caneGouge: String
     @NSManaged public var caneShape: String?
     @NSManaged public var caneType: String?
     @NSManaged public var date: Date?
@@ -69,16 +69,16 @@ extension Reed {
             return dateFormatter.string(from: d)
         } else {return ""}
     }
-    
-    static func hexToColor(hex: String){
-        //TODO
-    }
-    
-    static func colorToHex(color: Color){
-        //TODO
-    }
 }
 
-extension Reed : Identifiable {
-
+extension Reed: Identifiable {
+    
+    
+    func deleteNote(context: NSManagedObjectContext, note: Note){
+        do {
+            context.delete(note)
+        } catch {
+            print(error)
+        }
+    }
 }

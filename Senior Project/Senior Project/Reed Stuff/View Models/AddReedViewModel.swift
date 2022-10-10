@@ -75,15 +75,7 @@ class AddReedViewModel: ObservableObject{
     }
     
     func deleteNote(noteID: NSManagedObjectID){
-        do {
-            guard let note = try context.existingObject(with: noteID) as? Note else{
-                return
-            }
-            
-            context.delete(note)
-        } catch {
-            print(error)
-        }
+        
     }
     
     func save() -> Bool{
@@ -128,7 +120,7 @@ class AddReedViewModel: ObservableObject{
         newReed.reedStage = Int16(exactly: reedStage)!
         newReed.caneType = caneType
         newReed.caneDiameter = diameter
-        newReed.caneGouge = Double(caneGouge)!
+        newReed.caneGouge = caneGouge
         newReed.caneShape = caneShape
         newReed.stapleType = stapleType
         newReed.threadColor = threadColor.toHex()

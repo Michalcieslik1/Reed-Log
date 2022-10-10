@@ -14,6 +14,7 @@ struct AddReedQuestionaire: View {
     init(vm: AddReedViewModel){
         self.vm = vm
     }
+    
     func addNote(){
         vm.addNote()
     }

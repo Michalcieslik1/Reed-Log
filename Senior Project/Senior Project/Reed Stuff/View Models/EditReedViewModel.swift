@@ -111,7 +111,7 @@ class EditReedViewModel: ObservableObject{
             guard let note = try context.existingObject(with: noteID) as? Note else{
                 return
             }
-            
+            notes.remove(at: notes.firstIndex(of: note)!)
             context.delete(note)
         } catch {
             print(error)
@@ -159,7 +159,7 @@ class EditReedViewModel: ObservableObject{
         reedToEdit.reedStage = Int16(exactly: reedStage)!
         reedToEdit.caneType = caneType
         reedToEdit.caneDiameter = diameter
-        reedToEdit.caneGouge = Double(caneGouge) ?? 1.0 //FIX THIS
+        reedToEdit.caneGouge = caneGouge
         reedToEdit.caneShape = caneShape
         reedToEdit.stapleType = stapleType
         reedToEdit.threadColor = threadColor.toHex()

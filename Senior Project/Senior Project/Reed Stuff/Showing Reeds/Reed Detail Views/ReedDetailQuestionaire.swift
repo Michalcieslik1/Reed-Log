@@ -46,12 +46,6 @@ struct ReedDetailQuestionaire: View {
                             }
                         }
                     }
-                    HStack{
-                        Spacer()
-                        NavigationLink("New Note", destination: EditReedGroup(vm: vm))
-                            .buttonStyle(.plain)
-                        Spacer()
-                    }
                 }
             }
         }

@@ -15,16 +15,6 @@ struct EditReedQuestionaire: View {
         self.vm = vm
     }
     
-    func addNote(){
-        vm.addNote()
-    }
-    
-    func deleteNote(at offsets: IndexSet){
-        for i in offsets{
-            vm.deleteNote(noteID: vm.notes[i].objectID)
-        }
-    }
-    
     var body: some View {
         ZStack{
             VStack{
@@ -57,22 +47,6 @@ struct EditReedQuestionaire: View {
                         Text("TODO")
                     }
                     Section(header: Text("Notes")){
-                        ForEach(vm.notes){ note in
-                            VStack{
-                                HStack{
-                                    Text(Reed.dateToString(date: note.date))
-                                        .fontWeight(.semibold)
-                                    Spacer()
-                                }
-                                HStack{
-                                    Text(note.message ?? "")
-                                        .fontWeight(.light)
-                                        .multilineTextAlignment(.leading)
-                                    Spacer()
-                                }
-                            }
-                        }
-                        .onDelete(perform: deleteNote)
                         TextEditor(text: $vm.tempNote)
                         HStack{
                             Spacer()
@@ -81,10 +55,38 @@ struct EditReedQuestionaire: View {
                             }
                             Spacer()
                         }
+                        ForEach(vm.notes){ note in
+                            HStack{
+                                Button(role: .destructive, action: {deleteNote(note: note)}){
+                                    Text("-")
+                                }.buttonStyle(.borderedProminent)
+                                VStack{
+                                    HStack{
+                                        Text(Reed.dateToString(date: note.date))
+                                            .fontWeight(.semibold)
+                                        Spacer()
+                                    }
+                                    HStack{
+                                        Text(note.message ?? "")
+                                            .fontWeight(.light)
+                                            .multilineTextAlignment(.leading)
+                                        Spacer()
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
+    }
+    
+    func addNote(){
+        vm.addNote()
+    }
+    
+    func deleteNote(note: Note){
+        vm.deleteNote(noteID: note.objectID)
     }
 }
 

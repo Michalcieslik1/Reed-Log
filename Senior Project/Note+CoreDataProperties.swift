@@ -12,7 +12,7 @@ import CoreData
 
 extension Note {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Note> {
+    @nonobjc public class func createFetchRequest() -> NSFetchRequest<Note> {
         return NSFetchRequest<Note>(entityName: "Note")
     }
 
@@ -20,6 +20,12 @@ extension Note {
     @NSManaged public var message: String?
     @NSManaged public var date: Date?
     @NSManaged public var reed: Reed?
+    
+    static var all: NSFetchRequest<Note>{
+        let request = Note.createFetchRequest()
+        request.sortDescriptors = []
+        return request
+    }
 
 }
 
