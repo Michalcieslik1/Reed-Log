@@ -2,10 +2,9 @@
 //  Reed+CoreDataProperties.swift
 //  Senior Project
 //
-//  Created by Michał Cieslik on 10/10/22.
+//  Created by Michał Cieslik on 10/17/22.
 //
 //
-
 import Foundation
 import CoreData
 import SwiftUI

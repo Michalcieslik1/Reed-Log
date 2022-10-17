@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Experiment" representedClassName="Experiment" syncable="YES" codeGenerationType="class"/>
     <entity name="Note" representedClassName="Note" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -10,8 +10,8 @@
     <entity name="Reed" representedClassName="Reed" syncable="YES">
         <attribute name="bottomL" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="bottomR" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="caneDiameter" optional="YES" attributeType="String"/>
-        <attribute name="caneGouge" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="caneDiameter" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="caneGouge" optional="YES" attributeType="String"/>
         <attribute name="caneShape" optional="YES" attributeType="String"/>
         <attribute name="caneType" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -40,10 +40,4 @@
         <attribute name="size" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="reed" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reed" inverseName="reedBox" inverseEntity="Reed"/>
     </entity>
-    <elements>
-        <element name="Experiment" positionX="90" positionY="117" width="128" height="29"/>
-        <element name="Note" positionX="99" positionY="126" width="128" height="89"/>
-        <element name="Reed" positionX="214.74609375" positionY="-43.484375" width="128" height="374"/>
-        <element name="ReedBox" positionX="-36" positionY="9" width="128" height="119"/>
-    </elements>
 </model>

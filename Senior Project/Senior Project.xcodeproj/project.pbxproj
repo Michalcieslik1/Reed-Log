@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E6176A428E4C98300750F9E /* AddReedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6176A328E4C98300750F9E /* AddReedViewModel.swift */; };
-		9E6176AA28E637B300750F9E /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6176A928E637B300750F9E /* ListViewModel.swift */; };
+		9E6176AA28E637B300750F9E /* NoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6176A928E637B300750F9E /* NoteListViewModel.swift */; };
 		9E6176AE28E762C300750F9E /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6176AD28E762C300750F9E /* StatsView.swift */; };
 		9E6176B028E762D200750F9E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6176AF28E762D200750F9E /* SettingsView.swift */; };
 		9E6176B828E775B800750F9E /* Reed+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6176B628E775B800750F9E /* Reed+CoreDataClass.swift */; };
@@ -39,6 +39,9 @@
 		9E87615728D265E9009C8255 /* ReedBoxName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87615628D265E9009C8255 /* ReedBoxName.swift */; };
 		9E87615B28D266F2009C8255 /* AddReedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87615A28D266F2009C8255 /* AddReedBox.swift */; };
 		9E87615D28D267FE009C8255 /* NewReedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87615C28D267FE009C8255 /* NewReedBox.swift */; };
+		9E9DCAD628FDCB4E0082C888 /* ReedListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9DCAD528FDCB4E0082C888 /* ReedListViewModel.swift */; };
+		9E9DCAD828FDCB730082C888 /* ReedBoxListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9DCAD728FDCB730082C888 /* ReedBoxListViewModel.swift */; };
+		9E9DCADA28FDD1BC0082C888 /* AddNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9DCAD928FDD1BC0082C888 /* AddNote.swift */; };
 		9ECC6BE328D3956C0032A730 /* ReedBoxDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6BE228D3956C0032A730 /* ReedBoxDetail.swift */; };
 		9ECC6BF028D8BC0B0032A730 /* AddReedQuestionaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6BEF28D8BC0B0032A730 /* AddReedQuestionaire.swift */; };
 		9ECC6BF228D8BCFB0032A730 /* AddReedGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6BF128D8BCFB0032A730 /* AddReedGroup.swift */; };
@@ -46,7 +49,7 @@
 
 /* Begin PBXFileReference section */
 		9E6176A328E4C98300750F9E /* AddReedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReedViewModel.swift; sourceTree = "<group>"; };
-		9E6176A928E637B300750F9E /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		9E6176A928E637B300750F9E /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
 		9E6176AD28E762C300750F9E /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		9E6176AF28E762D200750F9E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9E6176B628E775B800750F9E /* Reed+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reed+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -78,6 +81,9 @@
 		9E87615628D265E9009C8255 /* ReedBoxName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReedBoxName.swift; sourceTree = "<group>"; };
 		9E87615A28D266F2009C8255 /* AddReedBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReedBox.swift; sourceTree = "<group>"; };
 		9E87615C28D267FE009C8255 /* NewReedBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReedBox.swift; sourceTree = "<group>"; };
+		9E9DCAD528FDCB4E0082C888 /* ReedListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReedListViewModel.swift; sourceTree = "<group>"; };
+		9E9DCAD728FDCB730082C888 /* ReedBoxListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReedBoxListViewModel.swift; sourceTree = "<group>"; };
+		9E9DCAD928FDD1BC0082C888 /* AddNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNote.swift; sourceTree = "<group>"; };
 		9ECC6BE228D3956C0032A730 /* ReedBoxDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReedBoxDetail.swift; sourceTree = "<group>"; };
 		9ECC6BEF28D8BC0B0032A730 /* AddReedQuestionaire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReedQuestionaire.swift; sourceTree = "<group>"; };
 		9ECC6BF128D8BCFB0032A730 /* AddReedGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReedGroup.swift; sourceTree = "<group>"; };
@@ -94,6 +100,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E31DF7228F796B70075326E /* Notes Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				9E31DF7328F796D50075326E /* View Models */,
+				9E9DCAD928FDD1BC0082C888 /* AddNote.swift */,
+			);
+			path = "Notes Stuff";
+			sourceTree = "<group>";
+		};
+		9E31DF7328F796D50075326E /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		9E6176A528E4C9CF00750F9E /* View Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +128,9 @@
 		9E6176AB28E637F700750F9E /* Entity List View Models */ = {
 			isa = PBXGroup;
 			children = (
-				9E6176A928E637B300750F9E /* ListViewModel.swift */,
+				9E6176A928E637B300750F9E /* NoteListViewModel.swift */,
+				9E9DCAD728FDCB730082C888 /* ReedBoxListViewModel.swift */,
+				9E9DCAD528FDCB4E0082C888 /* ReedListViewModel.swift */,
 			);
 			path = "Entity List View Models";
 			sourceTree = "<group>";
@@ -184,6 +208,7 @@
 				9E87613328D0D407009C8255 /* Preview Content */,
 				9E87614B28D14B87009C8255 /* Reed Stuff */,
 				9E87615528D26567009C8255 /* Reed Box Stuff */,
+				9E31DF7228F796B70075326E /* Notes Stuff */,
 			);
 			path = "Senior Project";
 			sourceTree = "<group>";
@@ -342,15 +367,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E9DCAD628FDCB4E0082C888 /* ReedListViewModel.swift in Sources */,
 				9E6176A428E4C98300750F9E /* AddReedViewModel.swift in Sources */,
 				9E71D80928EDE329008C160A /* Note+CoreDataClass.swift in Sources */,
 				9E87613D28D0D43B009C8255 /* ReedModel.xcdatamodeld in Sources */,
 				9E87614F28D14D58009C8255 /* AddReed.swift in Sources */,
 				9E71D80A28EDE329008C160A /* Note+CoreDataProperties.swift in Sources */,
 				9E71D80F28EDEB06008C160A /* EditReed.swift in Sources */,
+				9E9DCADA28FDD1BC0082C888 /* AddNote.swift in Sources */,
 				9E87615728D265E9009C8255 /* ReedBoxName.swift in Sources */,
 				9E6176BB28E778DE00750F9E /* CaneDiagram.swift in Sources */,
-				9E6176AA28E637B300750F9E /* ListViewModel.swift in Sources */,
+				9E6176AA28E637B300750F9E /* NoteListViewModel.swift in Sources */,
 				9ECC6BF228D8BCFB0032A730 /* AddReedGroup.swift in Sources */,
 				9E6176B928E775B800750F9E /* Reed+CoreDataProperties.swift in Sources */,
 				9E87615428D2655F009C8255 /* ReedBoxPreview.swift in Sources */,
@@ -368,6 +395,7 @@
 				9E87612E28D0D406009C8255 /* Senior_ProjectApp.swift in Sources */,
 				9E71D80D28EDE766008C160A /* EditReedViewModel.swift in Sources */,
 				9E6176C528E92B6900750F9E /* ReedBox+CoreDataProperties.swift in Sources */,
+				9E9DCAD828FDCB730082C888 /* ReedBoxListViewModel.swift in Sources */,
 				9ECC6BE328D3956C0032A730 /* ReedBoxDetail.swift in Sources */,
 				9E87615B28D266F2009C8255 /* AddReedBox.swift in Sources */,
 				9E71D81328EDEBB8008C160A /* EditReedGroup.swift in Sources */,
@@ -509,8 +537,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -518,9 +546,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "cieslik.Senior-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -538,8 +569,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -547,9 +578,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "cieslik.Senior-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

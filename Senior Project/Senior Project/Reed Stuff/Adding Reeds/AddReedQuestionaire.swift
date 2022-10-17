@@ -14,7 +14,7 @@ struct AddReedQuestionaire: View {
     init(vm: AddReedViewModel){
         self.vm = vm
     }
-    
+    /*
     func addNote(){
         vm.addNote()
     }
@@ -24,7 +24,7 @@ struct AddReedQuestionaire: View {
             vm.deleteNote(noteID: vm.notes[i].objectID)
         }
     }
-    
+    */
     var body: some View {
         ZStack{
             VStack{
@@ -57,6 +57,7 @@ struct AddReedQuestionaire: View {
                         Text("TODO")
                     }
                     Section(header: Text("Notes")){
+                        /*
                         ForEach(vm.notes){ note in
                             VStack{
                                 HStack{
@@ -81,6 +82,7 @@ struct AddReedQuestionaire: View {
                             }
                             Spacer()
                         }
+                         */
                     }
                 }
             }

@@ -47,6 +47,7 @@ struct EditReedQuestionaire: View {
                         Text("TODO")
                     }
                     Section(header: Text("Notes")){
+                        /*
                         TextEditor(text: $vm.tempNote)
                         HStack{
                             Spacer()
@@ -75,12 +76,13 @@ struct EditReedQuestionaire: View {
                                 }
                             }
                         }
+                        */
                     }
                 }
             }
         }
     }
-    
+    /*
     func addNote(){
         vm.addNote()
     }
@@ -88,6 +90,7 @@ struct EditReedQuestionaire: View {
     func deleteNote(note: Note){
         vm.deleteNote(noteID: note.objectID)
     }
+     */
 }
 
 struct EditReedQuestionaire_Previews: PreviewProvider {

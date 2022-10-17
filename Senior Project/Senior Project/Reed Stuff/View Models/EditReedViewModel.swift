@@ -48,8 +48,8 @@ class EditReedViewModel: ObservableObject{
     @Published var reedSuccess: Float
     @Published var reedLoudness: Float
     
-    @Published var notes: [Note]
-    @Published var tempNote: String
+    //@Published var notes: [Note]
+    //@Published var tempNote: String
     
     //@ObservedObject var showingAlert: Bool = false
     //@Published var errorMessage: String = ""
@@ -83,8 +83,8 @@ class EditReedViewModel: ObservableObject{
         
         reedSuccess = reedToEdit.reedSuccess
         reedLoudness = reedToEdit.reedLoudness
-        notes = reedToEdit.notesSet
-        tempNote = ""
+        //notes = reedToEdit.notesSet
+        //tempNote = ""
     }
     /*
     func listenForAlert() -> Binding<Bool>{
@@ -96,7 +96,7 @@ class EditReedViewModel: ObservableObject{
         errorMessage = error
     }
     */
-    
+    /*
     func addNote(){
         let temp = Note(context: context)
         temp.id = UUID()
@@ -117,7 +117,7 @@ class EditReedViewModel: ObservableObject{
             print(error)
         }
     }
-    
+    */
     func save() -> Bool{
         if let rb = targetReedBox{
             if rb.size > rb.reedsSet.count{
@@ -168,10 +168,12 @@ class EditReedViewModel: ObservableObject{
         reedToEdit.reedSuccess = reedSuccess
         reedToEdit.reedLoudness = reedLoudness
         
+        /*
         for note in notes{
             note.reed = reedToEdit
         }
         reedToEdit.notes = NSSet(array: notes)
+        */
         
         try? context.save()
         return true
