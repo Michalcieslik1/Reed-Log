@@ -9,22 +9,14 @@ import SwiftUI
 
 struct AddReedQuestionaire: View {
     @ObservedObject var vm: AddReedViewModel
+    @ObservedObject var noteVm: AddNoteViewModel
     @State var showingAlert = false
     
     init(vm: AddReedViewModel){
         self.vm = vm
-    }
-    /*
-    func addNote(){
-        vm.addNote()
+        noteVm = vm.notesVm
     }
     
-    func deleteNote(at offsets: IndexSet){
-        for i in offsets{
-            vm.deleteNote(noteID: vm.notes[i].objectID)
-        }
-    }
-    */
     var body: some View {
         ZStack{
             VStack{
@@ -57,32 +49,7 @@ struct AddReedQuestionaire: View {
                         Text("TODO")
                     }
                     Section(header: Text("Notes")){
-                        /*
-                        ForEach(vm.notes){ note in
-                            VStack{
-                                HStack{
-                                    Text(Reed.dateToString(date: note.date))
-                                        .fontWeight(.semibold)
-                                    Spacer()
-                                }
-                                HStack{
-                                    Text(note.message ?? "")
-                                        .fontWeight(.light)
-                                        .multilineTextAlignment(.leading)
-                                    Spacer()
-                                }
-                            }
-                        }
-                        .onDelete(perform: deleteNote)
-                        TextEditor(text: $vm.tempNote)
-                        HStack{
-                            Spacer()
-                            Button("Add Note"){
-                                addNote()
-                            }
-                            Spacer()
-                        }
-                         */
+                        AddNote(vm: noteVm)
                     }
                 }
             }
@@ -94,7 +61,7 @@ struct AddReedQuestionaire_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = DataController.shared.container.viewContext
         Group {
-            AddReedQuestionaire(vm: AddReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext)))
+            AddReedQuestionaire(vm: AddReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), notes: AddNoteViewModel(context: viewContext)))
         }
     }
 }

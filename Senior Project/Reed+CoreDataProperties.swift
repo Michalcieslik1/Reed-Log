@@ -72,7 +72,6 @@ extension Reed {
 
 extension Reed: Identifiable {
     
-    
     func deleteNote(context: NSManagedObjectContext, note: Note){
         do {
             context.delete(note)

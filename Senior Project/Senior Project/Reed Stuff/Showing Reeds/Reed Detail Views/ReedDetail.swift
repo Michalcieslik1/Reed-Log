@@ -9,10 +9,8 @@ import SwiftUI
 
 struct ReedDetail: View {
     @ObservedObject var reed: Reed
-    @ObservedObject var vm: EditReedViewModel
     
-    init(vm: EditReedViewModel, reed: Reed){
-        self.vm = vm
+    init(reed: Reed){
         self.reed = reed
     }
     
@@ -95,6 +93,6 @@ struct ReedDetail_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = DataController.shared.container.viewContext
         let tempReed = Reed(context: viewContext)
-        ReedDetail(vm: EditReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), reedToEdit: tempReed), reed: tempReed)
+        ReedDetail(reed: tempReed)
     }
 }

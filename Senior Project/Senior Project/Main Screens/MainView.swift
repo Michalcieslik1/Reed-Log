@@ -45,7 +45,7 @@ struct MainView: View {
                     }
                     Section(header:Text("Usable Reeds")){
                         ForEach(reedListVM.reeds){ reed in
-                            NavigationLink(destination: ReedDetailGroup(vm:EditReedViewModel(context: reedBoxListVM.context, reedBoxes: reedBoxListVM, reedToEdit: reed) ,reed: reed)) {
+                            NavigationLink(destination: ReedDetailGroup(vm:EditReedViewModel(context: reedBoxListVM.context, reedBoxes: reedBoxListVM, reedToEdit: reed, notes: AddNoteViewModel(context: moc)), reed: reed)) {
                                 ReedRow(reed: reed)
                             }
                         }
@@ -65,7 +65,7 @@ struct MainView: View {
                     //Dismiss
                 }, content:{
                     NavigationView{
-                        AddReedGroup(vm: AddReedViewModel(context: moc, reedBoxes: reedBoxListVM))
+                        AddReedGroup(vm: AddReedViewModel(context: moc, reedBoxes: reedBoxListVM, notes: AddNoteViewModel(context: moc)))
                     }
                     .navigationTitle("Add Reeds")
                 })

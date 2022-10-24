@@ -8,38 +8,53 @@
 import SwiftUI
 
 struct AddNote: View {
-    var vm: NoteListViewModel
+    @ObservedObject var vm: AddNoteViewModel
+    @State var message: String = ""
     var body: some View {
-        ForEach(vm.notes){ note in
-            VStack{
-                HStack{
-                    Text(Reed.dateToString(date: note.date))
-                        .fontWeight(.semibold)
-                    Spacer()
+        List{
+            TextEditor(text: $message)
+            HStack{
+                Spacer()
+                Button("Add Note"){
+                    addNote()
                 }
-                HStack{
-                    Text(note.message ?? "")
-                        .fontWeight(.light)
-                        .multilineTextAlignment(.leading)
-                    Spacer()
+                Spacer()
+            }
+            ForEach(vm.notes){ note in
+                VStack{
+                    HStack{
+                        Text(Reed.dateToString(date: note.date))
+                            .fontWeight(.semibold)
+                        Spacer()
+                    }
+                    HStack{
+                        Text(note.message ?? "")
+                            .fontWeight(.light)
+                            .multilineTextAlignment(.leading)
+                        Spacer()
+                    }
                 }
             }
+            .onDelete(perform: deleteNote)
         }
-        //.onDelete(perform: deleteNote)
-        //TextEditor(text: $vm.tempNote)
-        HStack{
-            Spacer()
-            Button("Add Note"){
-                //addNote()
-            }
-            Spacer()
+    }
+    
+    func deleteNote(at offsets: IndexSet){
+        for i in offsets{
+            vm.deleteNote(noteID: vm.notes[i].objectID)
         }
+    }
+    
+    func addNote(){
+        vm.addNote(message: message)
+        message = ""
     }
 }
 
 struct AddNote_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = DataController.shared.container.viewContext
-        AddNote(vm: NoteListViewModel(context: viewContext))
+        let viewModel = AddNoteViewModel(context: viewContext, test: true)
+        AddNote(vm: viewModel)
     }
 }

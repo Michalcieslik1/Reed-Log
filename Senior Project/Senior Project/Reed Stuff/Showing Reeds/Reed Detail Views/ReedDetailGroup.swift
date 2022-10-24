@@ -19,18 +19,17 @@ struct ReedDetailGroup: View {
     var body: some View {
         VStack{
             TabView{
-                ReedDetail(vm: vm, reed: reed)
-                ReedDetailQuestionaire(vm: vm, reed: reed)
+                ReedDetail(reed: reed)
+                ReedDetailQuestionaire(reed: reed)
             }
             .tabViewStyle(.page)
         }
         .navigationTitle("#\(reed.stapleID ?? "Unknown") (Date)")
         .toolbar(){
-            NavigationLink(destination: EditReedGroup(vm: EditReedViewModel(context: vm.context, reedBoxes: vm.reedBoxes, reedToEdit: reed))){
+            NavigationLink(destination: EditReedGroup(vm: EditReedViewModel(context: vm.context, reedBoxes: vm.reedBoxes, reedToEdit: reed, notes: AddNoteViewModel(context: vm.context)))){
                 Text("Edit")
             }
         }
-
     }
 }
 
@@ -38,6 +37,6 @@ struct ReedDetailGroup_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = DataController.shared.container.viewContext
         let tempReed = Reed(context: viewContext)
-        ReedDetailGroup(vm: EditReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), reedToEdit: Reed(context: viewContext)),reed: tempReed)
+        ReedDetailGroup(vm: EditReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), reedToEdit: Reed(context: viewContext), notes: AddNoteViewModel(context: viewContext, test: true)),reed: tempReed)
     }
 }

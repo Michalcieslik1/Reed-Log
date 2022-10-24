@@ -20,9 +20,6 @@ struct EditReedGroup: View {
         VStack{
             TabView{
                 EditReed(vm: vm)
-                    .tabItem {
-                        Text("HEY")
-                    }
                 EditReedQuestionaire(vm: vm)
             }
             .tabViewStyle(.page)
@@ -46,6 +43,6 @@ struct EditReedGroup: View {
 struct EditReedGroup_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = DataController.shared.container.viewContext
-        EditReedGroup(vm: EditReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), reedToEdit: Reed(context: viewContext)))
+        EditReedGroup(vm: EditReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), reedToEdit: Reed(context: viewContext), notes: AddNoteViewModel(context: viewContext, test: true)))
     }
 }

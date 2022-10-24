@@ -13,6 +13,7 @@ class AddReedViewModel: ObservableObject{
     private (set) var context: NSManagedObjectContext
     
     @Published var reedBoxes: ReedBoxListViewModel
+    @Published var notesVm: AddNoteViewModel
     
     @Published var targetReedBox: ReedBox?
     @Published var errorPopUpVisible: Bool = false
@@ -45,15 +46,14 @@ class AddReedViewModel: ObservableObject{
     
     @Published var reedSuccess: Float = 5.0
     @Published var reedLoudness: Float = 5.0
-    //@Published var notes: [Note] = []
-    //@Published var tempNote = ""
     
     //@ObservedObject var showingAlert: Bool = false
     //@Published var errorMessage: String = ""
     
-    init(context: NSManagedObjectContext, reedBoxes: ReedBoxListViewModel){
+    init(context: NSManagedObjectContext, reedBoxes: ReedBoxListViewModel, notes: AddNoteViewModel){
         self.context = context
         self.reedBoxes = reedBoxes
+        self.notesVm = notes
     }
     /*
     func listenForAlert() -> Binding<Bool>{
@@ -85,7 +85,6 @@ class AddReedViewModel: ObservableObject{
             if rb.size > rb.reedsSet.count{
                 rb.addToReed(newReed)
             } else{
-                //throwReedError(error: "HI")
                 context.delete(newReed)
                 return false
             }
@@ -129,12 +128,8 @@ class AddReedViewModel: ObservableObject{
         
         newReed.reedSuccess = reedSuccess
         newReed.reedLoudness = reedLoudness
-        /*
-        for note in notes{
-            note.reed = newReed
-        }
-        newReed.notes = NSSet(array: notes)
-        */
+        
+        newReed.notes = notesVm.getNotesList(reed: newReed)
         try? context.save()
         return true
     }

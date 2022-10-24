@@ -15,6 +15,7 @@ class EditReedViewModel: ObservableObject{
     private (set) var reedToEdit: Reed
     
     @Published var reedBoxes: ReedBoxListViewModel
+    @Published var notesVm: AddNoteViewModel
     
     @Published var targetReedBox: ReedBox?
     @Published var errorPopUpVisible: Bool = false
@@ -47,14 +48,12 @@ class EditReedViewModel: ObservableObject{
 
     @Published var reedSuccess: Float
     @Published var reedLoudness: Float
-    
-    //@Published var notes: [Note]
     //@Published var tempNote: String
     
     //@ObservedObject var showingAlert: Bool = false
     //@Published var errorMessage: String = ""
     
-    init(context: NSManagedObjectContext, reedBoxes: ReedBoxListViewModel, reedToEdit: Reed){
+    init(context: NSManagedObjectContext, reedBoxes: ReedBoxListViewModel, reedToEdit: Reed, notes: AddNoteViewModel){
         self.context = context
         self.reedBoxes = reedBoxes
         self.reedToEdit = reedToEdit
@@ -83,8 +82,8 @@ class EditReedViewModel: ObservableObject{
         
         reedSuccess = reedToEdit.reedSuccess
         reedLoudness = reedToEdit.reedLoudness
-        //notes = reedToEdit.notesSet
-        //tempNote = ""
+        self.notesVm = notes
+        self.notesVm.notes = reedToEdit.notesSet
     }
     /*
     func listenForAlert() -> Binding<Bool>{
@@ -96,28 +95,7 @@ class EditReedViewModel: ObservableObject{
         errorMessage = error
     }
     */
-    /*
-    func addNote(){
-        let temp = Note(context: context)
-        temp.id = UUID()
-        temp.message = tempNote
-        tempNote = ""
-        temp.date = Date.now
-        notes.append(temp)
-    }
     
-    func deleteNote(noteID: NSManagedObjectID){
-        do {
-            guard let note = try context.existingObject(with: noteID) as? Note else{
-                return
-            }
-            notes.remove(at: notes.firstIndex(of: note)!)
-            context.delete(note)
-        } catch {
-            print(error)
-        }
-    }
-    */
     func save() -> Bool{
         if let rb = targetReedBox{
             if rb.size > rb.reedsSet.count{
@@ -168,12 +146,10 @@ class EditReedViewModel: ObservableObject{
         reedToEdit.reedSuccess = reedSuccess
         reedToEdit.reedLoudness = reedLoudness
         
-        /*
-        for note in notes{
+        for note in notesVm.notes{
             note.reed = reedToEdit
         }
-        reedToEdit.notes = NSSet(array: notes)
-        */
+        reedToEdit.notes = NSSet(array: notesVm.notes)
         
         try? context.save()
         return true

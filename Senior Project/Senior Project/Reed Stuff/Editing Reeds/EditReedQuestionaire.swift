@@ -9,10 +9,12 @@ import SwiftUI
 
 struct EditReedQuestionaire: View {
     @ObservedObject var vm: EditReedViewModel
+    @ObservedObject var noteVm: AddNoteViewModel
     @State var showingAlert = false
     
     init(vm: EditReedViewModel){
         self.vm = vm
+        self.noteVm = vm.notesVm
     }
     
     var body: some View {
@@ -47,55 +49,17 @@ struct EditReedQuestionaire: View {
                         Text("TODO")
                     }
                     Section(header: Text("Notes")){
-                        /*
-                        TextEditor(text: $vm.tempNote)
-                        HStack{
-                            Spacer()
-                            Button("Add Note"){
-                                addNote()
-                            }
-                            Spacer()
-                        }
-                        ForEach(vm.notes){ note in
-                            HStack{
-                                Button(role: .destructive, action: {deleteNote(note: note)}){
-                                    Text("-")
-                                }.buttonStyle(.borderedProminent)
-                                VStack{
-                                    HStack{
-                                        Text(Reed.dateToString(date: note.date))
-                                            .fontWeight(.semibold)
-                                        Spacer()
-                                    }
-                                    HStack{
-                                        Text(note.message ?? "")
-                                            .fontWeight(.light)
-                                            .multilineTextAlignment(.leading)
-                                        Spacer()
-                                    }
-                                }
-                            }
-                        }
-                        */
+                        AddNote(vm: noteVm)
                     }
                 }
             }
         }
     }
-    /*
-    func addNote(){
-        vm.addNote()
-    }
-    
-    func deleteNote(note: Note){
-        vm.deleteNote(noteID: note.objectID)
-    }
-     */
 }
 
 struct EditReedQuestionaire_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = DataController.shared.container.viewContext
-        EditReedQuestionaire(vm: EditReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), reedToEdit: Reed(context: viewContext)))
+        EditReedQuestionaire(vm: EditReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), reedToEdit: Reed(context: viewContext), notes: AddNoteViewModel(context: viewContext)))
     }
 }

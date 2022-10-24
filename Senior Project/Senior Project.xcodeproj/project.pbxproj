@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E509E5C2906E693009FF2F5 /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E509E5B2906E693009FF2F5 /* NoteRow.swift */; };
 		9E6176A428E4C98300750F9E /* AddReedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6176A328E4C98300750F9E /* AddReedViewModel.swift */; };
 		9E6176AA28E637B300750F9E /* NoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6176A928E637B300750F9E /* NoteListViewModel.swift */; };
 		9E6176AE28E762C300750F9E /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6176AD28E762C300750F9E /* StatsView.swift */; };
@@ -42,12 +43,14 @@
 		9E9DCAD628FDCB4E0082C888 /* ReedListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9DCAD528FDCB4E0082C888 /* ReedListViewModel.swift */; };
 		9E9DCAD828FDCB730082C888 /* ReedBoxListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9DCAD728FDCB730082C888 /* ReedBoxListViewModel.swift */; };
 		9E9DCADA28FDD1BC0082C888 /* AddNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9DCAD928FDD1BC0082C888 /* AddNote.swift */; };
+		9E9DCADC28FDD95D0082C888 /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9DCADB28FDD95D0082C888 /* AddNoteViewModel.swift */; };
 		9ECC6BE328D3956C0032A730 /* ReedBoxDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6BE228D3956C0032A730 /* ReedBoxDetail.swift */; };
 		9ECC6BF028D8BC0B0032A730 /* AddReedQuestionaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6BEF28D8BC0B0032A730 /* AddReedQuestionaire.swift */; };
 		9ECC6BF228D8BCFB0032A730 /* AddReedGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6BF128D8BCFB0032A730 /* AddReedGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E509E5B2906E693009FF2F5 /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		9E6176A328E4C98300750F9E /* AddReedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReedViewModel.swift; sourceTree = "<group>"; };
 		9E6176A928E637B300750F9E /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
 		9E6176AD28E762C300750F9E /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 		9E9DCAD528FDCB4E0082C888 /* ReedListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReedListViewModel.swift; sourceTree = "<group>"; };
 		9E9DCAD728FDCB730082C888 /* ReedBoxListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReedBoxListViewModel.swift; sourceTree = "<group>"; };
 		9E9DCAD928FDD1BC0082C888 /* AddNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNote.swift; sourceTree = "<group>"; };
+		9E9DCADB28FDD95D0082C888 /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
 		9ECC6BE228D3956C0032A730 /* ReedBoxDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReedBoxDetail.swift; sourceTree = "<group>"; };
 		9ECC6BEF28D8BC0B0032A730 /* AddReedQuestionaire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReedQuestionaire.swift; sourceTree = "<group>"; };
 		9ECC6BF128D8BCFB0032A730 /* AddReedGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReedGroup.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 			children = (
 				9E31DF7328F796D50075326E /* View Models */,
 				9E9DCAD928FDD1BC0082C888 /* AddNote.swift */,
+				9E509E5B2906E693009FF2F5 /* NoteRow.swift */,
 			);
 			path = "Notes Stuff";
 			sourceTree = "<group>";
@@ -112,8 +117,16 @@
 		9E31DF7328F796D50075326E /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				9E9DCADB28FDD95D0082C888 /* AddNoteViewModel.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		9E509E5829031E06009FF2F5 /* Editing Reed Box */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Editing Reed Box";
 			sourceTree = "<group>";
 		};
 		9E6176A528E4C9CF00750F9E /* View Models */ = {
@@ -274,6 +287,7 @@
 				9E6176BF28E909CC00750F9E /* View Models */,
 				9E87615928D266DB009C8255 /* Adding Reed Box */,
 				9E87615828D266CE009C8255 /* Showing Reed Box */,
+				9E509E5829031E06009FF2F5 /* Editing Reed Box */,
 			);
 			path = "Reed Box Stuff";
 			sourceTree = "<group>";
@@ -379,6 +393,7 @@
 				9E6176BB28E778DE00750F9E /* CaneDiagram.swift in Sources */,
 				9E6176AA28E637B300750F9E /* NoteListViewModel.swift in Sources */,
 				9ECC6BF228D8BCFB0032A730 /* AddReedGroup.swift in Sources */,
+				9E509E5C2906E693009FF2F5 /* NoteRow.swift in Sources */,
 				9E6176B928E775B800750F9E /* Reed+CoreDataProperties.swift in Sources */,
 				9E87615428D2655F009C8255 /* ReedBoxPreview.swift in Sources */,
 				9ECC6BF028D8BC0B0032A730 /* AddReedQuestionaire.swift in Sources */,
@@ -387,6 +402,7 @@
 				9E6176AE28E762C300750F9E /* StatsView.swift in Sources */,
 				9E87614228D0D4BD009C8255 /* DataController.swift in Sources */,
 				9E87614A28D14B83009C8255 /* ReedRow.swift in Sources */,
+				9E9DCADC28FDD95D0082C888 /* AddNoteViewModel.swift in Sources */,
 				9E87613028D0D406009C8255 /* MainView.swift in Sources */,
 				9E6176B828E775B800750F9E /* Reed+CoreDataClass.swift in Sources */,
 				9E71D81128EDEB65008C160A /* EditReedQuestionaire.swift in Sources */,

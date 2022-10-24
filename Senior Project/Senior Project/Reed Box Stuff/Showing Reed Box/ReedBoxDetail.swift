@@ -27,7 +27,7 @@ struct ReedBoxDetail: View {
                     Spacer()
                 }
                 ForEach(reedBox.reedsSet) { reed in
-                    NavigationLink(destination: ReedDetailGroup(vm: EditReedViewModel(context: vm.context, reedBoxes: ReedBoxListViewModel(context: vm.context), reedToEdit: reed), reed: reed)){
+                    NavigationLink(destination: ReedDetailGroup(vm: EditReedViewModel(context: vm.context, reedBoxes: ReedBoxListViewModel(context: vm.context), reedToEdit: reed, notes: AddNoteViewModel(context: vm.context)), reed: reed)){
                         ReedRow(reed: reed)
                     }
                 }
@@ -37,7 +37,7 @@ struct ReedBoxDetail: View {
             .toolbar {
                 EditButton()
             }
-            NavigationLink("Add Reed", destination: AddReedGroup(vm: AddReedViewModel(context: vm.context, reedBoxes: ReedBoxListViewModel(context: vm.context))))
+            NavigationLink("Add Reed", destination: AddReedGroup(vm: AddReedViewModel(context: vm.context, reedBoxes: ReedBoxListViewModel(context: vm.context), notes: AddNoteViewModel(context: vm.context))))
             .buttonStyle(BorderedButtonStyle.bordered)
         }
     }

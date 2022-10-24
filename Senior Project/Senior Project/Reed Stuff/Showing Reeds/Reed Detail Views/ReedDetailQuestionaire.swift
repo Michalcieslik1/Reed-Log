@@ -9,10 +9,8 @@ import SwiftUI
 
 struct ReedDetailQuestionaire: View {
     @ObservedObject var reed: Reed
-    @ObservedObject var vm: EditReedViewModel
     
-    init(vm: EditReedViewModel, reed: Reed){
-        self.vm = vm
+    init(reed: Reed){
         self.reed = reed
     }
     var body: some View {
@@ -31,21 +29,7 @@ struct ReedDetailQuestionaire: View {
                     }
                 }
                 Section(header: Text("Notes")){
-                    ForEach(reed.notesSet, id: \.self.id){ note in
-                        VStack{
-                            HStack{
-                                Text(Reed.dateToString(date: reed.date))
-                                    .fontWeight(.semibold)
-                                Spacer()
-                            }
-                            HStack{
-                                Text(note.message ?? "")
-                                    .fontWeight(.light)
-                                    .multilineTextAlignment(.leading)
-                                Spacer()
-                            }
-                        }
-                    }
+                    NoteRow(reed: reed)
                 }
             }
         }
@@ -56,6 +40,6 @@ struct ReedDetailQuestionaire_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = DataController.shared.container.viewContext
         let tempReed = Reed(context: viewContext)
-        ReedDetailQuestionaire(vm:EditReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), reedToEdit: Reed(context: viewContext)),reed: tempReed)
+        ReedDetailQuestionaire(reed: tempReed)
     }
 }

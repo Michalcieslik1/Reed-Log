@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AddReed: View {
     @ObservedObject var vm: AddReedViewModel
-    //@State var errorMe
     
     init(vm: AddReedViewModel){
         self.vm = vm
@@ -108,6 +107,6 @@ struct AddReed: View {
 struct AddReed_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = DataController.shared.container.viewContext
-        AddReed(vm: AddReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext)))
+        AddReed(vm: AddReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), notes: AddNoteViewModel(context: viewContext)))
     }
 }
