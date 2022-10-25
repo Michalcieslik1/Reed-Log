@@ -35,7 +35,9 @@ struct ReedBoxDetail: View {
             }
             .navigationTitle(reedBox.name ?? "Unknown")
             .toolbar {
-                EditButton()
+                NavigationLink(destination: EditReedBox(reedListVM: ReedListViewModel(context: vm.context), vm: EditReedBoxViewModel(context: vm.context, reedBox: reedBox))){
+                    Text("Edit")
+                }
             }
             NavigationLink("Add Reed", destination: AddReedGroup(vm: AddReedViewModel(context: vm.context, reedBoxes: ReedBoxListViewModel(context: vm.context), notes: AddNoteViewModel(context: vm.context))))
             .buttonStyle(BorderedButtonStyle.bordered)

@@ -23,7 +23,6 @@ struct ReedBoxName: View {
                 .padding(.bottom)
         }
     }
-    
 }
 
 struct ReedBoxName_Previews: PreviewProvider {

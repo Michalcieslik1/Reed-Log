@@ -42,6 +42,7 @@ class ReedBoxListViewModel: NSObject, ObservableObject, NSFetchedResultsControll
             }
             
             context.delete(reedBox)
+            try? context.save()
         } catch {
             print(error)
         }
