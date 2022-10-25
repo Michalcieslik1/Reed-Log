@@ -26,7 +26,6 @@ struct NoteRow: View {
                     }
                 }
             }
-
         }
     }
 }

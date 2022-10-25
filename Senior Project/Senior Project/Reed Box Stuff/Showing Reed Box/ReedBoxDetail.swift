@@ -31,7 +31,6 @@ struct ReedBoxDetail: View {
                         ReedRow(reed: reed)
                     }
                 }
-                .onDelete(perform: deleteReed)
             }
             .navigationTitle(reedBox.name ?? "Unknown")
             .toolbar {
@@ -41,13 +40,6 @@ struct ReedBoxDetail: View {
             }
             NavigationLink("Add Reed", destination: AddReedGroup(vm: AddReedViewModel(context: vm.context, reedBoxes: ReedBoxListViewModel(context: vm.context), notes: AddNoteViewModel(context: vm.context))))
             .buttonStyle(BorderedButtonStyle.bordered)
-        }
-    }
-    
-    func deleteReed(at offsets:IndexSet){
-        for offset in offsets{
-            let reed = vm.reeds[offset]
-            vm.deleteReed(reedID: reed.objectID)
         }
     }
 }

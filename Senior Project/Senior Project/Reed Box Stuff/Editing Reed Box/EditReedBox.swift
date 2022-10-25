@@ -51,6 +51,7 @@ struct EditReedBox: View {
             }
             .buttonStyle(BorderedButtonStyle())
         }
+        .environment(\.editMode, Binding.constant(EditMode.active))
     }
     
     func deleteReed(at offsets:IndexSet){
