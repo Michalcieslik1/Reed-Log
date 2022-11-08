@@ -10,6 +10,7 @@ https://www.nytimes.com/1997/10/21/science/the-shaping-of-oboe-reeds-maybe-it-is
 
 ## CS Resources:
 ### [Best Core Data + SwiftUI + MVVM Tutorial Ever](https://www.youtube.com/watch?v=gGM_Qn3CUfQ)
+### https://medium.com/swlh/using-core-data-in-your-swiftui-app-with-combine-mvvm-and-protocols-4577f44d240d
 
 ### Graphs Resources:
 #### Perfect project for pie chart graphs (for the analysis section):
