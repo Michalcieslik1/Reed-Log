@@ -19,10 +19,14 @@ class ReedListViewModel: NSObject, ObservableObject, NSFetchedResultsControllerD
     
     private let reedFetchedResultsController: NSFetchedResultsController<Reed>
     
-    init(context: NSManagedObjectContext){
+    convenience init(context: NSManagedObjectContext){
+        self.init(context: context, fetchRequest: Reed.all)
+    }
+    
+    init(context: NSManagedObjectContext, fetchRequest: NSFetchRequest<Reed>){
         self.context = context
         
-        reedFetchedResultsController = NSFetchedResultsController(fetchRequest: Reed.all, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        reedFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         super.init()
         reedFetchedResultsController.delegate = self
         

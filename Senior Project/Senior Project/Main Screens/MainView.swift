@@ -70,8 +70,14 @@ struct MainView: View {
                     .navigationTitle("Add Reeds")
                 })
             }
+            .toolbar(){
+                ToolbarItem{
+                    Button(){} label:{
+                        Image("Icon")
+                    }
+                }
+            }
         }
-        
     }
     
     func deleteReed(at offsets:IndexSet){

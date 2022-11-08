@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E474354291ADA1400D6A4B1 /* StatsCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E474353291ADA1400D6A4B1 /* StatsCalculations.swift */; };
 		9E509E5C2906E693009FF2F5 /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E509E5B2906E693009FF2F5 /* NoteRow.swift */; };
 		9E6176A428E4C98300750F9E /* AddReedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6176A328E4C98300750F9E /* AddReedViewModel.swift */; };
 		9E6176AA28E637B300750F9E /* NoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6176A928E637B300750F9E /* NoteListViewModel.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E474353291ADA1400D6A4B1 /* StatsCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCalculations.swift; sourceTree = "<group>"; };
 		9E509E5B2906E693009FF2F5 /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		9E6176A328E4C98300750F9E /* AddReedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReedViewModel.swift; sourceTree = "<group>"; };
 		9E6176A928E637B300750F9E /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
@@ -124,6 +126,14 @@
 				9E9DCADB28FDD95D0082C888 /* AddNoteViewModel.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		9E474352291AD9DC00D6A4B1 /* Stats Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				9E474353291ADA1400D6A4B1 /* StatsCalculations.swift */,
+			);
+			path = "Stats Stuff";
 			sourceTree = "<group>";
 		};
 		9E509E5829031E06009FF2F5 /* Editing Reed Box */ = {
@@ -228,6 +238,7 @@
 				9E87614B28D14B87009C8255 /* Reed Stuff */,
 				9E87615528D26567009C8255 /* Reed Box Stuff */,
 				9E31DF7228F796B70075326E /* Notes Stuff */,
+				9E474352291AD9DC00D6A4B1 /* Stats Stuff */,
 			);
 			path = "Senior Project";
 			sourceTree = "<group>";
@@ -391,6 +402,7 @@
 				9E6176A428E4C98300750F9E /* AddReedViewModel.swift in Sources */,
 				9E71D80928EDE329008C160A /* Note+CoreDataClass.swift in Sources */,
 				9E87613D28D0D43B009C8255 /* ReedModel.xcdatamodeld in Sources */,
+				9E474354291ADA1400D6A4B1 /* StatsCalculations.swift in Sources */,
 				9E87614F28D14D58009C8255 /* AddReed.swift in Sources */,
 				9E71D80A28EDE329008C160A /* Note+CoreDataProperties.swift in Sources */,
 				9E71D80F28EDEB06008C160A /* EditReed.swift in Sources */,
