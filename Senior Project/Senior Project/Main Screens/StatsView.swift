@@ -8,27 +8,21 @@
 import SwiftUI
 
 struct AnalysisView: View {
+    @ObservedObject var reedListVM: ReedListViewModel
+    
+    init(rvm: ReedListViewModel){
+        self.reedListVM = rvm
+    }
     var body: some View {
         NavigationView{
-            List{
-                Section(header: Text("Save Data")){
-                    Text("Reeds")
-                }
-                Button(action: {
-                    print("Pressed")
-                }, label: {
-                    Text("Save")
-                })
-                
-            }
-            .navigationTitle("Data Collection")
+            DataCollection(vm: DataCollectionVM(context: reedListVM.context), rlvm: reedListVM)
         }
-        
     }
 }
 
 struct AnalysisView_Previews: PreviewProvider {
     static var previews: some View {
-        AnalysisView()
+        let viewContext = DataController.shared.container.viewContext
+        AnalysisView(rvm: ReedListViewModel(context: viewContext))
     }
 }

@@ -25,6 +25,7 @@ class AddReedBoxViewModel: ObservableObject{
     func save(){
         let reedBox = ReedBox(context: context)
         
+        reedBox.hidden = false
         reedBox.id = UUID()
         reedBox.name = name
         reedBox.size = Int16(size)

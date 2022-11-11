@@ -14,7 +14,7 @@ struct Senior_ProjectApp: App {
         WindowGroup {
             TabView(selection: $selection){
                 let viewContext = DataController.shared.container.viewContext
-                AnalysisView()
+                AnalysisView(rvm: ReedListViewModel(context: viewContext))
                     .tabItem{
                         Text("Stats")
                     }

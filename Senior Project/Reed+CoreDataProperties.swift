@@ -46,7 +46,15 @@ extension Reed {
     
     static var all: NSFetchRequest<Reed>{
         let request = Reed.createFetchRequest()
-        request.sortDescriptors = []
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Reed.date, ascending: false)]
+        request.predicate = NSPredicate(format: "hidden == %@", NSNumber(booleanLiteral: false))
+        return request
+    }
+    
+    static var hidden: NSFetchRequest<Reed>{
+        let request = Reed.createFetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Reed.date, ascending: false)]
+        request.predicate = NSPredicate(format: "hidden == %@", NSNumber(booleanLiteral: true))
         return request
     }
     
