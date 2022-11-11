@@ -21,6 +21,7 @@ extension ReedBox {
     @NSManaged public var size: Int16
     @NSManaged public var reed: NSSet?
     @NSManaged public var color: String?
+    @NSManaged public var hidden: Bool
     
     public var reedsSet: [Reed]{
         Array(reed as? Set<Reed> ?? [])

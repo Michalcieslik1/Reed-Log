@@ -38,7 +38,8 @@ extension Reed {
     @NSManaged public var reedLoudness: Float
     @NSManaged public var reedBox: ReedBox?
     @NSManaged public var notes: NSSet?
-
+    @NSManaged public var hidden: Bool
+    
     public var notesSet: [Note]{
         Array(notes as? Set<Note> ?? [])
     }

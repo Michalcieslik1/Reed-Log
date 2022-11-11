@@ -11,26 +11,17 @@ struct AnalysisView: View {
     var body: some View {
         NavigationView{
             List{
-                Section{
-                    Text("Pie Chart")
-                }
-                Section{
-                    Text("Calendar")
-                }
-                Section{
-                    Text("Rate of Success Graph")
-                }
-                Section{
-                    Text("Use of Stuff Graph")
+                Section(header: Text("Save Data")){
+                    Text("Reeds")
                 }
                 Button(action: {
                     print("Pressed")
                 }, label: {
-                    Text("Custom")
+                    Text("Save")
                 })
                 
             }
-            .navigationTitle("Analysis")
+            .navigationTitle("Data Collection")
         }
         
     }
