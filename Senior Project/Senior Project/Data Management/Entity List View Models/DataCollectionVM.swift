@@ -40,6 +40,11 @@ class DataCollectionVM: NSObject, ObservableObject, NSFetchedResultsControllerDe
             jsonTemp = jsonTemp.appending(reed.toJSON() ?? "")
         }
         print(jsonTemp)
+        let temp = JSONData(context: context)
+        temp.id = UUID()
+        temp.date = Date()
+        temp.data = jsonTemp
+        
+        try? context.save()
     }
-    
 }

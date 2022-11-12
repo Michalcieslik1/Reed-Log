@@ -16,7 +16,7 @@ struct DataCollection: View {
             Section(header: Text("Save Data")){
                 Text("Save Files")
                 ForEach(vm.saveFiles){ saveFile in
-                    Text("Date")
+                    Text("-")
                 }
             }
             Button(action: {

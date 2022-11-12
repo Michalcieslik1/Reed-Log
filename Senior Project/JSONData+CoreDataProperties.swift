@@ -26,10 +26,14 @@ extension JSONData: Identifiable{
     }
 }
 
-extension NSManagedObject {
+extension Reed {
   func toJSON() -> String? {
     let keys = Array(self.entity.attributesByName.keys)
-    let dict = self.dictionaryWithValues(forKeys: keys)
+    var dict = self.dictionaryWithValues(forKeys: keys)
+      dict["id"] = self.id?.uuidString
+      dict["date"] = self.date?.toString()
+      print(dict)
+    //print(dict)
     do {
         let jsonData = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
         let reqJSONStr = String(data: jsonData, encoding: .utf8)
@@ -38,4 +42,12 @@ extension NSManagedObject {
     catch{}
     return nil
   }
+}
+
+extension Date{
+    func toString() -> String?{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YY/MM/dd"
+        return dateFormatter.string(from: self)
+    }
 }
