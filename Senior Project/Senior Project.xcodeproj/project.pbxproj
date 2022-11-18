@@ -13,6 +13,10 @@
 		9E2D0195291EEC4500B17883 /* DataCollectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2D0194291EEC4500B17883 /* DataCollectionVM.swift */; };
 		9E474354291ADA1400D6A4B1 /* StatsCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E474353291ADA1400D6A4B1 /* StatsCalculations.swift */; };
 		9E509E5C2906E693009FF2F5 /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E509E5B2906E693009FF2F5 /* NoteRow.swift */; };
+		9E5D6B6C2923F82600FE5BAA /* AppState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D6B6A2923F82600FE5BAA /* AppState+CoreDataClass.swift */; };
+		9E5D6B6D2923F82600FE5BAA /* AppState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D6B6B2923F82600FE5BAA /* AppState+CoreDataProperties.swift */; };
+		9E5D6B6F2923F8A900FE5BAA /* StateVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D6B6E2923F8A900FE5BAA /* StateVM.swift */; };
+		9E5D6B742926B45500FE5BAA /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D6B732926B45500FE5BAA /* Settings.swift */; };
 		9E6176A428E4C98300750F9E /* AddReedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6176A328E4C98300750F9E /* AddReedViewModel.swift */; };
 		9E6176AA28E637B300750F9E /* NoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6176A928E637B300750F9E /* NoteListViewModel.swift */; };
 		9E6176AE28E762C300750F9E /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6176AD28E762C300750F9E /* StatsView.swift */; };
@@ -63,6 +67,10 @@
 		9E2D0194291EEC4500B17883 /* DataCollectionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionVM.swift; sourceTree = "<group>"; };
 		9E474353291ADA1400D6A4B1 /* StatsCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCalculations.swift; sourceTree = "<group>"; };
 		9E509E5B2906E693009FF2F5 /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
+		9E5D6B6A2923F82600FE5BAA /* AppState+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppState+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		9E5D6B6B2923F82600FE5BAA /* AppState+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppState+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		9E5D6B6E2923F8A900FE5BAA /* StateVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateVM.swift; sourceTree = "<group>"; };
+		9E5D6B732926B45500FE5BAA /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		9E6176A328E4C98300750F9E /* AddReedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReedViewModel.swift; sourceTree = "<group>"; };
 		9E6176A928E637B300750F9E /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
 		9E6176AD28E762C300750F9E /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
@@ -121,6 +129,7 @@
 		9E2D0191291EEA8500B17883 /* BETA Data Collection */ = {
 			isa = PBXGroup;
 			children = (
+				9E2D0194291EEC4500B17883 /* DataCollectionVM.swift */,
 				9E2D0192291EEABA00B17883 /* DataCollection.swift */,
 			);
 			path = "BETA Data Collection";
@@ -139,6 +148,7 @@
 		9E31DF7328F796D50075326E /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				9E6176A928E637B300750F9E /* NoteListViewModel.swift */,
 				9E9DCADB28FDD95D0082C888 /* AddNoteViewModel.swift */,
 			);
 			path = "View Models";
@@ -160,24 +170,23 @@
 			path = "Editing Reed Box";
 			sourceTree = "<group>";
 		};
+		9E5D6B722926B40700FE5BAA /* Settings Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				9E5D6B6E2923F8A900FE5BAA /* StateVM.swift */,
+				9E5D6B732926B45500FE5BAA /* Settings.swift */,
+			);
+			path = "Settings Stuff";
+			sourceTree = "<group>";
+		};
 		9E6176A528E4C9CF00750F9E /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				9E9DCAD528FDCB4E0082C888 /* ReedListViewModel.swift */,
 				9E6176A328E4C98300750F9E /* AddReedViewModel.swift */,
 				9E71D80C28EDE766008C160A /* EditReedViewModel.swift */,
 			);
 			path = "View Models";
-			sourceTree = "<group>";
-		};
-		9E6176AB28E637F700750F9E /* Entity List View Models */ = {
-			isa = PBXGroup;
-			children = (
-				9E2D0194291EEC4500B17883 /* DataCollectionVM.swift */,
-				9E6176A928E637B300750F9E /* NoteListViewModel.swift */,
-				9E9DCAD728FDCB730082C888 /* ReedBoxListViewModel.swift */,
-				9E9DCAD528FDCB4E0082C888 /* ReedListViewModel.swift */,
-			);
-			path = "Entity List View Models";
 			sourceTree = "<group>";
 		};
 		9E6176AC28E7622A00750F9E /* Main Screens */ = {
@@ -201,6 +210,7 @@
 		9E6176BF28E909CC00750F9E /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				9E9DCAD728FDCB730082C888 /* ReedBoxListViewModel.swift */,
 				9E6176C028E909E300750F9E /* AddReedBoxViewModel.swift */,
 				9ED83F7229075E8500DE5EDC /* EditReedBoxViewModel.swift */,
 			);
@@ -250,13 +260,14 @@
 				9E6176BC28E8F7B300750F9E /* Extensions */,
 				9E87612D28D0D406009C8255 /* Senior_ProjectApp.swift */,
 				9E6176AC28E7622A00750F9E /* Main Screens */,
-				9E87614028D0D48F009C8255 /* Data Management */,
+				9E87614028D0D48F009C8255 /* Core Data */,
 				9E87613328D0D407009C8255 /* Preview Content */,
 				9E87614B28D14B87009C8255 /* Reed Stuff */,
 				9E87615528D26567009C8255 /* Reed Box Stuff */,
 				9E31DF7228F796B70075326E /* Notes Stuff */,
 				9E2D0191291EEA8500B17883 /* BETA Data Collection */,
 				9E474352291AD9DC00D6A4B1 /* Stats Stuff */,
+				9E5D6B722926B40700FE5BAA /* Settings Stuff */,
 			);
 			path = "Senior Project";
 			sourceTree = "<group>";
@@ -269,22 +280,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		9E87614028D0D48F009C8255 /* Data Management */ = {
+		9E87614028D0D48F009C8255 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				9E5D6B6A2923F82600FE5BAA /* AppState+CoreDataClass.swift */,
+				9E5D6B6B2923F82600FE5BAA /* AppState+CoreDataProperties.swift */,
 				9E2D018D291EE85500B17883 /* JSONData+CoreDataClass.swift */,
 				9E2D018E291EE85500B17883 /* JSONData+CoreDataProperties.swift */,
 				9E71D80728EDE329008C160A /* Note+CoreDataClass.swift */,
 				9E71D80828EDE329008C160A /* Note+CoreDataProperties.swift */,
 				9E6176C228E92B6900750F9E /* ReedBox+CoreDataClass.swift */,
 				9E6176C328E92B6900750F9E /* ReedBox+CoreDataProperties.swift */,
-				9E6176AB28E637F700750F9E /* Entity List View Models */,
 				9E6176B628E775B800750F9E /* Reed+CoreDataClass.swift */,
 				9E6176B728E775B800750F9E /* Reed+CoreDataProperties.swift */,
 				9E87613B28D0D43B009C8255 /* ReedModel.xcdatamodeld */,
 				9E87614128D0D4BD009C8255 /* DataController.swift */,
 			);
-			path = "Data Management";
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		9E87614B28D14B87009C8255 /* Reed Stuff */ = {
@@ -430,6 +442,7 @@
 				9E87615728D265E9009C8255 /* ReedBoxName.swift in Sources */,
 				9E6176BB28E778DE00750F9E /* CaneDiagram.swift in Sources */,
 				9E6176AA28E637B300750F9E /* NoteListViewModel.swift in Sources */,
+				9E5D6B6F2923F8A900FE5BAA /* StateVM.swift in Sources */,
 				9ECC6BF228D8BCFB0032A730 /* AddReedGroup.swift in Sources */,
 				9E509E5C2906E693009FF2F5 /* NoteRow.swift in Sources */,
 				9E6176B928E775B800750F9E /* Reed+CoreDataProperties.swift in Sources */,
@@ -451,6 +464,7 @@
 				9E71D81128EDEB65008C160A /* EditReedQuestionaire.swift in Sources */,
 				9E87615128D25ADA009C8255 /* ReedDetail.swift in Sources */,
 				9E87615D28D267FE009C8255 /* NewReedBox.swift in Sources */,
+				9E5D6B742926B45500FE5BAA /* Settings.swift in Sources */,
 				9E87612E28D0D406009C8255 /* Senior_ProjectApp.swift in Sources */,
 				9E71D80D28EDE766008C160A /* EditReedViewModel.swift in Sources */,
 				9E6176C528E92B6900750F9E /* ReedBox+CoreDataProperties.swift in Sources */,
@@ -459,8 +473,10 @@
 				9E87615B28D266F2009C8255 /* AddReedBox.swift in Sources */,
 				9E71D81328EDEBB8008C160A /* EditReedGroup.swift in Sources */,
 				9E71D80328EA155E008C160A /* ReedDetailGroup.swift in Sources */,
+				9E5D6B6D2923F82600FE5BAA /* AppState+CoreDataProperties.swift in Sources */,
 				9E6176C128E909E300750F9E /* AddReedBoxViewModel.swift in Sources */,
 				9E2D0193291EEABA00B17883 /* DataCollection.swift in Sources */,
+				9E5D6B6C2923F82600FE5BAA /* AppState+CoreDataClass.swift in Sources */,
 				9E6176B028E762D200750F9E /* SettingsView.swift in Sources */,
 				9E6176C428E92B6900750F9E /* ReedBox+CoreDataClass.swift in Sources */,
 			);

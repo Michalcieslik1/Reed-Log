@@ -2,7 +2,7 @@
 //  Reed+CoreDataProperties.swift
 //  Senior Project
 //
-//  Created by Michał Cieslik on 10/17/22.
+//  Created by Michał Cieslik on 11/15/22.
 //
 //
 import Foundation
@@ -39,6 +39,7 @@ extension Reed {
     @NSManaged public var reedBox: ReedBox?
     @NSManaged public var notes: NSSet?
     @NSManaged public var hidden: Bool
+    @NSManaged public var state: AppState?
     
     public var notesSet: [Note]{
         Array(notes as? Set<Note> ?? [])

@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @ObservedObject var reedListVM: ReedListViewModel
+    init(rvm: ReedListViewModel){
+        self.reedListVM = rvm
+    }
+    
     var body: some View {
-        Text("Settings")
+        Settings(rvm: StateVM(context: reedListVM.context))
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        let viewContext = DataController.shared.container.viewContext
+        SettingsView(rvm: ReedListViewModel(context: viewContext))
     }
 }

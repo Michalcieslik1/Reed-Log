@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AppState" representedClassName="AppState" syncable="YES">
+        <relationship name="destroyedReeds" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ReedBox" inverseName="state" inverseEntity="ReedBox"/>
+        <relationship name="standardReed" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reed" inverseName="state" inverseEntity="Reed"/>
+    </entity>
     <entity name="Experiment" representedClassName="Experiment" syncable="YES" codeGenerationType="class"/>
     <entity name="JSONData" representedClassName="JSONData" syncable="YES">
         <attribute name="data" optional="YES" attributeType="String"/>
@@ -37,6 +41,7 @@
         <attribute name="tieLength" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="reed" inverseEntity="Note"/>
         <relationship name="reedBox" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ReedBox" inverseName="reed" inverseEntity="ReedBox"/>
+        <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AppState" inverseName="standardReed" inverseEntity="AppState"/>
     </entity>
     <entity name="ReedBox" representedClassName="ReedBox" syncable="YES">
         <attribute name="color" optional="YES" attributeType="String"/>
@@ -46,5 +51,6 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="size" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="reed" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reed" inverseName="reedBox" inverseEntity="Reed"/>
+        <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AppState" inverseName="destroyedReeds" inverseEntity="AppState"/>
     </entity>
 </model>

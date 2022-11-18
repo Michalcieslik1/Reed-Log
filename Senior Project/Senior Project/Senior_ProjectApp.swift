@@ -16,7 +16,7 @@ struct Senior_ProjectApp: App {
                 let viewContext = DataController.shared.container.viewContext
                 AnalysisView(rvm: ReedListViewModel(context: viewContext))
                     .tabItem{
-                        Text("Stats")
+                        Text("Data Collection")
                     }
                     .tag(1)
                 MainView(rvm: ReedListViewModel(context: viewContext), rbvm: ReedBoxListViewModel(context: viewContext))
@@ -25,9 +25,9 @@ struct Senior_ProjectApp: App {
                         Text("Explore")
                     }
                     .tag(2)
-                SettingsView()
+                SettingsView(rvm: ReedListViewModel(context: viewContext))
                     .tabItem{
-                        Text("Other (Search, settings)")
+                        Text("Settings")
                     }
                     .tag(3)
             }

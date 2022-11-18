@@ -13,7 +13,8 @@ class AddReedViewModel: ObservableObject{
     private (set) var context: NSManagedObjectContext
     
     @Published var reedBoxes: ReedBoxListViewModel
-    @Published var notesVm: AddNoteViewModel
+    @Published var notesVM: AddNoteViewModel
+    @Published var stateVM: StateVM
     
     @Published var targetReedBox: ReedBox?
     @Published var errorPopUpVisible: Bool = false
@@ -50,10 +51,36 @@ class AddReedViewModel: ObservableObject{
     //@ObservedObject var showingAlert: Bool = false
     //@Published var errorMessage: String = ""
     
-    init(context: NSManagedObjectContext, reedBoxes: ReedBoxListViewModel, notes: AddNoteViewModel){
+    init(context: NSManagedObjectContext, reedBoxes: ReedBoxListViewModel, notes: AddNoteViewModel, stateVM: StateVM){
         self.context = context
         self.reedBoxes = reedBoxes
-        self.notesVm = notes
+        self.notesVM = notes
+        self.stateVM = stateVM
+        
+        targetReedBox = stateVM.state.standardReed?.reedBox
+        reedStage = Int(stateVM.state.standardReed?.reedStage ?? 0)
+        
+        caneType = stateVM.state.standardReed?.caneType ?? ""
+        caneDiameter = String(stateVM.state.standardReed?.caneDiameter ?? 0)
+        caneGouge = stateVM.state.standardReed?.caneGouge ?? ""
+        caneShape = stateVM.state.standardReed?.caneShape ?? ""
+        
+        bottomLeft = stateVM.state.standardReed?.bottomL ?? 0
+        bottomRight = stateVM.state.standardReed?.bottomR ?? 0
+        leftL = stateVM.state.standardReed?.leftL ?? 0
+        leftM = stateVM.state.standardReed?.leftM ?? 0
+        leftR = stateVM.state.standardReed?.leftR ?? 0
+        rightL = stateVM.state.standardReed?.rightL ?? 0
+        rightM = stateVM.state.standardReed?.rightM ?? 0
+        rightR = stateVM.state.standardReed?.rightR ?? 0
+        
+        stapleType = stateVM.state.standardReed?.stapleType ?? ""
+        stapleID = stateVM.state.standardReed?.stapleID ?? ""
+        tieLength = String(stateVM.state.standardReed?.tieLength ?? 0)
+        threadColor = Color(hex: stateVM.state.standardReed?.threadColor ?? "") ?? Color.black
+        
+        reedSuccess = stateVM.state.standardReed?.reedSuccess ?? 0.0
+        reedLoudness = stateVM.state.standardReed?.reedLoudness ?? 0.0
     }
     /*
     func listenForAlert() -> Binding<Bool>{
@@ -130,7 +157,7 @@ class AddReedViewModel: ObservableObject{
         newReed.reedSuccess = reedSuccess
         newReed.reedLoudness = reedLoudness
         
-        newReed.notes = notesVm.getNotesList(reed: newReed)
+        newReed.notes = notesVM.getNotesList(reed: newReed)
         try? context.save()
         return true
     }

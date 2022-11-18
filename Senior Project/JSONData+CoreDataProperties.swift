@@ -8,6 +8,8 @@
 
 import Foundation
 import CoreData
+import SwiftUI
+import UniformTypeIdentifiers
 
 extension JSONData: Identifiable{
 
@@ -51,3 +53,5 @@ extension Date{
         return dateFormatter.string(from: self)
     }
 }
+
+// FileDocument?

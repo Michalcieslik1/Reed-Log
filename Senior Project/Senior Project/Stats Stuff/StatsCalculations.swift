@@ -18,7 +18,6 @@ class StatsCalculations: ObservableObject{
     }
     
     func reedMakeup() -> Int {
-        
         return 1
     }
 }

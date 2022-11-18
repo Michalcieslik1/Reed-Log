@@ -65,7 +65,7 @@ struct MainView: View {
                     //Dismiss
                 }, content:{
                     NavigationView{
-                        AddReedGroup(vm: AddReedViewModel(context: moc, reedBoxes: reedBoxListVM, notes: AddNoteViewModel(context: moc)))
+                        AddReedGroup(vm: AddReedViewModel(context: moc, reedBoxes: reedBoxListVM, notes: AddNoteViewModel(context: moc), stateVM: StateVM(context: moc)))
                     }
                     .navigationTitle("Add Reeds")
                 })

@@ -18,8 +18,8 @@ class AddReedBoxViewModel: ObservableObject{
     
     @Published var name: String = ""
     @Published var info: String = ""
-    @Published var size = 0
-    @Published var color: Color = .white
+    @Published var size = 20
+    @Published var color: Color = .black
     
     
     func save(){

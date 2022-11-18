@@ -16,7 +16,11 @@ struct AddReedBox: View {
             Form{
                 Section(header: Text("General")){
                     TextField("Name", text: $vm.name)
-                    TextField("Size", value: $vm.size, formatter: NumberFormatter())
+                    Picker("Size", selection: $vm.size) {
+                        ForEach(1...100, id: \.self) { number in
+                            Text("\(number)")
+                        }
+                    }
                     ColorPicker("Reed Box Color", selection: $vm.color)
                 }
                 Section(header:Text("Description")){

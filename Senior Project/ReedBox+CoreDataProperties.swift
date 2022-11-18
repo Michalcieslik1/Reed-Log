@@ -2,7 +2,7 @@
 //  ReedBox+CoreDataProperties.swift
 //  Senior Project
 //
-//  Created by Michał Cieslik on 10/1/22.
+//  Created by Michał Cieslik on 11/15/22.
 //
 //
 import Foundation
@@ -22,6 +22,7 @@ extension ReedBox {
     @NSManaged public var reed: NSSet?
     @NSManaged public var color: String?
     @NSManaged public var hidden: Bool
+    @NSManaged public var state: AppState?
     
     public var reedsSet: [Reed]{
         Array(reed as? Set<Reed> ?? [])

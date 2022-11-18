@@ -16,7 +16,15 @@ struct DataCollection: View {
             Section(header: Text("Save Data")){
                 Text("Save Files")
                 ForEach(vm.saveFiles){ saveFile in
-                    Text("-")
+                    HStack{
+                        Text(saveFile.date?.formatted() ?? "")
+                        Spacer()
+                        if #available(iOS 16.0, *) {
+                            ShareLink(item: saveFile.data ?? "Error")
+                        } else {
+                            Text("Error")
+                        }
+                    }
                 }
             }
             Button(action: {

@@ -38,7 +38,7 @@ struct ReedBoxDetail: View {
                     Text("Edit")
                 }
             }
-            NavigationLink("Add Reed", destination: AddReedGroup(vm: AddReedViewModel(context: vm.context, reedBoxes: ReedBoxListViewModel(context: vm.context), notes: AddNoteViewModel(context: vm.context))))
+            NavigationLink("Add Reed", destination: AddReedGroup(vm: AddReedViewModel(context: vm.context, reedBoxes: ReedBoxListViewModel(context: vm.context), notes: AddNoteViewModel(context: vm.context), stateVM: StateVM(context: vm.context))))
             .buttonStyle(BorderedButtonStyle.bordered)
         }
     }

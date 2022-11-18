@@ -9,12 +9,12 @@ import SwiftUI
 
 struct AddReedQuestionaire: View {
     @ObservedObject var vm: AddReedViewModel
-    @ObservedObject var noteVm: AddNoteViewModel
+    @ObservedObject var notesVM: AddNoteViewModel
     @State var showingAlert = false
     
     init(vm: AddReedViewModel){
         self.vm = vm
-        noteVm = vm.notesVm
+        self.notesVM = vm.notesVM
     }
     
     var body: some View {
@@ -49,7 +49,7 @@ struct AddReedQuestionaire: View {
                         Text("TODO")
                     }
                     Section(header: Text("Notes")){
-                        AddNote(vm: noteVm)
+                        AddNote(vm: notesVM)
                     }
                 }
             }
@@ -61,7 +61,7 @@ struct AddReedQuestionaire_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = DataController.shared.container.viewContext
         Group {
-            AddReedQuestionaire(vm: AddReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), notes: AddNoteViewModel(context: viewContext)))
+            AddReedQuestionaire(vm: AddReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), notes: AddNoteViewModel(context: viewContext), stateVM: StateVM(context: viewContext)))
         }
     }
 }
