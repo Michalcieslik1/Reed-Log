@@ -57,7 +57,8 @@ class AddReedViewModel: ObservableObject{
         self.notesVM = notes
         self.stateVM = stateVM
         
-        targetReedBox = stateVM.state.standardReed?.reedBox
+        targetReedBox = nil
+        
         reedStage = Int(stateVM.state.standardReed?.reedStage ?? 0)
         
         caneType = stateVM.state.standardReed?.caneType ?? ""

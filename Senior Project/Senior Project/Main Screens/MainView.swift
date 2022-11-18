@@ -43,7 +43,7 @@ struct MainView: View {
                             }
                         }
                     }
-                    Section(header:Text("Usable Reeds")){
+                    Section(header:Text("Reeds")){
                         ForEach(reedListVM.reeds){ reed in
                             NavigationLink(destination: ReedDetailGroup(vm:EditReedViewModel(context: reedBoxListVM.context, reedBoxes: reedBoxListVM, reedToEdit: reed, notes: AddNoteViewModel(context: moc)), reed: reed)) {
                                 ReedRow(reed: reed)

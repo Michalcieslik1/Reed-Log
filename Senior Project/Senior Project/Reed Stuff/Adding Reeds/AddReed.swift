@@ -25,6 +25,7 @@ struct AddReed: View {
                             ForEach(vm.reedBoxes.reedBoxes){ (reedBox: ReedBox) in
                                 Text(reedBox.name ?? "Unknown").tag(reedBox as ReedBox?)
                             }
+                            .onAppear{ vm.targetReedBox = vm.reedBoxes.reedBoxes[0]}
                         }
                         Picker("Reed Stage", selection: $vm.reedStage){
                             Text("Blank").tag(0)
