@@ -28,19 +28,23 @@ class StateVM: NSObject, ObservableObject, NSFetchedResultsControllerDelegate{
                 return
             }
             
-            self.state = states[0]
+            if states.count == 0 {
+                state = AppState(context: context)
+                state.destroyedReeds = ReedBox(context: context)
+                state.destroyedReeds?.hidden = true
+                state.standardReed = Reed(context: context)
+                state.standardReed?.id = UUID()
+                state.standardReed?.reedBox = state.destroyedReeds
+            } else{
+                self.state = states[0]
+            }
             print(self.state)
         } catch {
             print(error)
         }
         
         //if state == nil{
-            state = AppState(context: context)
-            state.destroyedReeds = ReedBox(context: context)
-            state.destroyedReeds?.hidden = true
-            state.standardReed = Reed(context: context)
-            state.standardReed?.id = UUID()
-            state.standardReed?.reedBox = state.destroyedReeds
+            
         //}
     }
 }

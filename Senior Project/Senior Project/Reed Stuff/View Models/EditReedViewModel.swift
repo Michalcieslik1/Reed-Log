@@ -100,11 +100,11 @@ class EditReedViewModel: ObservableObject{
         if let rb = targetReedBox{
             if rb.size > rb.reedsSet.count{
                 rb.addToReed(reedToEdit)
-            } else{
+            } //else{
                 //throwReedError(error: "HI")
-                context.delete(reedToEdit)
-                return false
-            }
+             //   context.delete(reedToEdit)
+            //    return false
+            //}
         }
         
         guard let diameter = Double(caneDiameter) else{

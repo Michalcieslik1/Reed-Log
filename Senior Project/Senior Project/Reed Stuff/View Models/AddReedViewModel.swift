@@ -109,6 +109,7 @@ class AddReedViewModel: ObservableObject{
     func save() -> Bool{
         let newReed = Reed(context: context)
         newReed.hidden = false
+        
         if let rb = targetReedBox{
             if rb.size > rb.reedsSet.count{
                 rb.addToReed(newReed)
