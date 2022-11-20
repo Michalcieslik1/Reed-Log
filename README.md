@@ -1,4 +1,8 @@
 # Senior-Project
+## Screen Shots
+![Simulator Screen Shot - iPhone 14 Pro - 2022-11-19 at 23 23 58](https://user-images.githubusercontent.com/60623457/202885391-893baa52-a132-46c3-b447-a82e334d89ea.png)
+![Simulator Screen Shot - iPhone 14 Pro - 2022-11-19 at 23 24 40](https://user-images.githubusercontent.com/60623457/202885421-b0dd9af0-579d-4115-9ae1-192ffe119505.png)
+
 
 ## Studies:
 ### Study on the scientific aspect of quality of cane on the success and sound production of the reed:
