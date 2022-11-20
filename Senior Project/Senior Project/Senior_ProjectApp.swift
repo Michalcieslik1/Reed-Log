@@ -16,18 +16,19 @@ struct Senior_ProjectApp: App {
                 let viewContext = DataController.shared.container.viewContext
                 AnalysisView(rvm: ReedListViewModel(context: viewContext))
                     .tabItem{
-                        Text("Data Collection")
+                        Label("Data Collection", systemImage: "square.and.arrow.up.circle")
                     }
                     .tag(1)
                 MainView(rvm: ReedListViewModel(context: viewContext), rbvm: ReedBoxListViewModel(context: viewContext))
                     .environment(\.managedObjectContext, viewContext)
                     .tabItem{
-                        Text("Explore")
+                        Label("Explore", systemImage: "book.circle")
                     }
                     .tag(2)
                 SettingsView(rvm: ReedListViewModel(context: viewContext))
                     .tabItem{
-                        Text("Settings")
+                        Label("Settings", systemImage: "gearshape" )
+                            
                     }
                     .tag(3)
             }
