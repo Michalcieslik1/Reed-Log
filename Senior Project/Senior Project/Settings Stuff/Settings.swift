@@ -24,13 +24,8 @@ struct Settings: View {
                     NavigationLink(destination: EditReedGroup(vm: EditReedViewModel(context: stateVM.context, reedBoxes: ReedBoxListViewModel(context: stateVM.context), reedToEdit: stateVM.state.standardReed!, notes: AddNoteViewModel(context: stateVM.context, notes: [])))){
                         ReedRow(reed: stateVM.state.standardReed!)
                     }
-                    //}
-                    Text("Edit Standard Reed Box")
-                        .bold()
-                        .centerHorizontally()
-                    // TODO: Need to create a state core data entity that saves the settings for the app.
-                    
                 }
+                //NavigationLink("Tutorial", destination: TutorialView())
             }.navigationTitle(Text("Settings"))
         }
     }

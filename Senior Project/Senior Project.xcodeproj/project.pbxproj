@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9E11DA152929794A007F9E2D /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 9E11DA142929794A007F9E2D /* SwiftUICharts */; };
 		9E11DA1829297CD6007F9E2D /* ChartsInStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E11DA1729297CD6007F9E2D /* ChartsInStatsView.swift */; };
+		9E11DA1A2929DC0E007F9E2D /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E11DA192929DC0E007F9E2D /* TutorialView.swift */; };
 		9E2D018F291EE85500B17883 /* JSONData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2D018D291EE85500B17883 /* JSONData+CoreDataClass.swift */; };
 		9E2D0190291EE85500B17883 /* JSONData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2D018E291EE85500B17883 /* JSONData+CoreDataProperties.swift */; };
 		9E2D0193291EEABA00B17883 /* DataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2D0192291EEABA00B17883 /* DataCollection.swift */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		9E11DA1729297CD6007F9E2D /* ChartsInStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsInStatsView.swift; sourceTree = "<group>"; };
+		9E11DA192929DC0E007F9E2D /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		9E2D018D291EE85500B17883 /* JSONData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		9E2D018E291EE85500B17883 /* JSONData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		9E2D0192291EEABA00B17883 /* DataCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollection.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		9E6176AC28E7622A00750F9E /* Main Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9E11DA192929DC0E007F9E2D /* TutorialView.swift */,
 				9E87612F28D0D406009C8255 /* MainView.swift */,
 				9E6176AD28E762C300750F9E /* StatsView.swift */,
 				9E6176AF28E762D200750F9E /* SettingsView.swift */,
@@ -467,6 +470,7 @@
 				9E71D80528EA1614008C160A /* ReedDetailQuestionaire.swift in Sources */,
 				9E6176BE28E8F7C700750F9E /* HelperExtentions.swift in Sources */,
 				9E6176AE28E762C300750F9E /* StatsView.swift in Sources */,
+				9E11DA1A2929DC0E007F9E2D /* TutorialView.swift in Sources */,
 				9E87614228D0D4BD009C8255 /* DataController.swift in Sources */,
 				9E87614A28D14B83009C8255 /* ReedRow.swift in Sources */,
 				9E9DCADC28FDD95D0082C888 /* AddNoteViewModel.swift in Sources */,
