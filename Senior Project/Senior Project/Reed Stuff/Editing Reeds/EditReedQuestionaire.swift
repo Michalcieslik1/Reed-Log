@@ -44,9 +44,24 @@ struct EditReedQuestionaire: View {
                         } maximumValueLabel: {
                             Text("10")
                         }.padding()
-                        Text("Tone (TODO)")
-                        Text("Experiment the reed takes part in")
-                        Text("TODO")
+                        Text("Opening Size:")
+                            .bold()
+                            .centerHorizontally()
+                        Slider(value: $vm.openingSize, in: 1...5, step: 1){}
+                    minimumValueLabel: {
+                        Text("Small")
+                    } maximumValueLabel: {
+                        Text("Large")
+                    }.padding()
+                        Text("Tone")
+                            .bold()
+                            .centerHorizontally()
+                        HStack{
+                            Toggle(isOn: $vm.toneRing, label: {
+                                Text("Ring")
+                            })
+                            Toggle("Depth", isOn: $vm.toneDepth)
+                        }
                     }
                     Section(header: Text("Notes")){
                         AddNote(vm: noteVm)

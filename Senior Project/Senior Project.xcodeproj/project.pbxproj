@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E11DA152929794A007F9E2D /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 9E11DA142929794A007F9E2D /* SwiftUICharts */; };
+		9E11DA1829297CD6007F9E2D /* ChartsInStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E11DA1729297CD6007F9E2D /* ChartsInStatsView.swift */; };
 		9E2D018F291EE85500B17883 /* JSONData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2D018D291EE85500B17883 /* JSONData+CoreDataClass.swift */; };
 		9E2D0190291EE85500B17883 /* JSONData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2D018E291EE85500B17883 /* JSONData+CoreDataProperties.swift */; };
 		9E2D0193291EEABA00B17883 /* DataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2D0192291EEABA00B17883 /* DataCollection.swift */; };
@@ -61,6 +63,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E11DA1729297CD6007F9E2D /* ChartsInStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsInStatsView.swift; sourceTree = "<group>"; };
 		9E2D018D291EE85500B17883 /* JSONData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		9E2D018E291EE85500B17883 /* JSONData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		9E2D0192291EEABA00B17883 /* DataCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollection.swift; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E11DA152929794A007F9E2D /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				9E474353291ADA1400D6A4B1 /* StatsCalculations.swift */,
+				9E11DA1729297CD6007F9E2D /* ChartsInStatsView.swift */,
 			);
 			path = "Stats Stuff";
 			sourceTree = "<group>";
@@ -376,6 +381,9 @@
 			dependencies = (
 			);
 			name = "Senior Project";
+			packageProductDependencies = (
+				9E11DA142929794A007F9E2D /* SwiftUICharts */,
+			);
 			productName = "Senior Project";
 			productReference = 9E87612A28D0D406009C8255 /* Senior Project.app */;
 			productType = "com.apple.product-type.application";
@@ -404,6 +412,9 @@
 				Base,
 			);
 			mainGroup = 9E87612128D0D406009C8255;
+			packageReferences = (
+				9E11DA132929794A007F9E2D /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 9E87612B28D0D406009C8255 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -464,6 +475,7 @@
 				9E71D81128EDEB65008C160A /* EditReedQuestionaire.swift in Sources */,
 				9E87615128D25ADA009C8255 /* ReedDetail.swift in Sources */,
 				9E87615D28D267FE009C8255 /* NewReedBox.swift in Sources */,
+				9E11DA1829297CD6007F9E2D /* ChartsInStatsView.swift in Sources */,
 				9E5D6B742926B45500FE5BAA /* Settings.swift in Sources */,
 				9E87612E28D0D406009C8255 /* Senior_ProjectApp.swift in Sources */,
 				9E71D80D28EDE766008C160A /* EditReedViewModel.swift in Sources */,
@@ -685,6 +697,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9E11DA132929794A007F9E2D /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9E11DA142929794A007F9E2D /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E11DA132929794A007F9E2D /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		9E87613B28D0D43B009C8255 /* ReedModel.xcdatamodeld */ = {

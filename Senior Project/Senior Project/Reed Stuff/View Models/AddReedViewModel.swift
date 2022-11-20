@@ -47,6 +47,9 @@ class AddReedViewModel: ObservableObject{
     
     @Published var reedSuccess: Float = 5.0
     @Published var reedLoudness: Float = 5.0
+    @Published var openingSize: Float = 5.0
+    @Published var toneDepth: Bool = true
+    @Published var toneRing: Bool = true
     
     //@ObservedObject var showingAlert: Bool = false
     //@Published var errorMessage: String = ""
@@ -82,6 +85,9 @@ class AddReedViewModel: ObservableObject{
         
         reedSuccess = stateVM.state.standardReed?.reedSuccess ?? 0.0
         reedLoudness = stateVM.state.standardReed?.reedLoudness ?? 0.0
+        openingSize = stateVM.state.standardReed?.openingSize ?? 0.0
+        toneDepth = stateVM.state.standardReed?.toneDepth ?? true
+        toneRing = stateVM.state.standardReed?.toneRing ?? true
     }
     /*
     func listenForAlert() -> Binding<Bool>{
@@ -158,6 +164,9 @@ class AddReedViewModel: ObservableObject{
         
         newReed.reedSuccess = reedSuccess
         newReed.reedLoudness = reedLoudness
+        newReed.openingSize = openingSize
+        newReed.toneDepth = toneDepth
+        newReed.toneRing = toneRing
         
         newReed.notes = notesVM.getNotesList(reed: newReed)
         try? context.save()

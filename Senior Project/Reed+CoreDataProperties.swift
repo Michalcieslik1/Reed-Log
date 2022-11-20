@@ -2,7 +2,7 @@
 //  Reed+CoreDataProperties.swift
 //  Senior Project
 //
-//  Created by Michał Cieslik on 11/15/22.
+//  Created by Michał Cieslik on 11/19/22.
 //
 //
 import Foundation
@@ -36,6 +36,9 @@ extension Reed {
     @NSManaged public var tieLength: Double
     @NSManaged public var reedSuccess: Float
     @NSManaged public var reedLoudness: Float
+    @NSManaged public var openingSize: Float
+    @NSManaged public var toneDepth: Bool
+    @NSManaged public var toneRing: Bool
     @NSManaged public var reedBox: ReedBox?
     @NSManaged public var notes: NSSet?
     @NSManaged public var hidden: Bool
@@ -71,6 +74,28 @@ extension Reed {
             return "Destroyed"
         }
     }
+    
+    func openingSizeToString() -> String{
+        switch openingSize{
+        case 1:
+            return "Small"
+        case 2:
+            return "Medium Small"
+        case 3:
+            return "Medium"
+        case 4:
+            return "Medium Large"
+        default:
+            return "Large"
+        }
+    }
+    func toneDepthToString() -> String {
+        if toneDepth {return "Yes"} else{ return "No"}
+    }
+    func toneRingToString() -> String {
+        if toneRing {return "Yes"} else{ return "No"}
+    }
+    
     static func dateToString(date: Date?) -> String{
         if let d = date {
             let dateFormatter = DateFormatter()

@@ -13,9 +13,15 @@ struct AnalysisView: View {
     init(rvm: ReedListViewModel){
         self.reedListVM = rvm
     }
+    
     var body: some View {
         NavigationView{
-            DataCollection(vm: DataCollectionVM(context: reedListVM.context), rlvm: reedListVM)
+                //ChartsInStatsView(vm: StatsCalculations(context: reedListVM.context))
+                    //.scaledToFill()
+            List{
+                DataCollection(vm: DataCollectionVM(context: reedListVM.context), rlvm: reedListVM)
+            }
+            .navigationTitle("Data Collection")
         }
     }
 }

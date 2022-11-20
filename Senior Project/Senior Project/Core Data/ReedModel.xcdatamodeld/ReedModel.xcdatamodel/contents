@@ -29,6 +29,7 @@
         <attribute name="leftL" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="leftM" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="leftR" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="openingSize" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="reedLoudness" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="reedStage" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="reedSuccess" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -39,6 +40,8 @@
         <attribute name="stapleType" optional="YES" attributeType="String"/>
         <attribute name="threadColor" optional="YES" attributeType="String"/>
         <attribute name="tieLength" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="toneDepth" optional="YES" attributeType="Boolean" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="toneRing" optional="YES" attributeType="Boolean" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="reed" inverseEntity="Note"/>
         <relationship name="reedBox" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ReedBox" inverseName="reed" inverseEntity="ReedBox"/>
         <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AppState" inverseName="standardReed" inverseEntity="AppState"/>

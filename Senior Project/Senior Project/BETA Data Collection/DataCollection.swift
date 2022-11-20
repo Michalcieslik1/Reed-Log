@@ -12,9 +12,7 @@ struct DataCollection: View {
     @ObservedObject var rlvm: ReedListViewModel
     
     var body: some View {
-        List{
-            Section(header: Text("Save Data")){
-                Text("Save Files")
+        Section(header: Text("Save Data")){
                 ForEach(vm.saveFiles){ saveFile in
                     HStack{
                         Text(saveFile.date?.formatted() ?? "")
@@ -33,8 +31,7 @@ struct DataCollection: View {
                 Text("Save")
                     .centerHorizontally()
             })
-        }
-        .navigationTitle("Data Collection")
+        //.navigationTitle("Data Collection")
     }
     
     func save(){

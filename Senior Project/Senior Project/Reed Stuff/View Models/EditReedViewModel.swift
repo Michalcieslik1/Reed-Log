@@ -48,6 +48,9 @@ class EditReedViewModel: ObservableObject{
 
     @Published var reedSuccess: Float
     @Published var reedLoudness: Float
+    @Published var openingSize: Float
+    @Published var toneDepth: Bool
+    @Published var toneRing: Bool
     //@Published var tempNote: String
     
     //@ObservedObject var showingAlert: Bool = false
@@ -82,6 +85,9 @@ class EditReedViewModel: ObservableObject{
         
         reedSuccess = reedToEdit.reedSuccess
         reedLoudness = reedToEdit.reedLoudness
+        toneDepth = reedToEdit.toneDepth
+        toneRing = reedToEdit.toneRing
+        openingSize = reedToEdit.openingSize
         self.notesVm = notes
         self.notesVm.notes = reedToEdit.notesSet
     }
@@ -145,6 +151,10 @@ class EditReedViewModel: ObservableObject{
         
         reedToEdit.reedSuccess = reedSuccess
         reedToEdit.reedLoudness = reedLoudness
+        reedToEdit.toneRing = toneRing
+        reedToEdit.toneDepth = toneDepth
+        reedToEdit.openingSize = openingSize
+        
         
         for note in notesVm.notes{
             note.reed = reedToEdit

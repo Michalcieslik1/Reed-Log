@@ -27,7 +27,23 @@ struct ReedDetailQuestionaire: View {
                         Spacer()
                         Text("\(Int(reed.reedLoudness))/10")
                     }
+                    HStack{
+                        Text("Opening Size:")
+                        Spacer()
+                        Text(reed.openingSizeToString())
+                    }
+                    HStack{
+                        Text("Deep:")
+                        Spacer()
+                        Text(reed.toneDepthToString())
+                    }
+                    HStack{
+                        Text("Ringing:")
+                        Spacer()
+                        Text(reed.toneRingToString())
+                    }
                 }
+                
                 Section(header: Text("Notes")){
                     NoteRow(reed: reed)
                 }
