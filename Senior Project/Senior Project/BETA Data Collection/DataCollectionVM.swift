@@ -47,4 +47,25 @@ class DataCollectionVM: NSObject, ObservableObject, NSFetchedResultsControllerDe
         
         try? context.save()
     }
+    
+    // Runs when something in the Core Data storage changes, and updates the reed array for the view
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        guard let json = controller.fetchedObjects as? [JSONData] else {
+            return
+        }
+        
+        self.saveFiles = json
+    }
+    
+    func deleteData(dataID: NSManagedObjectID){
+        do {
+            guard let json = try context.existingObject(with: dataID) as? JSONData else{
+                return
+            }
+            context.delete(json)
+            try? context.save()
+        } catch {
+            print(error)
+        }
+    }
 }

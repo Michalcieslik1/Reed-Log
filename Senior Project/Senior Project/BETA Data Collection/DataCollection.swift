@@ -23,7 +23,7 @@ struct DataCollection: View {
                             Text("Error")
                         }
                     }
-                }
+                }.onDelete(perform: deleteData)
             }
             Button(action: {
                 save()
@@ -36,6 +36,12 @@ struct DataCollection: View {
     
     func save(){
         vm.save(reeds: rlvm)
+    }
+    func deleteData(at offsets:IndexSet){
+        for offset in offsets{
+            let json = vm.saveFiles[offset]
+            vm.deleteData(dataID: json.objectID)
+        }
     }
 }
 
