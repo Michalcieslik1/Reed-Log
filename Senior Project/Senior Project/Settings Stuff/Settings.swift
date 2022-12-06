@@ -14,20 +14,16 @@ struct Settings: View {
     }
     
     var body: some View {
-        NavigationView{
-            List{
-                Section(header: Text("General")){
-                    //NavigationLink(<#LocalizedStringKey#>){
-                        Text("Edit Standard Reed")
-                        .bold()
-                        .centerHorizontally()
-                    NavigationLink(destination: EditReedGroup(vm: EditReedViewModel(context: stateVM.context, reedBoxes: ReedBoxListViewModel(context: stateVM.context), reedToEdit: stateVM.state.standardReed!, notes: AddNoteViewModel(context: stateVM.context, notes: [])))){
-                        ReedRow(reed: stateVM.state.standardReed!)
-                    }
+            Section(header: Text("General")){
+                //NavigationLink(<#LocalizedStringKey#>){
+                    Text("Edit Standard Reed")
+                    .bold()
+                    .centerHorizontally()
+                NavigationLink(destination: EditReedGroup(vm: EditReedViewModel(context: stateVM.context, reedBoxes: ReedBoxListViewModel(context: stateVM.context), reedToEdit: stateVM.state.standardReed!, notes: AddNoteViewModel(context: stateVM.context, notes: [])))){
+                    ReedRow(reed: stateVM.state.standardReed!)
                 }
-                //NavigationLink("Tutorial", destination: TutorialView())
-            }.navigationTitle(Text("Settings"))
-        }
+            }
+            //NavigationLink("Tutorial", destination: TutorialView())
     }
 }
 

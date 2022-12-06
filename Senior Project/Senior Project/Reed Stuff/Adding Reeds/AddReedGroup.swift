@@ -26,7 +26,7 @@ struct AddReedGroup: View {
             Button("Add Reed"){
                 addReed()
             }
-            .buttonStyle(BorderedButtonStyle.bordered)
+            .buttonStyle(.borderedProminent)
             
         }
         .navigationTitle("Add Reed")

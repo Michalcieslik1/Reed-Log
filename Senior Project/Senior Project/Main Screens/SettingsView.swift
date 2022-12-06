@@ -14,7 +14,35 @@ struct SettingsView: View {
     }
     
     var body: some View {
-        Settings(rvm: StateVM(context: reedListVM.context))
+        NavigationView{
+            List{
+                Settings(rvm: StateVM(context: reedListVM.context))
+                Link("Submit save file", destination: URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSdbussbA6dY0W6NT920FYsmsgufZmReKY1GGPpE54U8odo19g/viewform?usp=sf_link")!)
+                    .centerHorizontally()
+                    .buttonStyle(.borderedProminent)
+                Section(){
+                    NavigationLink(){
+                        TutorialView()
+                            .navigationTitle("Tutorial")
+                    } label:{
+                        Text("Tutorial - BETA")
+                            .bold()
+                            .centerHorizontally()
+                    }
+                }.navigationTitle(Text("Settings"))
+            }
+            .toolbar(){
+                ToolbarItem{
+                    Button(){} label:{
+                        VStack{
+                            Image("Icon")
+                            Text("Beta")
+                        }
+                    }
+                }
+            }
+        }
+        
     }
 }
 

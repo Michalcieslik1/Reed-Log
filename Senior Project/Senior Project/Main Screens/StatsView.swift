@@ -22,7 +22,19 @@ struct AnalysisView: View {
                 DataCollection(vm: DataCollectionVM(context: reedListVM.context), rlvm: reedListVM)
             }
             .navigationTitle("Data Collection")
+            .toolbar(){
+                ToolbarItem{
+                    Button(){} label:{
+                        VStack{
+                            Image("Icon")
+                            Text("Beta")
+                        }
+                    }
+                }
+            }
+            
         }
+        
     }
 }
 

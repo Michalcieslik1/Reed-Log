@@ -11,6 +11,11 @@ struct DataCollection: View {
     @ObservedObject var vm: DataCollectionVM
     @ObservedObject var rlvm: ReedListViewModel
     
+    func doc(a: String) -> TransferableDocument
+    {
+        return TransferableDocument(initialText: a)
+    }
+    
     var body: some View {
         Section(header: Text("Save Data")){
                 ForEach(vm.saveFiles){ saveFile in
@@ -18,19 +23,21 @@ struct DataCollection: View {
                         Text(saveFile.date?.formatted() ?? "")
                         Spacer()
                         if #available(iOS 16.0, *) {
-                            ShareLink(item: saveFile.data ?? "Error")
+                            ShareLink(item: doc(a: saveFile.data ?? "No Data") ,preview: SharePreview("logfile"))
+                            {
+                                Text("Share")
+                            }
                         } else {
                             Text("Error")
                         }
                     }
                 }.onDelete(perform: deleteData)
             }
-            Button(action: {
+            Button("Save"){
                 save()
-            }, label: {
-                Text("Save")
-                    .centerHorizontally()
-            })
+            }
+            .buttonStyle(.borderedProminent).centerHorizontally()
+        
         //.navigationTitle("Data Collection")
     }
     

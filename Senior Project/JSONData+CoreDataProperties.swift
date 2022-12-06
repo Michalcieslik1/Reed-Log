@@ -32,10 +32,9 @@ extension Reed {
   func toJSON() -> String? {
     let keys = Array(self.entity.attributesByName.keys)
     var dict = self.dictionaryWithValues(forKeys: keys)
-      dict["id"] = self.id?.uuidString
+      dict["id"] = self.id?.uuidString ?? ""
       dict["date"] = self.date?.toString()
-      print(dict)
-    //print(dict)
+
     do {
         let jsonData = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
         let reqJSONStr = String(data: jsonData, encoding: .utf8)

@@ -44,7 +44,12 @@ struct MainView: View {
                         }
                     }
                     Section(header:Text("Reeds")){
-                        ForEach(reedListVM.reeds){ reed in
+                        Picker("Filter", selection: $reedListVM.filter){
+                            ForEach(ReedListViewModel.FilterType.allCases, id: \.self){
+                                Text(Reed.reedStageToString(int: $0.rawValue))
+                            }
+                        }
+                        ForEach(reedListVM.filteredReeds){ reed in
                             NavigationLink(destination: ReedDetailGroup(vm:EditReedViewModel(context: reedBoxListVM.context, reedBoxes: reedBoxListVM, reedToEdit: reed, notes: AddNoteViewModel(context: moc)), reed: reed)) {
                                 ReedRow(reed: reed)
                             }
@@ -56,7 +61,7 @@ struct MainView: View {
                         Button("Add Reed"){
                             isPresented = true
                         }
-                        .buttonStyle(BorderedButtonStyle.bordered)
+                        .buttonStyle(.borderedProminent)
                         Spacer()
                     }
                 }
@@ -73,7 +78,10 @@ struct MainView: View {
             .toolbar(){
                 ToolbarItem{
                     Button(){} label:{
-                        Image("Icon")
+                        VStack{
+                            Image("Icon")
+                            Text("Beta")
+                        }
                     }
                 }
             }

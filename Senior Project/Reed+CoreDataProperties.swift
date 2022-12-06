@@ -63,7 +63,13 @@ extension Reed {
     }
     
     func reedStageToString() -> String{
-        switch reedStage{
+        Reed.reedStageToString(int: Int(reedStage))
+    }
+    
+    static func reedStageToString(int: Int) -> String{
+        switch int{
+        case -1:
+            return "All"
         case 0:
             return "Blank"
         case 1:

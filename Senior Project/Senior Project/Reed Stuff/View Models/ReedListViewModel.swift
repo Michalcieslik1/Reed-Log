@@ -14,8 +14,33 @@ import SwiftUI
 class ReedListViewModel: NSObject, ObservableObject, NSFetchedResultsControllerDelegate{
     private (set) var context: NSManagedObjectContext
     
+    enum FilterType: Int, Equatable, CaseIterable {
+        case all = -1
+        case blanks = 0
+        case scraped = 1
+        case finished = 2
+        case destroyed = 3
+    }
+    
     // Array of @Published Reed objects that's accesible by the view
     @Published var reeds = [Reed]()
+    
+    @Published var filter: FilterType = FilterType.all
+    
+    var filteredReeds: [Reed]{
+        switch filter {
+            case .all:
+                return reeds
+            case .blanks:
+                return reeds.filter { $0.reedStage == 0 }
+            case .scraped:
+                return reeds.filter { $0.reedStage == 1 }
+            case .finished:
+                return reeds.filter { $0.reedStage == 2 }
+            case .destroyed:
+                return reeds.filter { $0.reedStage == 3 }
+            }
+    }
     
     private let reedFetchedResultsController: NSFetchedResultsController<Reed>
     
