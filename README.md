@@ -2,6 +2,9 @@
 ## Purpose
 Throughout all levels of proficiency, using a loose scientific analysis is very common in the process of reed-making. While that method does prove effective over time, it does not stop players from over-focusing on untested assumptions that can completely derail the reed making process. With this project I want to create a way to analyze reed data more rigorously. As a data analysis tool, the app provides a way to analyze objective reed specifications in conjunction with subjective experiences with the reed, allowing one to find correlation between the two. The purpose of this project is twofold: to create a data analysis tool for the player to find correlations between datapoints, and use the tool to collect data and find how certain objective measurements affect the experience with the reed. For my own analysis of the data collected, I will focus on finding best configurations of staple, measurement, and tie length, and find reed specifications that maximize reed success between players and with players overall.
 
+## Essay
+[Midterm Board Essay.pdf](https://github.com/Michalcieslik1/Senior-Project/files/10189593/Midterm.Board.Essay.pdf)
+
 ## Studies:
 ### Study on the scientific aspect of quality of cane on the success and sound production of the reed:
 https://scholarworks.gvsu.edu/cgi/viewcontent.cgi?article=1119&context=sss
