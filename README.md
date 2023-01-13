@@ -7,10 +7,9 @@ Throughout all levels of proficiency, using a loose scientific analysis is very 
 ### Contact Information
 #### Email: mc1099@bard.edu
 #### Phone Number: (786) - 656 2109
-#### Social Media:
-##### Instagram: https://www.instagram.com/michal.cieslik1/
-##### Youtube: https://www.youtube.com/channel/UC7QrJWfReXCPF3pOBw1czxw
-
+#### Instagram: https://www.instagram.com/michal.cieslik1/
+#### Youtube: https://www.youtube.com/channel/UC7QrJWfReXCPF3pOBw1czxw
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Essay
 [Midterm Board Essay.pdf](https://github.com/Michalcieslik1/Senior-Project/files/10189593/Midterm.Board.Essay.pdf)
 
