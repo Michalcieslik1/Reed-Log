@@ -18,7 +18,7 @@ struct Tutorial2: View {
                     .resizable()
                     .frame(maxWidth: 200.0, maxHeight: 400)
             }
-            Text("The purpose of the beta is to collect reed data, and analyze the relationship between physical reed attributes (left) and player experiences with the reed (right).")
+            Text("The purpose of the study is to collect reed data, and analyze the relationship between physical reed attributes (left) and player experiences with the reed (right).")
         }
     }
 }

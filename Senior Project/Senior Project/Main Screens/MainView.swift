@@ -80,7 +80,6 @@ struct MainView: View {
                     Button(){} label:{
                         VStack{
                             Image("Icon")
-                            Text("Beta")
                         }
                     }
                 }

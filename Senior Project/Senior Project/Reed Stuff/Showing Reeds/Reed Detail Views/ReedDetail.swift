@@ -80,6 +80,13 @@ struct ReedDetail: View {
                         
                 }
             }
+            if (reed.reedStage >= 1){
+                ReedDetailQuestionaire(reed: reed)
+            }
+            
+            Section(header: Text("Notes")){
+                NoteRow(reed: reed)
+            }
         }
         .toolbar(){
             //NavigationLink(destination: EditReed(reedToEdit: reed, reedToEditBox: reedBoxID)){

@@ -9,10 +9,12 @@ import SwiftUI
 
 struct EditReed: View {
     @ObservedObject var vm: EditReedViewModel
+    @ObservedObject var noteVm: AddNoteViewModel
     //@State var errorMe
     
     init(vm: EditReedViewModel){
         self.vm = vm
+        self.noteVm = vm.notesVm
     }
     
     @Environment(\.dismiss) var dismiss
@@ -105,6 +107,13 @@ struct EditReed: View {
                         TextField("Tie Length", text: $vm.tieLength)
                             .keyboardType(.decimalPad)
                         ColorPicker("Thread Color", selection: $vm.threadColor)
+                    }
+                    if (vm.reedStage >= 1){
+                        EditReedQuestionaire(vm: vm)
+                    }
+                    
+                    Section(header: Text("Notes")){
+                        AddNote(vm: noteVm)
                     }
                 }
             }

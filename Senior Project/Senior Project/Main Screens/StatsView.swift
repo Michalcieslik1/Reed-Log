@@ -27,7 +27,6 @@ struct AnalysisView: View {
                     Button(){} label:{
                         VStack{
                             Image("Icon")
-                            Text("Beta")
                         }
                     }
                 }

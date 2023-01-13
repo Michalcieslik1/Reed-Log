@@ -14,39 +14,31 @@ struct ReedDetailQuestionaire: View {
         self.reed = reed
     }
     var body: some View {
-        VStack{
-            Form{
-                Section(header: Text("Questionaire")){
-                    HStack{
-                        Text("Reed Success:")
-                        Spacer()
-                        Text("\(Int(reed.reedSuccess))/10")
-                    }
-                    HStack{
-                        Text("Reed Loudness:")
-                        Spacer()
-                        Text("\(Int(reed.reedLoudness))/10")
-                    }
-                    HStack{
-                        Text("Opening Size:")
-                        Spacer()
-                        Text(reed.openingSizeToString())
-                    }
-                    HStack{
-                        Text("Deep:")
-                        Spacer()
-                        Text(reed.toneDepthToString())
-                    }
-                    HStack{
-                        Text("Ringing:")
-                        Spacer()
-                        Text(reed.toneRingToString())
-                    }
-                }
-                
-                Section(header: Text("Notes")){
-                    NoteRow(reed: reed)
-                }
+        Section(header: Text("Questionaire")){
+            HStack{
+                Text("Reed Success:")
+                Spacer()
+                Text("\(Int(reed.reedSuccess))/10")
+            }
+            HStack{
+                Text("Reed Loudness:")
+                Spacer()
+                Text("\(Int(reed.reedLoudness))/10")
+            }
+            HStack{
+                Text("Opening Size:")
+                Spacer()
+                Text(reed.openingSizeToString())
+            }
+            HStack{
+                Text("Deep:")
+                Spacer()
+                Text(reed.toneDepthToString())
+            }
+            HStack{
+                Text("Ringing:")
+                Spacer()
+                Text(reed.toneRingToString())
             }
         }
     }

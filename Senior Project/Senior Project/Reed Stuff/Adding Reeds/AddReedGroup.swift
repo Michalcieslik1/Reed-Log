@@ -18,10 +18,7 @@ struct AddReedGroup: View {
     
     var body: some View {
         VStack{
-            TabView{
-                AddReed(vm: vm)
-                AddReedQuestionaire(vm: vm)
-            }
+            AddReed(vm: vm)
             .tabViewStyle(.page)
             Button("Add Reed"){
                 addReed()

@@ -162,11 +162,19 @@ class AddReedViewModel: ObservableObject{
         newReed.threadColor = threadColor.toHex()
         newReed.tieLength = tieLen
         
-        newReed.reedSuccess = reedSuccess
-        newReed.reedLoudness = reedLoudness
-        newReed.openingSize = openingSize
-        newReed.toneDepth = toneDepth
-        newReed.toneRing = toneRing
+        if (reedStage >= 1) {
+            newReed.reedSuccess = reedSuccess
+            newReed.reedLoudness = reedLoudness
+            newReed.openingSize = openingSize
+            newReed.toneDepth = toneDepth
+            newReed.toneRing = toneRing
+        } else{
+            newReed.reedSuccess = 1
+            newReed.reedLoudness = 1
+            newReed.openingSize = 1
+            newReed.toneDepth = false
+            newReed.toneRing = false
+        }
         
         newReed.notes = notesVM.getNotesList(reed: newReed)
         try? context.save()

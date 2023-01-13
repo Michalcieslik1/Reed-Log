@@ -13,7 +13,7 @@ struct Tutorial3: View {
             Image("DataCollection-Tutorial")
                 .resizable()
                 .frame(maxWidth: 200.0, maxHeight: 400)
-            Text("After some time of normal use, pleasse press Save in the Data Collection screen, and save the data on your device. Only reeds currently present in the app will be saved, so please only delete reeds after saving them.")
+            Text("After some time of normal use, please press Save in the Data Collection screen, and save the data on your device. Only reeds currently present in the app will be saved, so please only delete reeds after saving them.")
         }
     }
 }
