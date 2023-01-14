@@ -12,3 +12,6 @@ Throughout all levels of proficiency, using a loose scientific analysis is very 
 #### Phone Number: (786) - 656 2109
 #### Instagram: https://www.instagram.com/michal.cieslik1/
 #### Youtube: https://www.youtube.com/channel/UC7QrJWfReXCPF3pOBw1czxw
+
+## Privacy Policy
+https://www.freeprivacypolicy.com/live/43c50dfe-3913-4b3b-af34-7f5b8e542df2
