@@ -6,7 +6,7 @@ Throughout all levels of proficiency, using a loose scientific analysis is very 
 
 ## Support
 ### Tutorial
-[Reed Log - User Guide.pdf](https://github.com/Michalcieslik1/Reed-Log/files/10419116/Reed.Log.-.User.Guide.pdf)
+[Reed Log - User Guide.pdf](https://github.com/Michalcieslik1/Reed-Log/files/10419121/Reed.Log.-.User.Guide.pdf)
 ### Contact Information
 #### Email: mc1099@bard.edu
 #### Phone Number: (786) - 656 2109
