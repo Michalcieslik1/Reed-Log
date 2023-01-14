@@ -1,4 +1,4 @@
-# Reed Log - Michał Cieślik's Senior Project
+# Reed Log - Michał Cieślik's Senior Thesis at Bard College
 ![ReedmakingAppIcon_App Icon - 120x120](https://user-images.githubusercontent.com/60623457/212485450-8d180237-b3ef-4f1c-9d15-a1292e6778f2.png)
 
 ## Purpose
