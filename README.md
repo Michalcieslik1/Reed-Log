@@ -1,4 +1,5 @@
-# Reed Log - Michał Cieślik's Senior Project
+# Reed Log - Michał Cieślik's Senior Project![ReedmakingAppIcon_App Icon Main - 1024x1024](https://user-images.githubusercontent.com/60623457/212485433-2565be14-4b4a-4453-8b29-353d021f2493.png)
+
 ## Purpose
 Throughout all levels of proficiency, using a loose scientific analysis is very common in the process of reed-making. While that method does prove effective over time, it does not stop players from over-focusing on untested assumptions that can completely derail the reed making process. With this project I want to create a way to analyze reed data more rigorously. As a data analysis tool, the app provides a way to analyze objective reed specifications in conjunction with subjective experiences with the reed, allowing one to find correlation between the two. The purpose of this project is twofold: to create a data analysis tool for the player to find correlations between datapoints, and use the tool to collect data and find how certain objective measurements affect the experience with the reed. For my own analysis of the data collected, I will focus on finding best configurations of staple, measurement, and tie length, and find reed specifications that maximize reed success between players and with players overall.
 
