@@ -12,13 +12,13 @@ To participate in the study, complete the following steps:
  [![Download button](https://user-images.githubusercontent.com/60623457/212577269-29ffdeee-6526-4250-944d-e5edfdf8aa4c.png)](https://apps.apple.com/us/app/reed-log/id6444420954)
  
 3. Read the User Guide in the section below.
-4. Submit the data periodically using the form listed below.
+4. Submit the data periodically using the form [here.](https://docs.google.com/forms/d/e/1FAIpQLSdbussbA6dY0W6NT920FYsmsgufZmReKY1GGPpE54U8odo19g/viewform?usp=sf_link)
 
 ## Support
 ### Tutorial
 [Reed Log - User Guide.pdf](https://github.com/Michalcieslik1/Reed-Log/files/10419121/Reed.Log.-.User.Guide.pdf)
-### [Google Form Link to Submit Data](https://docs.google.com/forms/d/e/1FAIpQLSdbussbA6dY0W6NT920FYsmsgufZmReKY1GGPpE54U8odo19g/viewform?usp=sf_link)
-### Contact Information
+### Google Form Link to Submit Data : [here](https://docs.google.com/forms/d/e/1FAIpQLSdbussbA6dY0W6NT920FYsmsgufZmReKY1GGPpE54U8odo19g/viewform?usp=sf_link)
+## Contact Information
 #### Email: mc1099@bard.edu
 #### Phone Number: (786) - 656 2109
 #### [Instagram](https://www.instagram.com/michal.cieslik1/)
