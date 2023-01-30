@@ -24,9 +24,12 @@ struct EditReed: View {
             VStack{
                 Form{
                     Section(header: Text("General")){
-                        Picker("Reed Box", selection: $vm.targetReedBox){
-                            ForEach(vm.reedBoxes.reedBoxes){ (reedBox: ReedBox) in
-                                Text(reedBox.name ?? "Unknown").tag(reedBox as ReedBox?)
+                        if(vm.reedToEdit.hidden == false){
+                            Picker("Reed Box", selection: $vm.targetReedBox){
+                                ForEach(vm.reedBoxes.reedBoxes){ (reedBox: ReedBox) in
+                                    Text(reedBox.name ?? "Unknown").tag(reedBox as ReedBox?)
+                                }
+                                Text("None").tag(nil as ReedBox?)
                             }
                         }
                         Picker("Reed Stage", selection: $vm.reedStage){
@@ -109,7 +112,7 @@ struct EditReed: View {
                         ColorPicker("Thread Color", selection: $vm.threadColor)
                     }
                     if (vm.reedStage >= 1){
-                        EditReedQuestionaire(vm: vm)
+                        EditReedQuestionnaire(vm: vm)
                     }
                     
                     Section(header: Text("Notes")){

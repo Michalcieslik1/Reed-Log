@@ -19,7 +19,7 @@ class EditReedViewModel: ObservableObject{
     
     @Published var targetReedBox: ReedBox?
     @Published var errorPopUpVisible: Bool = false
-    @Published var message: String = ""
+    @Published var errorMessage: String = ""
     @Published var title: String = ""
     @Published var button: String = ""
     var stages = ["Blank", "Scraped Reed", "In Use", "Destroyed"]
@@ -51,6 +51,8 @@ class EditReedViewModel: ObservableObject{
     @Published var openingSize: Float
     @Published var toneDepth: Bool
     @Published var toneRing: Bool
+    @Published var pitchFloor: Float
+    @Published var hidden: Bool
     //@Published var tempNote: String
     
     //@ObservedObject var showingAlert: Bool = false
@@ -82,11 +84,13 @@ class EditReedViewModel: ObservableObject{
         stapleID = reedToEdit.stapleID ?? ""
         tieLength = String(reedToEdit.tieLength)
         threadColor = Color(hex:reedToEdit.threadColor ?? "") ?? .orange
+        hidden = reedToEdit.hidden
         
         reedSuccess = reedToEdit.reedSuccess
         reedLoudness = reedToEdit.reedLoudness
         toneDepth = reedToEdit.toneDepth
         toneRing = reedToEdit.toneRing
+        pitchFloor = reedToEdit.pitchFloor
         openingSize = reedToEdit.openingSize
         self.notesVm = notes
         self.notesVm.notes = reedToEdit.notesSet
@@ -103,26 +107,32 @@ class EditReedViewModel: ObservableObject{
     */
     
     func save() -> Bool{
-        if let rb = targetReedBox{
-            if rb.size > rb.reedsSet.count{
-                rb.addToReed(reedToEdit)
-            } //else{
-                //throwReedError(error: "HI")
-             //   context.delete(reedToEdit)
-            //    return false
-            //}
+        if !hidden{
+            if let rb = targetReedBox{
+                if rb.size > rb.reedsSet.count{
+                    rb.addToReed(reedToEdit)
+                } else{
+                    title = "Reedbox Full"
+                    errorMessage = "The chosen reedbox is full. Please choose another reedbox."
+                    button = "Ok"
+                    if !errorPopUpVisible{
+                        errorPopUpVisible.toggle()
+                    }
+                    return false
+                }
+            }
         }
         
         guard let diameter = Double(caneDiameter) else{
             title = "Incorrect Input"
-            message = "Diameter can only be a number"
+            errorMessage = "Diameter can only be a number"
             button = "Ok"
             errorPopUpVisible.toggle()
             return false
         }
         guard let tieLen = Double(tieLength) else{
             title = "Incorrect Input"
-            message = "Tie Length can only be a number"
+            errorMessage = "Tie Length can only be a number"
             button = "Ok"
             errorPopUpVisible.toggle()
             return false
@@ -139,7 +149,6 @@ class EditReedViewModel: ObservableObject{
         
         reedToEdit.stapleID = stapleID
         reedToEdit.id = reedToEdit.id
-        reedToEdit.date = Date.now
         reedToEdit.reedStage = Int16(exactly: reedStage)!
         reedToEdit.caneType = caneType
         reedToEdit.caneDiameter = diameter
@@ -154,7 +163,7 @@ class EditReedViewModel: ObservableObject{
         reedToEdit.toneRing = toneRing
         reedToEdit.toneDepth = toneDepth
         reedToEdit.openingSize = openingSize
-        
+        reedToEdit.pitchFloor = pitchFloor
         
         for note in notesVm.notes{
             note.reed = reedToEdit

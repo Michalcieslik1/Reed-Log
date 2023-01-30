@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PopupView
 
 struct AddReedBox: View {
     @ObservedObject var vm: AddReedBoxViewModel
@@ -30,10 +31,44 @@ struct AddReedBox: View {
             .navigationTitle("Create New Reed Box")
             Spacer()
             Button("Add Reed Case"){
-                vm.save()
-                dismiss()
+                if (vm.save()){
+                    dismiss()
+                }
             }
             .buttonStyle(BorderedButtonStyle())
+        }
+        .popup(isPresented: $vm.errorPopUpVisible) {
+            VStack{
+                ZStack{
+                    Rectangle()
+                        .fill(Color.accentColor)
+                        .frame(height: 50, alignment: .top)
+                    Text(vm.title)
+                        .bold()
+                        .centerHorizontally()
+                }
+                Spacer()
+                Text(vm.errorMessage)
+                    .lineLimit(nil)
+                    .centerHorizontally()
+                Spacer()
+                Button(vm.button){
+                    vm.errorMessage = ""
+                    vm.title = ""
+                    vm.errorPopUpVisible.toggle()
+                }.buttonStyle(.bordered)
+                .frame(alignment: .bottom)
+                Spacer()
+            }
+            .frame(minHeight: 150, maxHeight: 200)
+            .background(Color(UIColor.systemBackground))
+        } customize: {
+            $0
+                .type(.floater())
+                .position(.top)
+                .animation(.spring())
+                .closeOnTapOutside(true)
+                .backgroundColor(.black.opacity(0.5))
         }
     }
 }

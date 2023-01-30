@@ -35,6 +35,7 @@ class StateVM: NSObject, ObservableObject, NSFetchedResultsControllerDelegate{
                 state.standardReed = Reed(context: context)
                 state.standardReed?.id = UUID()
                 state.standardReed?.reedBox = state.destroyedReeds
+                state.standardReed?.hidden = true
             } else{
                 self.state = states[0]
             }

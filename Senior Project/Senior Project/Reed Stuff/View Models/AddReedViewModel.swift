@@ -18,7 +18,7 @@ class AddReedViewModel: ObservableObject{
     
     @Published var targetReedBox: ReedBox?
     @Published var errorPopUpVisible: Bool = false
-    @Published var message: String = ""
+    @Published var errorMessage: String = ""
     @Published var title: String = ""
     @Published var button: String = ""
     var stages = ["Blank", "Scraped Reed", "In Use", "Destroyed"]
@@ -50,6 +50,7 @@ class AddReedViewModel: ObservableObject{
     @Published var openingSize: Float = 5.0
     @Published var toneDepth: Bool = true
     @Published var toneRing: Bool = true
+    @Published var pitchFloor: Float = 3.0
     
     //@ObservedObject var showingAlert: Bool = false
     //@Published var errorMessage: String = ""
@@ -83,36 +84,20 @@ class AddReedViewModel: ObservableObject{
         tieLength = String(stateVM.state.standardReed?.tieLength ?? 0)
         threadColor = Color(hex: stateVM.state.standardReed?.threadColor ?? "") ?? Color.black
         
-        reedSuccess = stateVM.state.standardReed?.reedSuccess ?? 0.0
-        reedLoudness = stateVM.state.standardReed?.reedLoudness ?? 0.0
-        openingSize = stateVM.state.standardReed?.openingSize ?? 0.0
+        reedSuccess = stateVM.state.standardReed?.reedSuccess ?? 5.0
+        reedLoudness = stateVM.state.standardReed?.reedLoudness ?? 5.0
+        openingSize = stateVM.state.standardReed?.openingSize ?? 3.0
         toneDepth = stateVM.state.standardReed?.toneDepth ?? true
         toneRing = stateVM.state.standardReed?.toneRing ?? true
+        pitchFloor = stateVM.state.standardReed?.pitchFloor ?? 3.0
     }
-    /*
-    func listenForAlert() -> Binding<Bool>{
-        return $showingAlert
-    }
+    
     
     private func throwReedError(error: String){
-        showingAlert.toggle()
+        errorPopUpVisible.toggle()
         errorMessage = error
     }
-    */
-    /*
-    func addNote(){
-        let temp = Note(context: context)
-        temp.id = UUID()
-        temp.message = tempNote
-        tempNote = ""
-        temp.date = Date.now
-        notes.append(temp)
-    }
     
-    func deleteNote(noteID: NSManagedObjectID){
-        
-    }
-    */
     func save() -> Bool{
         let newReed = Reed(context: context)
         newReed.hidden = false
@@ -121,6 +106,12 @@ class AddReedViewModel: ObservableObject{
             if rb.size > rb.reedsSet.count{
                 rb.addToReed(newReed)
             } else{
+                title = "Reedbox Full"
+                errorMessage = "The chosen reedbox is full. Please choose another reedbox."
+                button = "Ok"
+                if !errorPopUpVisible{
+                    errorPopUpVisible.toggle()
+                }
                 context.delete(newReed)
                 return false
             }
@@ -128,16 +119,22 @@ class AddReedViewModel: ObservableObject{
         
         guard let diameter = Double(caneDiameter) else{
             title = "Incorrect Input"
-            message = "Diameter can only be a number"
+            errorMessage = "Diameter can only be a number"
             button = "Ok"
-            errorPopUpVisible.toggle()
+            if !errorPopUpVisible{
+                errorPopUpVisible.toggle()
+            }
+            context.delete(newReed)
             return false
         }
         guard let tieLen = Double(tieLength) else{
             title = "Incorrect Input"
-            message = "Tie Length can only be a number"
+            errorMessage = "Tie Length can only be a number"
             button = "Ok"
-            errorPopUpVisible.toggle()
+            if !errorPopUpVisible{
+                errorPopUpVisible.toggle()
+            }
+            context.delete(newReed)
             return false
         }
         
@@ -168,6 +165,7 @@ class AddReedViewModel: ObservableObject{
             newReed.openingSize = openingSize
             newReed.toneDepth = toneDepth
             newReed.toneRing = toneRing
+            newReed.pitchFloor = pitchFloor
         } else{
             newReed.reedSuccess = 1
             newReed.reedLoudness = 1

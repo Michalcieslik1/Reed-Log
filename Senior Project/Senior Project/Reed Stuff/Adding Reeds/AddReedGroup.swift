@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PopupView
 
 struct AddReedGroup: View {
     @ObservedObject var vm: AddReedViewModel
@@ -19,7 +20,6 @@ struct AddReedGroup: View {
     var body: some View {
         VStack{
             AddReed(vm: vm)
-            .tabViewStyle(.page)
             Button("Add Reed"){
                 addReed()
             }
@@ -27,7 +27,39 @@ struct AddReedGroup: View {
             
         }
         .navigationTitle("Add Reed")
-        //.alert("Incorrect Input", isPresented: vm.listenForAlert(), actions: {})
+        .popup(isPresented: $vm.errorPopUpVisible) {
+            VStack{
+                ZStack{
+                    Rectangle()
+                        .fill(Color.accentColor)
+                        .frame(height: 50, alignment: .top)
+                    Text(vm.title)
+                        .bold()
+                        .centerHorizontally()
+                }
+                Spacer()
+                Text(vm.errorMessage)
+                    .lineLimit(nil)
+                    .centerHorizontally()
+                Spacer()
+                Button(vm.button){
+                    vm.errorMessage = ""
+                    vm.title = ""
+                    vm.errorPopUpVisible.toggle()
+                }.buttonStyle(.bordered)
+                .frame(alignment: .bottom)
+                Spacer()
+            }
+            .frame(minHeight: 150, maxHeight: 200)
+            .background(Color(UIColor.systemBackground))
+        } customize: {
+            $0
+                .type(.floater())
+                .position(.top)
+                .animation(.spring())
+                .closeOnTapOutside(true)
+                .backgroundColor(.black.opacity(0.5))
+        }
     }
     
     func addReed(){

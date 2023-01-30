@@ -27,7 +27,7 @@ struct AddReed: View {
                             ForEach(vm.reedBoxes.reedBoxes){ (reedBox: ReedBox) in
                                 Text(reedBox.name ?? "Unknown").tag(reedBox as ReedBox?)
                             }
-                            .onAppear{ vm.targetReedBox = vm.reedBoxes.reedBoxes[0]}
+                            Text("None").tag(nil as ReedBox?)
                         }
                         Picker("Reed Stage", selection: $vm.reedStage){
                             Text("Blank").tag(0)
@@ -109,7 +109,7 @@ struct AddReed: View {
                         ColorPicker("Thread Color", selection: $vm.threadColor)
                     }
                     if(vm.reedStage >= 1){
-                        AddReedQuestionaire(vm: vm)
+                        AddReedQuestionnaire(vm: vm)
                     }
                     Section(header: Text("Notes")){
                         AddNote(vm: notesVM)

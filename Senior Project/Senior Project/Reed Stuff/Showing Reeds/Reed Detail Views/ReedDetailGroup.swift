@@ -20,11 +20,10 @@ struct ReedDetailGroup: View {
         VStack{
             TabView{
                 ReedDetail(reed: reed)
-                ReedDetailQuestionaire(reed: reed)
             }
             .tabViewStyle(.page)
         }
-        .navigationTitle("#\(reed.stapleID ?? "Unknown") (Date)")
+        .navigationTitle("#\(reed.stapleID ?? "Unknown") - \(Reed.dateToString(date: reed.date))")
         .toolbar(){
             NavigationLink(destination: EditReedGroup(vm: EditReedViewModel(context: vm.context, reedBoxes: vm.reedBoxes, reedToEdit: reed, notes: AddNoteViewModel(context: vm.context)))){
                 Text("Edit")

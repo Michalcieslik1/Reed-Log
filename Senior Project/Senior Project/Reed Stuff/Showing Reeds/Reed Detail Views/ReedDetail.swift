@@ -81,7 +81,7 @@ struct ReedDetail: View {
                 }
             }
             if (reed.reedStage >= 1){
-                ReedDetailQuestionaire(reed: reed)
+                ReedDetailQuestionnaire(reed: reed)
             }
             
             Section(header: Text("Notes")){

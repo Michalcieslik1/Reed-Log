@@ -27,6 +27,10 @@ class EditReedBoxViewModel: ObservableObject{
         self.reedBoxes = ReedBoxListViewModel(context: context)
     }
     
+    @Published var errorPopUpVisible: Bool = false
+    @Published var errorMessage: String = ""
+    @Published var title: String = ""
+    @Published var button: String = ""
     @Published var reedBoxes: ReedBoxListViewModel
     @Published var name: String
     @Published var info: String
@@ -35,7 +39,16 @@ class EditReedBoxViewModel: ObservableObject{
     @Published var id: UUID
     
     
-    func save(){
+    func save() -> Bool{
+        if name == ""{
+            title = "Name Field Required"
+            errorMessage = "You cannot leave the \"Name\" field blank."
+            button = "Ok"
+            if !errorPopUpVisible{
+                errorPopUpVisible.toggle()
+            }
+            return false
+        }
         reedBoxToEdit.id = id
         reedBoxToEdit.name = name
         reedBoxToEdit.size = Int16(size)
@@ -43,5 +56,6 @@ class EditReedBoxViewModel: ObservableObject{
         reedBoxToEdit.color = color.toHex()
         
         try? context.save()
+        return true
     }
 }

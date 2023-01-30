@@ -11,7 +11,7 @@ struct NewReedBox: View {
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 25, style: .continuous)
-                .fill(Color(UIColor.lightGray))
+                .fill(Color("ReedboxColor"))
                 .frame(width: 200, height: 200)
             RoundedRectangle(cornerRadius: 25, style: .continuous)
                 .fill(Color.white)

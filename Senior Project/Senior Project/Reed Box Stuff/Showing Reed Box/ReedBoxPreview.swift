@@ -12,9 +12,9 @@ struct ReedBoxPreview: View {
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 25, style: .continuous)
-                .fill(Color(hex: reedBox.color ?? "0") ?? Color(.white))
+                .fill(Color(hex: reedBox.color ?? "0") ?? Color.accentColor)
                 .frame(width: 200, height: 200)
-                .shadow(color: Color.gray, radius: 8)
+                .shadow(color: Color(hex: reedBox.color ?? "0") ?? Color(UIColor.systemGray), radius: 8)
             RoundedRectangle(cornerRadius: 25, style: .continuous)
                 .fill(Color.white)
                 .opacity(0.3)

@@ -25,7 +25,7 @@ struct SettingsView: View {
                         TutorialView()
                             .navigationTitle("Tutorial")
                     } label:{
-                        Text("Tutorial - BETA")
+                        Text("Tutorial - Study")
                             .bold()
                             .centerHorizontally()
                     }

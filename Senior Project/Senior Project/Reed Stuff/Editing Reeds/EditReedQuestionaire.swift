@@ -1,5 +1,5 @@
 //
-//  EditReedQuestionaire.swift
+//  EditReedQuestionnaire.swift
 //  Senior Project
 //
 //  Created by Michał Cieslik on 10/5/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EditReedQuestionaire: View {
+struct EditReedQuestionnaire: View {
     @ObservedObject var vm: EditReedViewModel
     @State var showingAlert = false
     
@@ -16,7 +16,7 @@ struct EditReedQuestionaire: View {
     }
     
     var body: some View {
-        Section(header: Text("Questionaire")){
+        Section(header: Text("Questionnaire")){
             HStack{
                 Text("How successful is the reed:")
                 Spacer()
@@ -39,7 +39,18 @@ struct EditReedQuestionaire: View {
             } maximumValueLabel: {
                 Text("10")
             }.padding()
-            Text("Opening Size:")
+            HStack{
+                Text("Pitch floor")
+                    .bold()
+                    .centerHorizontally()
+            }
+            Slider(value: $vm.pitchFloor, in: 1...5, step: 1){}
+        minimumValueLabel: {
+            Text("Flat")
+        } maximumValueLabel: {
+            Text("Sharp")
+        }.padding()
+            Text("Opening Size")
                 .bold()
                 .centerHorizontally()
             Slider(value: $vm.openingSize, in: 1...5, step: 1){}
@@ -61,9 +72,9 @@ struct EditReedQuestionaire: View {
     }
 }
 
-struct EditReedQuestionaire_Previews: PreviewProvider {
+struct EditReedQuestionnaire_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = DataController.shared.container.viewContext
-        EditReedQuestionaire(vm: EditReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), reedToEdit: Reed(context: viewContext), notes: AddNoteViewModel(context: viewContext)))
+        EditReedQuestionnaire(vm: EditReedViewModel(context: viewContext, reedBoxes: ReedBoxListViewModel(context: viewContext), reedToEdit: Reed(context: viewContext), notes: AddNoteViewModel(context: viewContext)))
     }
 }
