@@ -17,7 +17,7 @@ struct SettingsView: View {
         NavigationView{
             List{
                 Settings(rvm: StateVM(context: reedListVM.context))
-                Link("Submit save file", destination: URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSdbussbA6dY0W6NT920FYsmsgufZmReKY1GGPpE54U8odo19g/viewform?usp=sf_link")!)
+                Link("Submit save file", destination: URL(string: "https://michalcieslik1.github.io/Reed-Log/")!)
                     .centerHorizontally()
                     .buttonStyle(.borderedProminent)
                 Section(){
