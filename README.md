@@ -20,7 +20,6 @@ To participate in the study, complete the following steps:
 # Support
 ### Tutorial
 [Reed Log - User Guide.pdf](https://github.com/Michalcieslik1/Reed-Log/files/10419121/Reed.Log.-.User.Guide.pdf)
-### Google Form Link to Submit Data : [here](https://docs.google.com/forms/d/e/1FAIpQLSdbussbA6dY0W6NT920FYsmsgufZmReKY1GGPpE54U8odo19g/viewform?usp=sf_link)
 ## Contact Information
 #### Email: mc1099@bard.edu
 #### Phone Number: (786) - 656 2109
