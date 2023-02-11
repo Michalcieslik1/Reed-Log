@@ -9,7 +9,7 @@ Throughout all levels of proficiency, using a loose scientific analysis is very 
 
 ## How to Participate
 To participate in the study, complete the following steps:
-1. Fill out the following form to join the mailing list [here.](https://docs.google.com/forms/d/e/1FAIpQLScHW6bc-bIBA8-C8KgqSxMmJevqTpZQl2NIPGkokU_45Dfdaw/viewform?usp=send_form)
+1. Fill out the following form to join the mailing list, and to be part of the study [here.](https://docs.google.com/forms/d/e/1FAIpQLScHW6bc-bIBA8-C8KgqSxMmJevqTpZQl2NIPGkokU_45Dfdaw/viewform?usp=send_form)
 1. Download the app through the AppStore at the link below:
 
  [![Download button](https://user-images.githubusercontent.com/60623457/212577269-29ffdeee-6526-4250-944d-e5edfdf8aa4c.png)](https://apps.apple.com/us/app/reed-log/id6444420954)
