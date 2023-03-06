@@ -16,6 +16,8 @@ struct EditReedQuestionnaire: View {
     }
     
     var body: some View {
+        HStack{}
+        /*
         Section(header: Text("Questionnaire")){
             HStack{
                 Text("How successful is the reed:")
@@ -68,7 +70,7 @@ struct EditReedQuestionnaire: View {
                 })
                 Toggle("Depth", isOn: $vm.toneDepth)
             }
-        }
+        }*/
     }
 }
 

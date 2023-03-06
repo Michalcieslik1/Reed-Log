@@ -80,9 +80,10 @@ struct ReedDetail: View {
                         
                 }
             }
+            /*
             if (reed.reedStage >= 1){
                 ReedDetailQuestionnaire(reed: reed)
-            }
+            }*/
             
             Section(header: Text("Notes")){
                 NoteRow(reed: reed)

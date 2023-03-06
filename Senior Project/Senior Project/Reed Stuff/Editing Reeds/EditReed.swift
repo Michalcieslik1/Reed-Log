@@ -111,9 +111,10 @@ struct EditReed: View {
                             .keyboardType(.decimalPad)
                         ColorPicker("Thread Color", selection: $vm.threadColor)
                     }
+                    /*
                     if (vm.reedStage >= 1){
                         EditReedQuestionnaire(vm: vm)
-                    }
+                    }*/
                     
                     Section(header: Text("Notes")){
                         AddNote(vm: noteVm)

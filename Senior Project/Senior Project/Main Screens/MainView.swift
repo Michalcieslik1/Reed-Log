@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @Environment(\.managedObjectContext) var moc
-    // HELLo
+    
     @ObservedObject var reedListVM: ReedListViewModel
     @ObservedObject var reedBoxListVM: ReedBoxListViewModel
     @State var isPresented = false

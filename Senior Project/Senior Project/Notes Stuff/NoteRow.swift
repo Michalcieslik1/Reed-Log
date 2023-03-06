@@ -10,20 +10,18 @@ import SwiftUI
 struct NoteRow: View {
     @ObservedObject var reed: Reed
     var body: some View {
-        List{
-            ForEach(reed.notesSet){ note in
-                VStack{
-                    HStack{
-                        Text(Reed.dateToString(date: note.date))
-                            .fontWeight(.semibold)
-                        Spacer()
-                    }
-                    HStack{
-                        Text(note.message ?? "")
-                            .fontWeight(.light)
-                            .multilineTextAlignment(.leading)
-                        Spacer()
-                    }
+        ForEach(reed.notesSet){ note in
+            VStack{
+                HStack{
+                    Text(Reed.dateToString(date: note.date))
+                        .fontWeight(.semibold)
+                    Spacer()
+                }
+                HStack{
+                    Text(note.message ?? "")
+                        .fontWeight(.light)
+                        .multilineTextAlignment(.leading)
+                    Spacer()
                 }
             }
         }

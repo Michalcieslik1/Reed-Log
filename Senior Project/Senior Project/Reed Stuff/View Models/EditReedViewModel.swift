@@ -46,12 +46,6 @@ class EditReedViewModel: ObservableObject{
     @Published var tieLength: String
     @Published var threadColor: Color
 
-    @Published var reedSuccess: Float
-    @Published var reedLoudness: Float
-    @Published var openingSize: Float
-    @Published var toneDepth: Bool
-    @Published var toneRing: Bool
-    @Published var pitchFloor: Float
     @Published var hidden: Bool
     //@Published var tempNote: String
     
@@ -86,12 +80,6 @@ class EditReedViewModel: ObservableObject{
         threadColor = Color(hex:reedToEdit.threadColor ?? "") ?? .orange
         hidden = reedToEdit.hidden
         
-        reedSuccess = reedToEdit.reedSuccess
-        reedLoudness = reedToEdit.reedLoudness
-        toneDepth = reedToEdit.toneDepth
-        toneRing = reedToEdit.toneRing
-        pitchFloor = reedToEdit.pitchFloor
-        openingSize = reedToEdit.openingSize
         self.notesVm = notes
         self.notesVm.notes = reedToEdit.notesSet
     }
@@ -158,12 +146,6 @@ class EditReedViewModel: ObservableObject{
         reedToEdit.threadColor = threadColor.toHex()
         reedToEdit.tieLength = tieLen
         
-        reedToEdit.reedSuccess = reedSuccess
-        reedToEdit.reedLoudness = reedLoudness
-        reedToEdit.toneRing = toneRing
-        reedToEdit.toneDepth = toneDepth
-        reedToEdit.openingSize = openingSize
-        reedToEdit.pitchFloor = pitchFloor
         
         for note in notesVm.notes{
             note.reed = reedToEdit

@@ -45,13 +45,6 @@ class AddReedViewModel: ObservableObject{
     @Published var tieLength: String = ""
     @Published var threadColor: Color = .white
     
-    @Published var reedSuccess: Float = 5.0
-    @Published var reedLoudness: Float = 5.0
-    @Published var openingSize: Float = 5.0
-    @Published var toneDepth: Bool = true
-    @Published var toneRing: Bool = true
-    @Published var pitchFloor: Float = 3.0
-    
     //@ObservedObject var showingAlert: Bool = false
     //@Published var errorMessage: String = ""
     
@@ -83,13 +76,6 @@ class AddReedViewModel: ObservableObject{
         stapleID = stateVM.state.standardReed?.stapleID ?? ""
         tieLength = String(stateVM.state.standardReed?.tieLength ?? 0)
         threadColor = Color(hex: stateVM.state.standardReed?.threadColor ?? "") ?? Color.black
-        
-        reedSuccess = stateVM.state.standardReed?.reedSuccess ?? 5.0
-        reedLoudness = stateVM.state.standardReed?.reedLoudness ?? 5.0
-        openingSize = stateVM.state.standardReed?.openingSize ?? 3.0
-        toneDepth = stateVM.state.standardReed?.toneDepth ?? true
-        toneRing = stateVM.state.standardReed?.toneRing ?? true
-        pitchFloor = stateVM.state.standardReed?.pitchFloor ?? 3.0
     }
     
     
@@ -158,21 +144,6 @@ class AddReedViewModel: ObservableObject{
         newReed.stapleType = stapleType
         newReed.threadColor = threadColor.toHex()
         newReed.tieLength = tieLen
-        
-        if (reedStage >= 1) {
-            newReed.reedSuccess = reedSuccess
-            newReed.reedLoudness = reedLoudness
-            newReed.openingSize = openingSize
-            newReed.toneDepth = toneDepth
-            newReed.toneRing = toneRing
-            newReed.pitchFloor = pitchFloor
-        } else{
-            newReed.reedSuccess = 1
-            newReed.reedLoudness = 1
-            newReed.openingSize = 1
-            newReed.toneDepth = false
-            newReed.toneRing = false
-        }
         
         newReed.notes = notesVM.getNotesList(reed: newReed)
         try? context.save()

@@ -34,15 +34,9 @@ extension Reed {
     @NSManaged public var stapleType: String?
     @NSManaged public var threadColor: String?
     @NSManaged public var tieLength: Double
-    @NSManaged public var reedSuccess: Float
-    @NSManaged public var reedLoudness: Float
-    @NSManaged public var openingSize: Float
-    @NSManaged public var toneDepth: Bool
-    @NSManaged public var toneRing: Bool
     @NSManaged public var reedBox: ReedBox?
     @NSManaged public var notes: NSSet?
     @NSManaged public var hidden: Bool
-    @NSManaged public var pitchFloor: Float
     @NSManaged public var state: AppState?
     
     public var notesSet: [Note]{
@@ -80,45 +74,6 @@ extension Reed {
         default:
             return "Destroyed"
         }
-    }
-    
-    func openingSizeToString() -> String{
-        switch openingSize{
-        case 0:
-            return ""
-        case 1:
-            return "Small"
-        case 2:
-            return "Medium Small"
-        case 3:
-            return "Medium"
-        case 4:
-            return "Medium Large"
-        default:
-            return "Large"
-        }
-    }
-    func pitchFloorToString() -> String{
-        switch pitchFloor{
-        case 0:
-            return ""
-        case 1:
-            return "Flat"
-        case 2:
-            return "Slightly Flat"
-        case 3:
-            return "In Tune"
-        case 4:
-            return "Slightly Sharp"
-        default:
-            return "Sharp"
-        }
-    }
-    func toneDepthToString() -> String {
-        if toneDepth {return "Yes"} else{ return "No"}
-    }
-    func toneRingToString() -> String {
-        if toneRing {return "Yes"} else{ return "No"}
     }
     
     static func dateToString(date: Date?) -> String{

@@ -14,6 +14,8 @@ struct ReedDetailQuestionnaire: View {
         self.reed = reed
     }
     var body: some View {
+        HStack{}
+        /*
         Section(header: Text("Questionnaire")){
             HStack{
                 Text("Reed Success:")
@@ -51,7 +53,7 @@ struct ReedDetailQuestionnaire: View {
                 Spacer()
                 Text(reed.toneRingToString())
             }
-        }
+        }*/
     }
 }
 

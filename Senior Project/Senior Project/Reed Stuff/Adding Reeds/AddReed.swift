@@ -107,10 +107,11 @@ struct AddReed: View {
                         TextField("Tie Length", text: $vm.tieLength)
                             .keyboardType(.numberPad)
                         ColorPicker("Thread Color", selection: $vm.threadColor)
-                    }
+                    }/*
                     if(vm.reedStage >= 1){
                         AddReedQuestionnaire(vm: vm)
                     }
+                    */
                     Section(header: Text("Notes")){
                         AddNote(vm: notesVM)
                     }
