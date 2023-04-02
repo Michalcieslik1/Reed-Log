@@ -1,6 +1,8 @@
 # General Tests:
 
-## How large is the app:
+## How large is the app: 
+
+2MB
 
 # Execution Time tests:
 
