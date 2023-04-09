@@ -21,4 +21,40 @@
 # Core Data test:
 
 ## How much memory each reed takes up:
-
+There are 3 Sqlite databases present in standard use of Core Data. The measuring of storage present in the sqlite database is difficult because of swift's NSPersistentStoreManager's functionalities that does not remove the data completely, rather keeps the data there to be reused later. The size question gets handled by Swift's functionality so these are just estimates. Here is the memory breakup of these databases given different amount of reeds:
+### 0 reeds:
+The size of the store is: 74 KB
+The size of the wal is: nil
+The size of the shm is: 33 KB
+### 1 reed:
+The size of the store is: 74 KB
+The size of the wal is: 41 KB
+The size of the shm is: 33 KB
+### 2 reeds:
+The size of the store is: 74 KB
+The size of the wal is: 62 KB
+The size of the shm is: 33 KB
+### 3 reeds:
+The size of the store is: 74 KB
+The size of the wal is: 82 KB
+The size of the shm is: 33 KB
+### 5 reeds:
+The size of the store is: 74 KB
+The size of the wal is: 107 KB
+The size of the shm is: 33 KB
+### 10 reeds:
+The size of the store is: 74 KB
+The size of the wal is: 185 KB
+The size of the shm is: 33 KB
+### 100 reeds:
+The size of the store is: 74 KB
+The size of the wal is: 1,739 KB
+The size of the shm is: 33 KB
+### 1000 reeds:
+The size of the store is: 311 KB
+The size of the wal is: 766 KB
+The size of the shm is: 33 KB
+### 5000 reeds:
+The size of the store is: 1,290 KB
+The size of the wal is: 1,121 KB
+The size of the shm is: 33 KB
