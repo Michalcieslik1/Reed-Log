@@ -99,6 +99,6 @@ https://www.avanderlee.com/swift/write-ahead-logging-wal/
 
 # App Diagrams
 ## Core Data Diagram
-![CoreDataStructure drawio](https://user-images.githubusercontent.com/60623457/232142558-a866e0bd-c0cc-43cb-8aff-c45a32e9210e.png)
+![CoreDataStructure drawio](https://user-images.githubusercontent.com/60623457/232142840-bdb95e90-5f74-49b0-a3ad-b963326a22e5.svg)
 ## Whole App Diagram
 
