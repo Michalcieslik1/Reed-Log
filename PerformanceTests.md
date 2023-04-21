@@ -94,8 +94,11 @@ The size of the shm is: 33 KB
 ## Data Size Chart:
 ![Screenshot 2023-04-09 at 2 12 58 PM](https://user-images.githubusercontent.com/60623457/230789545-ad4d8581-b98a-44ff-9774-8bbd1f632ede.png)
 
-## Resources for Core Data Databases:
+# Resource:
+## Data Structures:
 https://www.avanderlee.com/swift/write-ahead-logging-wal/
+## SwiftUI:
+https://link.springer.com/chapter/10.1007/978-1-4842-5516-2_1
 
 # App Diagrams
 ## Core Data Diagram
